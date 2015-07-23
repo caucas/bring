@@ -1,0 +1,74 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        id:
+            label: ID
+            disabled: true
+            hidden: true
+            tab: macrobit.bring::lang.shops.tab.main
+        name:
+            label: macrobit.bring::lang.form.name
+            span: left
+            tab: macrobit.bring::lang.shops.tab.main
+        images:
+            label: macrobit.bring::lang.form.images
+            type: fileupload
+            mode: image
+            imageHeight: 120
+            span: right
+            tab: macrobit.bring::lang.shops.tab.main
+        tel:
+            label: macrobit.bring::lang.form.telephone
+            span: left
+            tab: macrobit.bring::lang.shops.tab.main
+        address:
+            label: macrobit.bring::lang.form.address
+            span: left
+            tab: macrobit.bring::lang.shops.tab.main
+        company:
+            label: macrobit.bring::lang.form.company
+            type: recordfinder
+            list: $/macrobit/bring/models/company/columns.yaml
+            nameFrom: name
+            span: left
+            tab: macrobit.bring::lang.shops.tab.main
+        region:
+            label: macrobit.bring::lang.form.region
+            type: recordfinder
+            list: $/macrobit/bring/models/region/columns.yaml
+            nameFrom: name
+            span: right
+            tab: macrobit.bring::lang.shops.tab.main
+        description:
+            label: macrobit.bring::lang.form.description
+            type: textarea
+            size: tiny
+            tab: macrobit.bring::lang.shops.tab.main
+        deliveryPrice:
+            label: macrobit.bring::lang.form.deliveryPrice
+            type: number
+            span: left
+            tab: macrobit.bring::lang.shops.tab.delivery
+        minDeliverySumm:
+            label: macrobit.bring::lang.form.minDeliverySumm
+            type: number
+            span: right
+            tab: macrobit.bring::lang.shops.tab.delivery
+        deliveryDescription:
+            label: macrobit.bring::lang.form.description
+            type: textarea
+            size: tiny
+            tab: macrobit.bring::lang.shops.tab.delivery
+
+
+secondaryTabs:
+    fields:
+        logo:
+            label: macrobit.bring::lang.form.logo
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260

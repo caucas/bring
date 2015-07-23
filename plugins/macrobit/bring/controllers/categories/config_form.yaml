@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/macrobit/bring/models/category/fields.yaml
+
+# Model Class name
+modelClass: Macrobit\Bring\Models\Category
+
+# Default redirect location
+defaultRedirect: macrobit/bring/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: macrobit/bring/categories/update/:id
+    redirectClose: macrobit/bring/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: macrobit/bring/categories
+    redirectClose: macrobit/bring/categories
+
+# Preview page
+preview:
+    title: Preview Category

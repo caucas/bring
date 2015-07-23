@@ -1,0 +1,37 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        id:
+            label: ID
+            disabled: true
+            hidden: true
+            tab: macrobit.bring::lang.companies.tab.main
+        name:
+            label: macrobit.bring::lang.form.name
+            span: left
+            tab: macrobit.bring::lang.companies.tab.main
+        logo:
+            label: macrobit.bring::lang.form.logo
+            type: fileupload
+            mode: image
+            span: right
+            tab: macrobit.bring::lang.companies.tab.main
+        url:
+            label: macrobit.bring::lang.form.url
+            span: left
+            tab: macrobit.bring::lang.companies.tab.main
+        description:
+            label: macrobit.bring::lang.form.description
+            type: textarea
+            size: tiny
+            span: left
+            tab: macrobit.bring::lang.companies.tab.main
+        users:
+            label: macrobit.bring::lang.form.users
+            type: partial
+            path: users_field
+            context: [update]
+            tab: macrobit.bring::lang.companies.tab.users

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Shop
+
+# Model Form Field configuration
+form: $/macrobit/bring/models/shop/fields.yaml
+
+# Model Class name
+modelClass: Macrobit\Bring\Models\Shop
+
+# Default redirect location
+defaultRedirect: macrobit/bring/shops
+
+# Create page
+create:
+    title: Create Shop
+    redirect: macrobit/bring/shops/update/:id
+    redirectClose: macrobit/bring/shops
+
+# Update page
+update:
+    title: Edit Shop
+    redirect: macrobit/bring/shops
+    redirectClose: macrobit/bring/shops
+
+# Preview page
+preview:
+    title: Preview Shop

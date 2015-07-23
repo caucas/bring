@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Goods Tag
+
+# Model Form Field configuration
+form: $/macrobit/bring/models/goodstag/fields.yaml
+
+# Model Class name
+modelClass: Macrobit\Bring\Models\GoodsTag
+
+# Default redirect location
+defaultRedirect: macrobit/bring/goodstags
+
+# Create page
+create:
+    title: Create Goods Tag
+    redirect: macrobit/bring/goodstags/update/:id
+    redirectClose: macrobit/bring/goodstags
+
+# Update page
+update:
+    title: Edit Goods Tag
+    redirect: macrobit/bring/goodstags
+    redirectClose: macrobit/bring/goodstags
+
+# Preview page
+preview:
+    title: Preview Goods Tag

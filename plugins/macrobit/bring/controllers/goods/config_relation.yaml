@@ -1,0 +1,9 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+tags:
+    label: Goods Tags
+    view:
+        list: $/macrobit/bring/models/goodstag/columns.yaml
+        toolbarButtons: add|remove

@@ -1,0 +1,17 @@
+1.0.1: First version of Bring
+1.0.2:
+    - Added regions table
+    - create_regions_table.php
+1.0.3:
+    - Added companies and shops tables
+    - create_companies_table.php
+    - create_shops_table.php
+1.0.4:
+    - Added categories table
+    - create_categories_table.php
+1.0.5:
+    - Added goods tags table
+    - create_goods_tags_table.php
+1.0.6:
+    - Added goods table
+    - create_goods_table.php

@@ -1,0 +1,19 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        invisible: true
+    name:
+        label: macrobit.bring::lang.form.name
+    price:
+        label: macrobit.bring::lang.form.price
+    shop:
+        label: macrobit.bring::lang.form.shop
+        relation: shop
+        select: name
+    updated_at:
+        label: macrobit.bring::lang.form.updated
+        type: timesince

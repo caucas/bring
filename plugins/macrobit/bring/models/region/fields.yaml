@@ -1,0 +1,27 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+tabs:
+    fields:
+        id:
+            label: ID
+            disabled: true
+            tab: macrobit.bring::lang.regions.tab.main
+        name:
+            label: macrobit.bring::lang.form.name
+            tab: macrobit.bring::lang.regions.tab.main
+        contacts:
+            label: macrobit.bring::lang.form.contacts
+            type: textarea
+            size: tiny
+            tab: macrobit.bring::lang.regions.tab.main
+        orderPriority:
+            label: macrobit.bring::lang.form.order
+            type: number
+            tab: macrobit.bring::lang.regions.tab.main
+        users:
+            label: macrobit.bring::lang.form.users
+            type: partial
+            path: users_field
+            context: [update]
+            tab: macrobit.bring::lang.regions.tab.users

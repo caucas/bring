@@ -1,0 +1,9 @@
+==
+<ul>
+    {% for category in categories %}
+    <li>
+        {% for tag in category.tags %}{{ tag.title }} {% endfor %}
+        {% partial 'categories' categories=category.children %}
+    </li>     
+    {% endfor %}
+</ul>

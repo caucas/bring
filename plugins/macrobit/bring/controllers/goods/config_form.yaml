@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Goods
+
+# Model Form Field configuration
+form: $/macrobit/bring/models/goods/fields.yaml
+
+# Model Class name
+modelClass: Macrobit\Bring\Models\Goods
+
+# Default redirect location
+defaultRedirect: macrobit/bring/goods
+
+# Create page
+create:
+    title: Create Goods
+    redirect: macrobit/bring/goods/update/:id
+    redirectClose: macrobit/bring/goods
+
+# Update page
+update:
+    title: Edit Goods
+    redirect: macrobit/bring/goods
+    redirectClose: macrobit/bring/goods
+
+# Preview page
+preview:
+    title: Preview Goods

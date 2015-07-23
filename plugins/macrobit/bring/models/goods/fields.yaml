@@ -1,0 +1,58 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        id:
+            label: ID
+            disabled: true
+            hidden: true
+            tab: macrobit.bring::lang.goods.tab.main
+        name:
+            label: macrobit.bring::lang.form.name
+            span: left
+            tab: macrobit.bring::lang.goods.tab.main
+        shop:
+            label: macrobit.bring::lang.form.shop
+            type: recordfinder
+            list: $/macrobit/bring/models/shop/columns.yaml
+            nameFrom: name
+            descriptionFrom: description
+            span: right
+            tab: macrobit.bring::lang.goods.tab.main
+        price:
+            label: macrobit.bring::lang.form.price
+            span: left
+            tab: macrobit.bring::lang.goods.tab.main
+        description:
+            label: macrobit.bring::lang.form.description
+            type: textarea
+            size: small
+            span: right
+            tab: macrobit.bring::lang.goods.tab.main
+        weight:
+            label: macrobit.bring::lang.form.weight
+            span: left
+            tab: macrobit.bring::lang.goods.tab.main
+        stock:
+            label: macrobit.bring::lang.form.stock
+            span: left
+            tab: macrobit.bring::lang.goods.tab.main
+        images:
+            label: macrobit.bring::lang.form.images
+            type: fileupload
+            mode: image
+            span: right
+            tab: macrobit.bring::lang.goods.tab.main
+        rawId:
+            label: macrobit.bring::lang.form.rawId
+            disabled: true
+            span: left
+            tab: macrobit.bring::lang.goods.tab.main
+        tags:
+            label: macrobit.bring::lang.form.tags
+            type: partial
+            path: tags_field
+            context: update
+            tab: macrobit.bring::lang.goods.tab.tags

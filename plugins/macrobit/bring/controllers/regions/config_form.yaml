@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Region
+
+# Model Form Field configuration
+form: $/macrobit/bring/models/region/fields.yaml
+
+# Model Class name
+modelClass: Macrobit\Bring\Models\Region
+
+# Default redirect location
+defaultRedirect: macrobit/bring/regions
+
+# Create page
+create:
+    title: Create Region
+    redirect: macrobit/bring/regions/update/:id
+    redirectClose: macrobit/bring/regions
+
+# Update page
+update:
+    title: Edit Region
+    redirect: macrobit/bring/regions
+    redirectClose: macrobit/bring/regions
+
+# Preview page
+preview:
+    title: Preview Region
