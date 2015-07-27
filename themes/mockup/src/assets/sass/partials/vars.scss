@@ -1,0 +1,15 @@
+// COLORS
+	// bg colors
+	$bg-sidebar-color	: #21282E;
+	$bg-yellow-color	: #FED700;
+
+	// font colors
+	$color-light-white	: #FEFEFE;
+	$color-light-gray	: #DDD;
+	$color-light-blue	: #00B3D3;
+
+// MIXINS
+
+@mixin bg ($filename, $bgcolor:transparent, $pos: 0 0, $repeat:no-repeat) {
+	background: $bgcolor url('../../assets/images/' + $filename) $pos $repeat;
+}

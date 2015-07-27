@@ -1,0 +1,20 @@
+aside
+	.logo
+		a(href="/")
+			img(src="/assets/images/logo.png", alt="logo")
+			h1 Доставка
+	.logo-icon
+
+	nav
+		ul
+			each item in mainMenuItems
+				li
+					a(href="#")= item.parentName
+					ul
+						each childItem in item.childs
+							li
+								a(href="#")= childItem
+		.contacts
+			p.title Телефон <br> справочной <br> службы
+			p: a.tel(href="tel:+78004252233") 8-800-42-5-22-33
+			p.small-desc звонки принимаются <br> с 9:00 до 18:00

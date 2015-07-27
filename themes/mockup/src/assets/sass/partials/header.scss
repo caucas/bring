@@ -1,0 +1,54 @@
+header {
+	height: 80px;
+	background-color: #fff;
+	box-shadow : 1px 1px 4px rgba(0,0,0,0.15);
+	@extend .clrfix;
+}
+
+.user-area,
+.top-search {
+	// display: inline-block;
+}
+.user-area {
+	// float: right;
+	// text-align: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	.auth-block,
+	.basket-block {
+		display: inline-block;
+		height: 80px;
+		width: 85px;
+	}
+	.auth-block {
+		@include bg($filename: 'icon/icon-login-btn.png', $bgcolor: $bg-sidebar-color, $pos: center);
+	}
+	.basket-block {
+		@include bg($filename: 'icon/icon-basket-btn.png', $bgcolor: $bg-yellow-color, $pos: center);
+	}
+}
+
+.top-search {
+	position: relative;
+	width: 100%;
+	padding: 20px 190px 20px 35px;
+
+	.search-btn {
+		position: absolute;
+		top: 20px;
+		left: 35px;
+		width: 20px;
+		height: 40px;
+		border: 0;
+		@include bg($filename: 'icon/icon-search.png', $pos: center);
+		background-size: 20px;
+	}
+	input[type="text"] {
+		width: 99%;
+		height: 40px;
+		margin-left: 30px;
+		border: 0;
+	}
+}

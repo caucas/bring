@@ -1,0 +1,218 @@
+@font-face {
+  font-family: 'R-300';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/roboto-v15-cyrillic_latin-300.eot");
+  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/roboto-v15-cyrillic_latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v15-cyrillic_latin-300.woff2") format("woff2"), url("../fonts/roboto-v15-cyrillic_latin-300.woff") format("woff"), url("../fonts/roboto-v15-cyrillic_latin-300.ttf") format("truetype"), url("../fonts/roboto-v15-cyrillic_latin-300.svg#Roboto") format("svg"); }
+
+@font-face {
+  font-family: 'R-400';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-v15-cyrillic_latin-regular.eot");
+  src: local("Roboto"), local("Roboto-Regular"), url("../fonts/roboto-v15-cyrillic_latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v15-cyrillic_latin-regular.woff2") format("woff2"), url("../fonts/roboto-v15-cyrillic_latin-regular.woff") format("woff"), url("../fonts/roboto-v15-cyrillic_latin-regular.ttf") format("truetype"), url("../fonts/roboto-v15-cyrillic_latin-regular.svg#Roboto") format("svg"); }
+
+@font-face {
+  font-family: 'RC';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/roboto-condensed-v13-latin_cyrillic-300.eot");
+  src: local("Roboto Condensed Light"), local("RobotoCondensed-Light"), url("../fonts/roboto-condensed-v13-latin_cyrillic-300.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-condensed-v13-latin_cyrillic-300.woff2") format("woff2"), url("../fonts/roboto-condensed-v13-latin_cyrillic-300.woff") format("woff"), url("../fonts/roboto-condensed-v13-latin_cyrillic-300.ttf") format("truetype"), url("../fonts/roboto-condensed-v13-latin_cyrillic-300.svg#RobotoCondensed") format("svg"); }
+
+* {
+  margin: 0;
+  padding: 0;
+  font: 100% 'R-300';
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+a {
+  color: inherit;
+  font: inherit; }
+  a.tel {
+    font-size: 20px; }
+
+button:focus,
+input:focus {
+  outline: 0; }
+
+nav ul {
+  list-style: none; }
+
+.clrfix:after, aside .logo:after, header:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.small-desc {
+  font-size: 11px; }
+
+.ta-left {
+  text-align: left; }
+
+.ta-center {
+  text-align: center; }
+
+.ta-right {
+  text-align: right; }
+
+.main-container {
+  background-color: #af0; }
+
+aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  min-height: 100%;
+  padding: 25px 35px 200px;
+  background: #21282E url(../../assets/images/aside-logo.png) no-repeat 0 80px;
+  color: #FEFEFE; }
+  aside:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: url(../../assets/images/bg/bg-aside.png) no-repeat left bottom; }
+  aside a {
+    text-decoration: none; }
+    aside a:hover {
+      text-decoration: underline; }
+  aside .logo {
+    margin-bottom: 250px; }
+    aside .logo a {
+      display: block; }
+    aside .logo img {
+      float: left; }
+    aside .logo h1 {
+      display: inline-block;
+      height: 33px;
+      line-height: 33px;
+      margin: 0;
+      margin-left: 15px;
+      padding-left: 15px;
+      vertical-align: top;
+      font-size: 18px;
+      font-family: 'Myriad Pro Condensed';
+      color: #e3e3e3;
+      text-transform: uppercase;
+      border-left: 1px solid #777; }
+  aside nav ul li {
+    font-size: 16px;
+    font-family: 'Myriad Pro Condensed';
+    color: #DDD;
+    text-transform: none; }
+  aside nav > ul > li {
+    margin-bottom: 25px;
+    color: #00B3D3;
+    font-size: 18px;
+    text-transform: uppercase; }
+  aside .contacts p.title {
+    font-size: 18px;
+    font-family: 'R-400';
+    font-weight: bold; }
+  aside .contacts p.small-desc {
+    color: #929292; }
+  aside .contacts p + p {
+    margin-top: 20px; }
+
+header {
+  height: 80px;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15); }
+
+.user-area {
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .user-area .auth-block,
+  .user-area .basket-block {
+    display: inline-block;
+    height: 80px;
+    width: 85px; }
+  .user-area .auth-block {
+    background: #21282E url("../../assets/images/icon/icon-login-btn.png") center no-repeat; }
+  .user-area .basket-block {
+    background: #FED700 url("../../assets/images/icon/icon-basket-btn.png") center no-repeat; }
+
+.top-search {
+  position: relative;
+  width: 100%;
+  padding: 20px 190px 20px 35px; }
+  .top-search .search-btn {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    width: 20px;
+    height: 40px;
+    border: 0;
+    background: transparent url("../../assets/images/icon/icon-search.png") center no-repeat;
+    background-size: 20px; }
+  .top-search input[type="text"] {
+    width: 99%;
+    height: 40px;
+    margin-left: 30px;
+    border: 0; }
+
+.main-wrap {
+  width: 100%;
+  height: 100%;
+  padding-left: 250px; }
+
+.main-container {
+  height: 100%;
+  margin-bottom: -100px; }
+  .main-container:after {
+    content: '';
+    display: block;
+    height: 100px; }
+
+footer {
+  height: 100px; }
+
+.main-slider .slide-bg-image {
+  background-size: cover;
+  height: 300px; }
+
+.main-slider .slide-content {
+  position: absolute;
+  top: 0;
+  padding: 20px 45px;
+  display: table; }
+  .main-slider .slide-content .image {
+    display: table-cell;
+    width: 25%;
+    max-width: 355px;
+    overflow: hidden;
+    vertical-align: middle; }
+    .main-slider .slide-content .image img {
+      width: 100%;
+      height: auto; }
+  .main-slider .slide-content .desc {
+    display: table-cell;
+    padding-left: 40px;
+    vertical-align: middle; }
+    .main-slider .slide-content .desc h2, .main-slider .slide-content .desc p {
+      font-size: 60px;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.48); }
+    .main-slider .slide-content .desc p {
+      font-size: 28px; }
+
+.main-slider .swiper-pagination {
+  padding-right: 45px;
+  text-align: right; }
+  .main-slider .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border: 1px solid #fff;
+    opacity: 1; }
+  .main-slider .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #fff; }

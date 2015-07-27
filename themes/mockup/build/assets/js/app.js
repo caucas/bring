@@ -1,0 +1,1 @@
+var mainSlider=new Swiper(".main-slider",{pagination:".swiper-pagination",paginationClickable:!0,swipeHandler:".image",followFinger:!0,effect:"fade",loop:!0});

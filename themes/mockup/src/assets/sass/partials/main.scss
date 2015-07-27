@@ -1,0 +1,42 @@
+$footer-height: 100px;
+.main-wrap {
+	width: 100%;
+	height: 100%;
+	padding-left: 250px;
+}
+
+.main-container {
+	height: 100%;
+	margin-bottom: -$footer-height;
+	
+	&:after {
+		content: '';
+		display: block;
+		height: $footer-height;
+	}
+}
+footer {
+	height: $footer-height;
+}
+
+
+// .main-wrap {
+//     display: table;
+//     width: 100%;
+//     height: 100%;
+// }
+//     .main-container {
+//         display: table;
+//         width: 100%;
+//         height: 100%;
+//     }
+//         header,
+//         footer {
+//             display: table-row;
+//             height: 1px;
+//             background: #ffd34e;
+//         }
+//     aside {
+//         display: table-cell;
+//         width: 250px;
+//     }
