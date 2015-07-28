@@ -6,6 +6,7 @@ var gulp		= require('gulp'),
 	concatJS		= require('gulp-concat'),
 	concatCSS		= require('gulp-concat-css'),
 	connect			= require('gulp-connect'),
+	cssimport		= require("gulp-cssimport"),
 	filter			= require('gulp-filter'),
 	gulpif			= require('gulp-if'),
 	jade			= require('gulp-jade'),
@@ -74,8 +75,9 @@ var gulp		= require('gulp'),
 			.pipe(rigger())
 			.pipe(plumber())
 			// .pipe(sass().on('error', sass.logError))
-			.pipe(sass())
+			.pipe(sass({includePaths: ['./src/assets/sass']}))
 			.pipe(autoprefixer())
+			.pipe(cssimport())
 			// .pipe(minifyCSS())
 			.pipe(rename('style.min.css'))
 			.pipe(gulp.dest(build.css))
@@ -99,7 +101,7 @@ var gulp		= require('gulp'),
 			.pipe(plumber())
 			.pipe(rigger())
 			// .pipe(concat('main.js', {newLine: ';'}))
-			.pipe(minifyJS())
+			// .pipe(minifyJS())
 			.pipe(gulp.dest(build.js))
 			.pipe(connect.reload())
 			.pipe(notify("JS concat is done."));
@@ -163,4 +165,4 @@ var gulp		= require('gulp'),
 	});
 
 // default
-gulp.task('default', ['connect', 'sass', 'jade', 'img',  'js', 'watch']);
+gulp.task('default', ['connect', 'sass', 'jade',  'js', 'watch']);

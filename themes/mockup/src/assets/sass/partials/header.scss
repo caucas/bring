@@ -21,12 +21,19 @@ header {
 		display: inline-block;
 		height: 80px;
 		width: 85px;
+		transition: all .3s ease;
 	}
 	.auth-block {
-		@include bg($filename: 'icon/icon-login-btn.png', $bgcolor: $bg-sidebar-color, $pos: center);
+		@include bg($filename: 'icon/icon-login-btn.png', $bgcolor: $bg-dark-color, $pos: center);
+		&:hover {
+			background-color: darken($bg-dark-color, 15%);
+		}
 	}
 	.basket-block {
 		@include bg($filename: 'icon/icon-basket-btn.png', $bgcolor: $bg-yellow-color, $pos: center);
+		&:hover {
+			background-color: darken($bg-yellow-color, 5%);
+		}
 	}
 }
 

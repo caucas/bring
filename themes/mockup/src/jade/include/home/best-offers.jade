@@ -1,0 +1,22 @@
+section.best-offers
+	.filter
+		.heading 
+			div Кухни/Блюда
+			a.clearFilter(href="#") Очистить
+		.chboxes
+			- var filterOptions = ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома', 'Косметика и гигиена', 'Бытовая техника и электроника', 'Всё для детей', 'Бакалея', 'Напитки', 'Подарочные наборы']
+			each item in filterOptions
+				label.chbox
+					input(type="checkbox")
+					span= item
+	.products.cat.wrap.left-xl
+		h1 ЛУЧШИЕ ПРЕДЛОЖЕНИЯ НЕДЕЛи
+		- for(var i=0; i<4; i++)
+			.cat-item.xl-1-2
+				.item-image
+					a(href="#")
+						img(src="/assets/images/cat-item.png", alt="cat item name")
+				.item-desc
+					h3 Пицца
+					p При заказе от 1200 руб. пицца Моцарелла классик в подарок!
+					button.btn Подробнее

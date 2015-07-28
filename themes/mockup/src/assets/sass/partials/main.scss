@@ -1,24 +1,10 @@
-$footer-height: 100px;
 .main-wrap {
-	width: 100%;
-	height: 100%;
 	padding-left: 250px;
 }
-
-.main-container {
-	height: 100%;
-	margin-bottom: -$footer-height;
-	
-	&:after {
-		content: '';
-		display: block;
-		height: $footer-height;
-	}
+.main-container {}
+.main-content {
+	background-color: $color-light-white;
 }
-footer {
-	height: $footer-height;
-}
-
 
 // .main-wrap {
 //     display: table;

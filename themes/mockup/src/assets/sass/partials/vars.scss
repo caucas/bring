@@ -1,15 +1,30 @@
 // COLORS
 	// bg colors
-	$bg-sidebar-color	: #21282E;
+	$bg-dark-color		: #21282E;
 	$bg-yellow-color	: #FED700;
+	$bg-orange-color	: #FF4933;
 
 	// font colors
-	$color-light-white	: #FEFEFE;
+	$color-light-white	: #F6F6F6;
+	$color-gray			: #9E9E9E;
 	$color-light-gray	: #DDD;
+	$color-light-gray-2	: #B8B8B8;
 	$color-light-blue	: #00B3D3;
+	$color-light-green	: #BBCC29;
+	$color-dark-red		: #993300;
 
 // MIXINS
 
 @mixin bg ($filename, $bgcolor:transparent, $pos: 0 0, $repeat:no-repeat) {
 	background: $bgcolor url('../../assets/images/' + $filename) $pos $repeat;
+}
+
+@mixin additional-colors ($color-value, $color-name) {
+	&.btn-#{$color-name} {
+		background-color: $color-value;
+		border-color: $color-value;
+		&:hover {
+			background-color: lighten($color-value, 10%);
+		}
+	}
 }

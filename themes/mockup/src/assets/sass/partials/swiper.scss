@@ -1,0 +1,50 @@
+// SWIPER SLIDER OVERRIDE STYLES
+.swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	background: transparent;
+	border: 1px solid #fff;
+	opacity: 1;
+}
+.swiper-pagination-bullet-active {
+	background-color: #fff;
+}
+
+.swiper-pagination.gray-dots {
+	.swiper-pagination-bullet {
+		border-color: $color-gray;
+	}
+	.swiper-pagination-bullet-active {
+		background-color: $color-gray;
+	}
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	top: 0;
+	bottom: 0;
+	width: 85px;
+	height: 100%;
+	margin-top: 0;
+}
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+	left: 0;
+	@include bg(
+		$bgcolor: rgba(158,158,158, .2),
+		$filename: 'icon/icon-slider-left.png',
+		$pos: center
+	);
+}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+	right: 0;
+	@include bg(
+		$bgcolor: rgba(158,158,158, .2),
+		$filename: 'icon/icon-slider-right.png',
+		$pos: center
+	);
+}
+.swiper-button-disabled {
+	opacity: 0 !important;
+}

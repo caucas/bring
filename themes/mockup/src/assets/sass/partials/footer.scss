@@ -1,0 +1,106 @@
+footer {
+	position: relative;
+	height: 240px;
+	padding: 40px 50px;
+	border-top: 3px solid $color-gray;
+	background-color: $bg-dark-color;
+	color: #B8B8B8;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -3px; // = footer border width
+		left: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 136px 10px 0 0px;
+		border-color: #ffffff transparent transparent transparent;
+	}
+
+	nav {
+		margin-bottom: 40px;
+		li {
+			margin-bottom: 3px;
+		}
+		a {
+			color: #E6E6E6;
+			font-size: 14px;
+			text-decoration: none;
+			border-bottom: 2px solid #E6E6E6;
+			opacity: .6;
+			transition: opacity .3s ease;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	.copy {
+		font-size: 14px;
+	}
+
+	.add-links {
+		a {
+			font-size: 15px;
+			vertical-align: bottom;			
+			text-transform: uppercase;
+			text-decoration: none;
+			opacity: .5;
+			transition: opacity .3s ease;
+
+			&:hover {
+				opacity: .8;
+			}
+
+			img {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.col-3 {
+		padding-left: 50px;
+	}
+	.social {
+		margin-bottom: 35px;
+
+		.icon {
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			margin-right: 25px;
+			opacity: .4;
+			@include bg($filename: 'icon/icon-social-sprite.png');
+			transition: opacity .3s ease;
+
+			&.icon-fb {background-position: -41px 0}
+			&.icon-yt {background-position: -80px 0}
+			&.icon-ig {background-position: -126px 0}
+			&.icon-gp {background-position: -171px 0}
+			&.icon-wp {background-position: -219px 0}
+
+			&:hover {
+				opacity: .8;
+			}
+		}
+	}
+	.info {
+		font-size: 13px;
+		color: $color-gray;
+		opacity: .8;
+	}
+	.to-top-btn {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 85px;
+		height: 80px;
+		@include bg($bgcolor: #111, $filename: 'icon/icon-arrow-up.png', $pos: center);
+
+		&:hover {
+			background-color: #000;
+		}
+	}
+}

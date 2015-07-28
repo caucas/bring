@@ -1,4 +1,4 @@
-.main-slider {
+.top-slider {
 	.slide-bg-image {
 		background-size: cover;
 		height: 300px;
@@ -6,8 +6,9 @@
 	.slide-content {
 		position: absolute;
 		top: 0;
-		padding: 20px 45px;
 		display: table;
+		width: 100%;
+		padding: 20px 45px;
 
 		.image {
 			display: table-cell;
@@ -36,21 +37,121 @@
 				line-height: 28px;
 			}
 		}
-
 	}
 	.swiper-pagination {
 		padding-right: 45px;
 		text-align: right;
+	}
+}
 
-		.swiper-pagination-bullet {
-			width: 12px;
-			height: 12px;
-			background: transparent;
-			border: 1px solid #fff;
-			opacity: 1;
+.best-offers {
+	padding: 50px 40px 0;
+	@extend .clrfix;
+
+	h1 {
+		margin-top: 0;
+		margin-bottom: 30px;
+		font-size: 35px;
+		text-transform: uppercase;
+	}
+
+	.filter {
+		width: 340px;
+		padding-right: 55px;
+		float: left;
+
+		.heading {
+			position: relative;
+			margin-bottom: 20px;
+
+			div {
+				font: 22px 'Myriad Pro Condensed';
+				color: $color-light-blue;
+				text-transform: uppercase;
+			}
+			.clearFilter {
+				position: absolute;
+				top: 5px;
+				right: 0;
+				font: 14px 'Myriad Pro Condensed';
+				color: #9E9E9E;
+			}
 		}
-		.swiper-pagination-bullet-active {
-			background-color: #fff;
+	}
+
+	.products {
+		padding-left: 340px;
+	}
+}
+
+.novelty-slider {
+	background-color: #fff;
+	padding: 40px 50px;
+
+	h1 {
+		margin-top: 0;
+		margin-bottom: 20px;
+		font-size: 30px;
+		text-transform: uppercase;
+	}
+	.cat .cat-item {
+		margin-bottom: 10px;
+	}
+}
+
+.single-product {
+	padding: 50px;
+
+	// SILDER STYLES
+	.swiper-wrapper {
+		padding-bottom: 30px;
+
+		img {
+			width: 100%;
+		}
+	}	
+	.swiper-pagination {
+		text-align: left;
+		bottom: 0;
+
+		.swiper-pagination-bullet:first-child {
+			margin-left: 0 !important;
+			margin-left: 0;
+		}
+	}
+
+	.single-product-desc {
+		margin-bottom: 15px;
+		padding-left: 50px;
+
+		h2 {
+			font-size: 35px;
+			margin-bottom: 14px;
+		}
+		span, p {
+			color: $color-gray;
+			font-size: 16px;
+		}
+		span {
+			display: inline-block;
+			margin-bottom: 20px;
+		}
+		.cost {
+			margin-bottom: 25px;
+			font-size: 30px;
+			color: $color-dark-red;
+
+			sub {
+				font-size: 12px;
+				color: #000;
+			}
+		}
+	}
+	.buttons {
+		margin-top: 25px;
+
+		button {
+			margin-right: 20px;
 		}
 	}
 }
