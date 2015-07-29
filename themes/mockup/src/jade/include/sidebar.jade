@@ -1,19 +1,18 @@
 aside
-	.logo
-		a(href="/")
-			img(src="/assets/images/logo.png", alt="logo")
-			h1 Доставка
+	.logo: a(href="/")
+		img(src="/assets/images/logo.png", alt="logo")
+		div Доставка
 	.logo-icon
 
 	nav
 		ul
-			each item in mainMenuItems
+			- var sidebarItems = [{parentName: "ГОТОВЫЕ БЛЮДА", childs : ["Мясные продукты","Замороженные продукты","Молочные продукты","Рыба","Кондитерские изделия","Хлебобулочные изделия","Овощи, фрукты"]}, {parentName: "продукты", childs : ["Всё для детей","Бакалея","Напитки","Подарочные наборы"]}, {parentName: "цветы", childs : ["Напитки","Подарочные наборы"]}, {parentName: "аптека", childs : ["Лекартства","Памперсы"]}, {parentName: "разделы", childs : ["Стать паартнером","Пользовательское соглашение","Акции","Новости","Контактная информация","О компании"]}]
+			each item in sidebarItems
 				li
 					a(href="#")= item.parentName
 					ul
 						each childItem in item.childs
-							li
-								a(href="#")= childItem
+							li: a(href="#")= childItem
 		.contacts
 			p.title Телефон <br> справочной <br> службы
 			p: a.tel(href="tel:+78004252233") 8-800-42-5-22-33

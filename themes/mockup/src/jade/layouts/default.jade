@@ -1,5 +1,4 @@
 include ../include/vars.jade
-include ../include/data.jade
 doctype html
 html
 	head
@@ -18,8 +17,8 @@ html
 			include ../include/sidebar.jade
 			.main-container
 				include ../include/header.jade
-				.main-content
-					block content
+				block breads
+				block content
 				include ../include/footer.jade
 
 		script(src="./assets/js/vendor.min.js")

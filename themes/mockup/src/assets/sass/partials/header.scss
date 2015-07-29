@@ -1,7 +1,9 @@
 header {
+	position: relative;
 	height: 80px;
 	background-color: #fff;
 	box-shadow : 1px 1px 4px rgba(0,0,0,0.15);
+	z-index: 2;
 	@extend .clrfix;
 }
 
@@ -21,7 +23,7 @@ header {
 		display: inline-block;
 		height: 80px;
 		width: 85px;
-		transition: all .3s ease;
+		transition: background-color .3s ease;
 	}
 	.auth-block {
 		@include bg($filename: 'icon/icon-login-btn.png', $bgcolor: $bg-dark-color, $pos: center);
@@ -30,7 +32,10 @@ header {
 		}
 	}
 	.basket-block {
-		@include bg($filename: 'icon/icon-basket-btn.png', $bgcolor: $bg-yellow-color, $pos: center);
+		@include bg($filename: 'icon/icon-basket-empty.png', $bgcolor: $bg-yellow-color, $pos: center);
+		&.full {
+			background-image: url(../../assets/images/icon/icon-basket-full.png);
+		}
 		&:hover {
 			background-color: darken($bg-yellow-color, 5%);
 		}

@@ -72,10 +72,9 @@ var gulp		= require('gulp'),
 // sass preprocessing
 	gulp.task("sass", function () {
 		gulp.src(src.sass)
-			.pipe(rigger())
 			.pipe(plumber())
 			// .pipe(sass().on('error', sass.logError))
-			.pipe(sass({includePaths: ['./src/assets/sass']}))
+			.pipe(sass())
 			.pipe(autoprefixer())
 			.pipe(cssimport())
 			// .pipe(minifyCSS())
@@ -112,13 +111,10 @@ var gulp		= require('gulp'),
 		gulp.src(src.img)
 			.pipe(minifyIMG())
 			.pipe(gulp.dest(build.img))
-			.pipe(notify("Images is optimized"));
 	});
 
 // fonts
 	gulp.task('fonts', function () {
-		gulp.src('./build/assets/fonts/*.{ttf,woff,woff2,eot,svg}')
-			.pipe(clean());
 		gulp.src(src.fonts)
 			.pipe(gulp.dest(build.fonts))
 	});
@@ -153,7 +149,15 @@ var gulp		= require('gulp'),
 	gulp.task('clean', function () {
 		return gulp.src('./build/*', {read: false})
 			.pipe(clean());
-	})
+	});
+	gulp.task('clean:img', function () {
+		return gulp.src('./build/assets/images', {read: false})
+			.pipe(clean());
+	});
+	gulp.task('clean:fonts', function () {
+		return gulp.src('./build/assets/fonts', {read: false})
+			.pipe(clean());
+	});
 
 // watch
 	gulp.task('watch', function () {

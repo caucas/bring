@@ -1,6 +1,6 @@
 // READY FUNC
 	$(function() {
-		equalHeight();
+
 	});
 
 // -- SWIPER SLIDERS --
@@ -25,12 +25,9 @@
 	});
 
 // -- FUNCTIONS --
-	// equal sidebar & content div heights
-		function equalHeight() {
-			var asideH = $('aside').innerHeight(),
-				contentH = $('.main-container').innerHeight();
-			if (asideH > contentH)
-				$('.main-container').innerHeight(asideH);
-			else if (asideH < contentH)
-				$('aside').innerHeight(contentH)
-		}
+
+// -- EVENTS --
+$('body').on('click', '.to-top-btn', function(e) {
+	e.preventDefault();
+	$('body').animate({scrollTop:0}, '400');
+});

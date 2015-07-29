@@ -1,28 +1,169 @@
 .main-wrap {
+	position: relative;
 	padding-left: 250px;
 }
 .main-container {}
 .main-content {
+	padding: 50px;
 	background-color: $color-light-white;
+
+	&.fluid {
+		padding: 0;
+	}
+
+	h2 {
+		font-size: 35px;
+		margin-bottom: 30px;
+	}
+	h3, h4 {
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	h2, h3 {
+		text-transform: uppercase;
+	}
 }
 
-// .main-wrap {
-//     display: table;
-//     width: 100%;
-//     height: 100%;
-// }
-//     .main-container {
-//         display: table;
-//         width: 100%;
-//         height: 100%;
-//     }
-//         header,
-//         footer {
-//             display: table-row;
-//             height: 1px;
-//             background: #ffd34e;
-//         }
-//     aside {
-//         display: table-cell;
-//         width: 250px;
-//     }
+// CATALOG ITEMS STYLES
+.cat {
+	@extend .clrfix;
+
+	.cat-item {
+		position: relative;
+		margin-bottom: 45px;
+		padding-right: 45px;
+		height: 220px;
+	}
+	.item-image {
+		position: absolute;
+		width: 220px;
+		height: 100%;
+
+		a {
+			display: block;
+		}
+		img {
+			min-width: 100%;
+			min-height: 100%;
+		}
+	}
+	.item-desc {
+		height: 220px;
+		padding: 25px 25px 25px 245px;
+		background-color: #fff;
+		box-shadow:1px 1px 1px rgba(0,0,0,0.12);
+
+		.item-name {
+			font: 20px 'R-700';
+			margin-bottom: 10px;
+		}
+		p {
+			width: 90%;
+			height: 75px;
+			margin-bottom: 15px;
+			overflow: hidden;
+			font-size: 15px;
+		}
+		.basket-area {
+			@extend .clrfix;
+			.cost {
+				line-height: 46px;
+			}
+		}
+		.add-to-basket {
+			float: right;
+
+			span {
+				margin-right: 10px;
+				line-height: 46px;
+				text-decoration: underline;
+				vertical-align: top;
+				font-size: 12px;
+				color: #888;
+			}
+
+			button {
+				width: 46px;
+				height: 46px;
+				@include bg($filename: 'icon/icon-basket-add.png', $bgcolor: $color-light-green, $pos: center);
+				border: 0;
+				text-indent: -1000px;
+				overflow: hidden;
+
+				&:hover {
+					background-color: darken($color-light-green, 5%);
+				}
+			}
+		}
+	}
+}
+
+// BREADCRUMBS
+.breads {
+	display: block;
+	height: 50px;
+	padding: 0 50px;
+	background-color: #C8C8C8;
+
+	ul {
+		padding: 15px 0;
+		li {
+			position: relative;
+			display: inline-block;
+			min-height: 15px;
+			margin-right: 20px;
+			vertical-align: middle;
+			font-size: 13px;
+
+			a {
+				color: #212121;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&:after {
+				content: "/";
+				position: absolute;
+				top: 0;
+				right: -15px;
+				color: #545454;
+			}
+				&:last-child:after {
+					display: none;
+				}
+		}
+	}
+}
+
+// CATALOG FILTER
+.filter {
+	width: 340px;
+	padding-right: 55px;
+	float: left;
+
+	.heading {
+		position: relative;
+		margin-bottom: 20px;
+
+		div {
+			font: 22px 'Myriad Pro Condensed';
+			color: $color-light-blue;
+			text-transform: uppercase;
+		}
+		.clearFilter {
+			position: absolute;
+			top: 5px;
+			right: 0;
+			font: 14px 'Myriad Pro Condensed';
+			color: #9E9E9E;
+		}
+	}
+	.chboxes {
+		margin-bottom: 50px;
+	}
+}
+.products {
+	padding-left: 340px;
+}

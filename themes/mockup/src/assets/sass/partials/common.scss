@@ -9,7 +9,7 @@ $sidebar-width : 250px;
 
 html,
 body {
-	height: 100%;
+	// height: 100%;
 }
 
 a {
@@ -21,18 +21,36 @@ a {
 	}
 }
 
+p {
+	font-size: 13px;
+	& + & {
+		margin-top: 20px;
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+}
+h2 {
+	font-size: 35px;
+}
+h3 {
+	font-size: 30px;
+}
+h4 {
+	font-size: 30px;
+	text-transform: none;
+}
+
 nav {
 	ul {
 		list-style: none;
 	}
 }
 
-// т.к. flexible не расчитан на использование вложенных .wrap'ов,
-// перебиваем стили, чтобы избавиться от ненужных отступов
+// flexible fix
 .wrap .wrap {font-size: 0 !important;}
 
-
-// EXTENDS
 .clrfix {
 	&:after {
 		content: '';
@@ -41,54 +59,46 @@ nav {
 	}
 }
 
-.small-desc {
+.small-desc, small {
 	font-size: 11px;
 }
 
-.ta-left {text-align: left;}
-.ta-center {text-align: center;}
-.ta-right {text-align: right;}
+.cost {
+	font-size: 30px;
+	color: $color-dark-red;
 
-// CATALOG ITEMS STYLES
-.cat {
-	@extend .clrfix;
-
-	.cat-item {
-		display: table;
-		margin-bottom: 45px;
-		padding-right: 45px;
-		float: left;
+	sub {
+		font-size: 12px;
+		color: #000;
 	}
-	.item-image {
-		display: table-cell;
-		width: 220px;
-		height: 220px;
-		font-size: 0;
+	&.cost-small {
+		font-size: 22px;
 
-		a {
-			display: block;
-		}
-		img {
-			min-width: 100%;
-			min-height: 100%;
+		sub {
+			font-size: 10px;
 		}
 	}
-	.item-desc {
-		display: table-cell;
-		height: 220px;
-		vertical-align: top;
-		padding: 29px;
-		background-color: #fff;
-		box-shadow:1px 1px 1px rgba(0,0,0,0.12);
+}
 
-		h3 {
-			font: 20px 'R-700';
-			margin-bottom: 10px;
-		}
-		p {
-			width: 90%;
-			height: 79px;
-			overflow: hidden;
+ul.list {
+	margin: 25px 0 25px 16px;
+
+	li {
+		position: relative;
+		margin-bottom: 5px;
+		color: #111;
+		font-size: 13px;
+
+		&:after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: 5px;
+			left: -16px;
+			width: 6px;
+			height: 6px;
+			border-radius: 100%;
+			background-color: $color-gray;
 		}
 	}
 }

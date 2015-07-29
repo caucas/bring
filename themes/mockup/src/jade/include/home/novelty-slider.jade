@@ -1,5 +1,5 @@
 section.novelty-slider.swiper-container
-	h1 Новинки
+	h3 Новинки
 	.swiper-wrapper.cat
 		- for(var i=0; i<4; i++)
 			.swiper-slide.cat-item
@@ -7,7 +7,7 @@ section.novelty-slider.swiper-container
 					a(href="#")
 						img(src="/assets/images/cat-item.png", alt="cat item name")
 				.item-desc
-					h3 Пицца
+					.item-name Пицца
 					p При заказе от 1200 руб. пицца Моцарелла классик в подарок!
 					button.btn Подробнее
 	.swiper-button-next
