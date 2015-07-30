@@ -18,20 +18,20 @@ header {
 	top: 0;
 	right: 0;
 
-	.auth-block,
-	.basket-block {
+	.auth-btn,
+	.basket-btn {
 		display: inline-block;
 		height: 80px;
 		width: 85px;
 		transition: background-color .3s ease;
 	}
-	.auth-block {
+	.auth-btn {
 		@include bg($filename: 'icon/icon-login-btn.png', $bgcolor: $bg-dark-color, $pos: center);
 		&:hover {
 			background-color: darken($bg-dark-color, 15%);
 		}
 	}
-	.basket-block {
+	.basket-btn {
 		@include bg($filename: 'icon/icon-basket-empty.png', $bgcolor: $bg-yellow-color, $pos: center);
 		&.full {
 			background-image: url(../../assets/images/icon/icon-basket-full.png);

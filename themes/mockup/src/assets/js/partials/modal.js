@@ -1,6 +1,3 @@
-'use strict';
-
-// JS INCLUDES
 ;
 /*---------------------------
 		MODAL PLUGIN
@@ -122,50 +119,3 @@
 		});
 	}
 })(jQuery);
-;
-/*---------------------------
-			EVENTS
-----------------------------*/
-
-	// GO TOP BUTTON
-	$('body').on('click', '.to-top-btn', function(e) {
-		e.preventDefault();
-		$('body').animate({scrollTop:0}, '400');
-	});
-
-	$('body').on('click', '.classTrigger', function(e) {
-		e.preventDefault();
-		// console.log();
-		var divID = $(this).attr('href');
-		if ($(divID).hasClass('opened'))
-			$(divID).removeClass('opened')
-		else
-			$(divID).addClass('opened')
-	});
-;
-/*---------------------------
-        SWIPER SLIDERS
-----------------------------*/
-
-	// Home page sliders
-	var topSlider = new Swiper('.top-slider', {
-		pagination: '.top-slider-pagination',
-		paginationClickable: true,
-		followFinger: true,
-		// swipeHandler: '.image',
-		// autoplay: 3000,
-		effect: 'fade',
-		loop: true
-	});
-	var noveltySlider = new Swiper('.novelty-slider', {
-		slidesPerView: 3,
-		nextButton: '.swiper-button-next',
-		prevButton: '.swiper-button-prev'
-	});
-	var singleProductSlider = new Swiper('.single-product-slider', {
-		pagination: '.single-slider-pagination',
-        paginationClickable: true,
-        effect: 'fade'
-	});
-
-// -- FUNCTIONS --

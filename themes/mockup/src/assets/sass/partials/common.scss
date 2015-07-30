@@ -59,6 +59,19 @@ nav {
 	}
 }
 
+.label-required {
+	position: relative;
+
+	&:after {
+		content: '*';
+		position: absolute;
+		top: -7px;
+		right: -12px;
+		font-size: 18px;
+		color: #FF0000;
+	}
+}
+
 .small-desc, small {
 	font-size: 11px;
 }

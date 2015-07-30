@@ -11,6 +11,43 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
   </head>
   <body>
+    <div id="auth-block" class="wrap left-xl">
+      <form id="login-form" class="xl-4-12">
+        <fieldset>
+          <legend>Авторизация</legend>
+          <label>Имя пользователя</label>
+          <input type="text" required>
+          <label>Пароль</label>
+          <input type="password" required>
+        </fieldset>
+        <fieldset>
+          <button class="btn">Войти</button>
+        </fieldset>
+      </form>
+      <form id="reg-form" class="xl-8-12">
+        <fieldset class="wrap left-xl">
+          <legend>Регистрация</legend>
+          <fieldset class="xl-1-2">
+            <label class="label-required">ФИО</label>
+            <input type="text" required>
+            <label class="label-required">Контактный телефон</label>
+            <input type="tel" required>
+          </fieldset>
+          <fieldset class="xl-1-2">
+            <label class="label-required">E-mail</label>
+            <input type="email" required>
+            <label class="label-required">Пароль</label>
+            <input type="password" required>
+          </fieldset>
+          <fieldset>
+            <button class="btn">Регистрация</button>
+            <label class="chbox">
+              <input type="checkbox"><span>Согласен с условиями <br> пользовательского соглашения</span>
+            </label><span class="info-block label-required">- Обязательные поля</span>
+          </fieldset>
+        </fieldset>
+      </form>
+    </div>
     <div class="main-wrap">
       <aside>
         <div class="logo"><a href="/"><img src="/assets/images/logo.png" alt="logo">
@@ -73,7 +110,7 @@
             <input type="text" name="s" placeholder="Поиск (например: Молоко, Ресторан, Скидка)">
             <input type="button" class="search-btn">
           </form>
-          <div class="user-area"><a href="#" class="auth-block"></a><a href="#" class="basket-block"></a></div>
+          <div class="user-area"><a href="#auth-block" class="auth-btn classTrigger"></a><a href="#" class="basket-btn"></a></div>
         </header>
         <div class="breads">
           <ul>

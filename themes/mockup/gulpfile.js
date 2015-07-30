@@ -8,7 +8,6 @@ var gulp		= require('gulp'),
 	connect			= require('gulp-connect'),
 	cssimport		= require("gulp-cssimport"),
 	filter			= require('gulp-filter'),
-	gulpif			= require('gulp-if'),
 	jade			= require('gulp-jade'),
 	livereload		= require('gulp-livereload'),
 	mainBowerFiles	= require('main-bower-files'),	
@@ -75,7 +74,7 @@ var gulp		= require('gulp'),
 			.pipe(plumber())
 			// .pipe(sass().on('error', sass.logError))
 			.pipe(sass())
-			.pipe(autoprefixer())
+			.pipe(autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']}))
 			.pipe(cssimport())
 			// .pipe(minifyCSS())
 			.pipe(rename('style.min.css'))
@@ -99,7 +98,7 @@ var gulp		= require('gulp'),
 		gulp.src(src.js)
 			.pipe(plumber())
 			.pipe(rigger())
-			// .pipe(concat('main.js', {newLine: ';'}))
+			.pipe(plumber())
 			// .pipe(minifyJS())
 			.pipe(gulp.dest(build.js))
 			.pipe(connect.reload())

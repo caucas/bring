@@ -19,63 +19,46 @@ input:focus {
 	@include additional-colors($color-light-green, green);
 	@include additional-colors($color-light-blue, blue);
 }
-	// @each $color-name, $color-value in (
-	// 	green: $color-light-green,
-	// 	blue: $color-light-blue
-	// ){
-	// 	.btn.btn-#{$color-name} {
-	// 		background-color: #{$color-value};
-	// 	}
-	// }
-
-// .btn {
-// 	&.btn-green {
-// 		border-color: $color-light-green;
-// 		background-color: $color-light-green;
-// 	}
-// 	&.btn-blue {
-// 		border-color: $color-light-blue;
-// 		background-color: $color-light-blue;
-// 	}
-// }
-
 
 // CUSTOM CHECKBOXES STYLES
-.chboxes {
-	.chbox {
-		position: relative;
-		display: block;
-		overflow: hidden;
 
-		input[type="checkbox"] {
-			position: absolute;
-			left: -1000px;
-			opacity: 0;
-		}
-		span {
-			display: inline-block;
-			padding-left: 30px;
-			line-height: 16px;
-			font-size: 16px;
-			color: #1F262C;
-			cursor: pointer;
+.chbox {
+	display: block;
+	position: relative;
+	overflow: hidden;
 
-			&:after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 3px;
-				left: 0;
-				width: 14px;
-				height: 14px;
-				@include bg($filename: 'bg/bg-chbox.png');
-			}
-		}
-		input[type="checkbox"]:checked ~ span:after {
-			background-position: 0 bottom;
-		}
-
+	input[type="checkbox"] {
+		position: absolute;
+		left: -1000px;
+		opacity: 0;
 	}
+	span {
+		display: inline-block;
+		padding-left: 30px;
+		line-height: 16px;
+		font-size: 16px;
+		color: #1F262C;
+		cursor: pointer;
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 14px;
+			height: 14px;
+			margin-top: -6px;
+			@include bg($filename: 'bg/bg-chbox.png');
+		}
+	}
+	input[type="checkbox"]:checked ~ span:after {
+		background-position: 0 bottom;
+	}
+
+}
+
+.chboxes {
 	.chbox + .chbox {
 		margin-top: 10px;
 	}

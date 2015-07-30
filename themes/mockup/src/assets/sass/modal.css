@@ -1,0 +1,40 @@
+.modal-bg {
+	display: none;
+	position: fixed; 
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	background: rgba(0,0,0,.8);
+	z-index: 100;
+}
+
+.modal {
+	position: absolute;
+	top: 100px;
+	visibility: hidden;
+	left: 50%;
+	margin-left: -300px;
+	width: 520px;
+	background: #eee;
+	z-index: 101;
+	padding: 30px 40px 34px;
+}
+	
+.modal.small	{ width: 200px; margin-left: -140px;}
+.modal.medium	{ width: 400px; margin-left: -240px;}
+.modal.large	{ width: 600px; margin-left: -340px;}
+.modal.xlarge	{ width: 800px; margin-left: -440px;}
+
+.modal .close-modal {
+	position: absolute;
+	top: 8px;
+	right: 11px;
+	font-size: 22px;
+	line-height: .5;
+	color: #aaa;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+	cursor: pointer;
+}

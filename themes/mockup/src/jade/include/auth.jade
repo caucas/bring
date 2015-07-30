@@ -1,0 +1,31 @@
+#auth-block.wrap.left-xl
+	form#login-form.xl-4-12
+		fieldset
+			legend Авторизация
+			label Имя пользователя
+			input(type="text", required)
+			label Пароль
+			input(type="password", required)
+		fieldset
+			button.btn Войти
+			//- a(href="#") Забыли пароль?
+
+	form#reg-form.xl-8-12
+		fieldset.wrap.left-xl
+			legend Регистрация
+			fieldset.xl-1-2
+				label.label-required ФИО
+				input(type="text", required)
+				label.label-required Контактный телефон
+				input(type="tel", required)
+			fieldset.xl-1-2
+				label.label-required E-mail
+				input(type="email", required)
+				label.label-required Пароль
+				input(type="password", required)
+			fieldset
+				button.btn Регистрация
+				label.chbox
+					input(type="checkbox")
+					span Согласен с условиями <br> пользовательского соглашения
+				span.info-block.label-required - Обязательные поля

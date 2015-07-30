@@ -2744,31 +2744,32 @@ input:focus {
     .btn.btn-blue:hover {
       background-color: #07d9ff; }
 
-.chboxes .chbox {
-  position: relative;
+.chbox {
   display: block;
+  position: relative;
   overflow: hidden; }
-  .chboxes .chbox input[type="checkbox"] {
+  .chbox input[type="checkbox"] {
     position: absolute;
     left: -1000px;
     opacity: 0; }
-  .chboxes .chbox span {
+  .chbox span {
     display: inline-block;
     padding-left: 30px;
     line-height: 16px;
     font-size: 16px;
     color: #1F262C;
     cursor: pointer; }
-    .chboxes .chbox span:after {
+    .chbox span:after {
       content: '';
       display: block;
       position: absolute;
-      top: 3px;
+      top: 50%;
       left: 0;
       width: 14px;
       height: 14px;
+      margin-top: -6px;
       background: transparent url("../../assets/images/bg/bg-chbox.png") 0 0 no-repeat; }
-  .chboxes .chbox input[type="checkbox"]:checked ~ span:after {
+  .chbox input[type="checkbox"]:checked ~ span:after {
     background-position: 0 bottom; }
 
 .chboxes .chbox + .chbox {
@@ -2816,10 +2817,20 @@ nav ul {
 .wrap .wrap {
   font-size: 0 !important; }
 
-.clrfix:after, aside .logo:after, header:after, .cat:after, .cat .item-desc .basket-area:after, .best-offers:after {
+.clrfix:after, #auth-block fieldset:after, aside .logo:after, header:after, .cat:after, .cat .item-desc .basket-area:after, .best-offers:after {
   content: '';
   display: table;
   clear: both; }
+
+.label-required {
+  position: relative; }
+  .label-required:after {
+    content: '*';
+    position: absolute;
+    top: -7px;
+    right: -12px;
+    font-size: 18px;
+    color: #FF0000; }
 
 .small-desc, small {
   font-size: 11px; }
@@ -2889,6 +2900,68 @@ ul.list {
 
 .swiper-button-disabled {
   opacity: 0 !important; }
+
+#auth-block {
+  height: 320px;
+  margin-top: -320px;
+  width: 100%;
+  padding: 35px 20%;
+  -webkit-transition: margin-top 0.3s ease;
+          transition: margin-top 0.3s ease;
+  background-image: -webkit-radial-gradient(center, circle, transparent 0%, rgba(0, 0, 0, 0.35) 100%), url("../../assets/images/bg/bg-auth.png");
+  background-image: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.35) 100%), url("../../assets/images/bg/bg-auth.png");
+  background-repeat: repeat;
+  background-position: 0 0; }
+  #auth-block.opened {
+    margin-top: 0; }
+  #auth-block fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    padding-right: 30px; }
+    #auth-block fieldset legend {
+      height: 36px;
+      margin-bottom: 25px;
+      padding: 5px 0 0 50px;
+      font: 22px 'R-400';
+      color: #fff; }
+    #auth-block fieldset:last-child > * {
+      vertical-align: middle; }
+  #auth-block label {
+    display: inline-block;
+    margin-bottom: 3px;
+    font-size: 12px;
+    color: #fff; }
+  #auth-block input[type="text"],
+  #auth-block input[type="email"],
+  #auth-block input[type="tel"],
+  #auth-block input[type="password"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #222;
+    font-size: 14px;
+    color: #111; }
+  #auth-block .chbox {
+    margin-left: 20px; }
+    #auth-block .chbox span {
+      line-height: 10px;
+      font-size: 12px;
+      color: #fff; }
+  #auth-block .info-block {
+    float: right;
+    line-height: 45px;
+    color: #fff;
+    font-size: 12px; }
+    #auth-block .info-block.label-required:after {
+      right: auto;
+      left: -10px; }
+  #auth-block #login-form {
+    padding-right: 70px; }
+    #auth-block #login-form legend {
+      background: transparent url("../../assets/images/icon/icon-profile-btn.png") 0 0 no-repeat; }
+  #auth-block #reg-form legend {
+    background: transparent url("../../assets/images/icon/icon-reg-btn.png") 0 0 no-repeat; }
 
 aside {
   position: absolute;
@@ -2961,22 +3034,22 @@ header {
   position: absolute;
   top: 0;
   right: 0; }
-  .user-area .auth-block,
-  .user-area .basket-block {
+  .user-area .auth-btn,
+  .user-area .basket-btn {
     display: inline-block;
     height: 80px;
     width: 85px;
     -webkit-transition: background-color 0.3s ease;
             transition: background-color 0.3s ease; }
-  .user-area .auth-block {
+  .user-area .auth-btn {
     background: #21282E url("../../assets/images/icon/icon-login-btn.png") center no-repeat; }
-    .user-area .auth-block:hover {
+    .user-area .auth-btn:hover {
       background-color: #010101; }
-  .user-area .basket-block {
+  .user-area .basket-btn {
     background: #FED700 url("../../assets/images/icon/icon-basket-empty.png") center no-repeat; }
-    .user-area .basket-block.full {
+    .user-area .basket-btn.full {
       background-image: url(../../assets/images/icon/icon-basket-full.png); }
-    .user-area .basket-block:hover {
+    .user-area .basket-btn:hover {
       background-color: #e5c100; }
 
 .top-search {
