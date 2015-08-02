@@ -1,8 +1,9 @@
 #auth-block {
+	position: relative;
 	height: 320px;
 	margin-top: -320px;
 	width: 100%;
-	padding: 35px 20%;
+	padding: 30px 20%;
 	transition: margin-top .3s ease;
 	@include gradient($img: 'bg/bg-auth.png', $from: rgba(0,0,0,0), $to: rgba(0,0,0,0.35));
 
@@ -24,9 +25,10 @@
 			font: 22px 'R-400';
 			color: #fff;
 		}
-		&:last-child > * {
-			vertical-align: middle;
-		}
+	}
+
+	form fieldset:last-child > * {
+		vertical-align: middle;
 	}
 
 	label {
@@ -40,16 +42,12 @@
 	input[type="email"],
 	input[type="tel"],
 	input[type="password"] {
-		width: 100%;
 		margin-bottom: 10px;
-		padding: 10px;
 		border: 1px solid #222;
-		font-size: 14px;
-		color: #111;
 	}
 
-	.chbox {
-		margin-left: 20px;
+	.checkbox {
+		margin-left: 30px;
 
 		span {
 			line-height: 10px;
@@ -70,6 +68,10 @@
 		}
 	}
 
+	.btn {
+		padding: 11px 40px;
+	}
+
 	#login-form {
 		padding-right: 70px;
 		legend {
@@ -80,6 +82,22 @@
 	#reg-form {
 		legend {
 			@include bg($filename: 'icon/icon-reg-btn.png');
+		}
+	}
+
+	.trigger-btn {
+		display: inline-block;
+		position: absolute;
+		top: 30px;
+		right: 107px;
+		width: 35px;
+		height: 18px;
+		opacity: .8;
+		// transition: opacity .3s ease;
+		@include bg($filename: 'icon/icon-arrow-down.png');
+
+		&:hover {
+			opacity: 1;
 		}
 	}
 }

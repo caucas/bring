@@ -1,73 +1,108 @@
 button:focus,
-input:focus {
+input:focus, 
+textarea {
 	outline: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"], 
+textarea {
+	width: 100%;
+	padding: 12px 18px;
+	border: 1px solid #C5C5C5;
+	font-size: 14px;
+	color: #111;
+	resize: vertical;
+
+	&:focus {
+		border-color: #666;
+	}
+}
+textarea {
+	min-height: 150px;
+}
+
+.label-required {
+	position: relative;
+
+	&:after {
+		content: '*';
+		position: absolute;
+		top: -7px;
+		right: -12px;
+		font-size: 18px;
+		color: #FF0000;
+	}
 }
 
 // CUSTOM BUTTONS STYLES
 .btn {
 	$button-color: $bg-orange-color;
-	padding: 11px 24px;
+	padding: 11px 25px;
 	background-color: $button-color;
 	border: 3px solid $button-color;
-	transition: background-color .3s ease;
 	font: 15px 'R-700';
 	color: #fff;
+	transition: background-color .3s ease;
 
 	&:hover {
 		background-color: lighten($button-color, 10%);
 	}
+
 	@include additional-colors($color-light-green, green);
+	@include additional-colors($color-gray, gray);
 	@include additional-colors($color-light-blue, blue);
 }
 
-// CUSTOM CHECKBOXES STYLES
+// CUSTOM CHECKBOX & RADIO STYLES
+@each $inputType in checkbox, radio {
+	.#{$inputType} {
+		display: block;
+		position: relative;
+		overflow: hidden;
 
-.chbox {
-	display: block;
-	position: relative;
-	overflow: hidden;
-
-	input[type="checkbox"] {
-		position: absolute;
-		left: -1000px;
-		opacity: 0;
-	}
-	span {
-		display: inline-block;
-		padding-left: 30px;
-		line-height: 16px;
-		font-size: 16px;
-		color: #1F262C;
-		cursor: pointer;
-
-		&:after {
-			content: '';
-			display: block;
+		input[type="#{$inputType}"] {
 			position: absolute;
-			top: 50%;
-			left: 0;
-			width: 14px;
-			height: 14px;
-			margin-top: -6px;
-			@include bg($filename: 'bg/bg-chbox.png');
+			left: -1000px;
+			opacity: 0;
 		}
-	}
-	input[type="checkbox"]:checked ~ span:after {
-		background-position: 0 bottom;
-	}
-
-}
-
-.chboxes {
-	.chbox + .chbox {
-		margin-top: 10px;
-	}
-	&.chb-inline {
-		.chbox {
+		span {
 			display: inline-block;
+			padding-left: 30px;
+			line-height: 16px;
+			font-size: 16px;
+			color: #1F262C;
+			cursor: pointer;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 14px;
+				height: 14px;
+				margin-top: -6px;
+				@include bg($filename: 'bg/bg-#{$inputType}.png');
+			}
 		}
-		.chbox + .chbox {
-			margin-left: 20px;
+		input[type="#{$inputType}"]:checked ~ span:after {
+			background-position: 0 bottom;
+		}
+	}
+	.#{$inputType}-group {
+		.#{$inputType} + .#{$inputType} {
+			margin-top: 10px;
+		}
+		&.#{$inputType}-group-inline {
+			.#{$inputType} {
+				display: inline-block;
+			}
+			.#{$inputType} + .#{$inputType} {
+				margin-left: 20px;
+			}
 		}
 	}
 }

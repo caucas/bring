@@ -51,24 +51,15 @@ nav {
 // flexible fix
 .wrap .wrap {font-size: 0 !important;}
 
+.no-scroll {
+	overflow: hidden;
+}
+
 .clrfix {
 	&:after {
 		content: '';
 		display: table;
 		clear: both;
-	}
-}
-
-.label-required {
-	position: relative;
-
-	&:after {
-		content: '*';
-		position: absolute;
-		top: -7px;
-		right: -12px;
-		font-size: 18px;
-		color: #FF0000;
 	}
 }
 

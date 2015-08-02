@@ -1,0 +1,66 @@
+.modal-bg {
+	display: none;
+	position: fixed; 
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.4);
+	z-index: 100;
+}
+
+.modal {
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	width: 800px;
+	margin-left: -400px;
+	visibility: hidden;
+	background: #fff;
+	z-index: 101;
+
+	.head, .body {
+		padding: 20px 30px;
+	}
+	.head {
+		background-color: $bg-yellow-color;
+		font: 30px 'R-700';
+		color: #fff;
+	}
+	label {
+		font-size: 12px;
+	}
+	input[type="text"] {
+		margin-bottom: 15px;
+	}
+	.foot {
+		padding: 30px;
+		padding-top: 0;
+	}
+	.close-modal-btn {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		width: 26px;
+		height: 26px;
+		overflow: hidden;
+		text-indent: -1000px;
+		cursor: pointer;
+		@include bg($filename: 'icon/icon-close-btn.png');
+	}
+
+	// forms
+	.order-summ {
+		font-size: 20px;
+		color: #333;
+
+		span {
+			display: inline-block;
+			position: relative;
+			padding-left: 15px;
+			padding-right: 15px;
+			// font-size: 22px;
+			color: #000;
+		}
+	}
+}

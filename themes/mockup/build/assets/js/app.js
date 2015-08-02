@@ -1,16 +1,12 @@
 'use strict';
 
 // JS INCLUDES
-;
-/*---------------------------
-		MODAL PLUGIN
-----------------------------*/
-
+'use strict';
 (function($) {
 
-	$('a[data-id]').on('click', function(e) {
+	$('a[data-modal]').on('click', function(e) {
 		e.preventDefault();
-		var modalLocation = $(this).attr('data-id');
+		var modalLocation = $(this).attr('data-modal');
 		$('#'+modalLocation).modal($(this).data());
 	});
 
@@ -40,6 +36,7 @@
 
 			//Entrance Animations
 			modal.bind('modal:open', function () {
+			  $('body').addClass('no-scroll');
 			  modalBG.unbind('click.modalEvent');
 				$('.' + options.closeBtn).unbind('click.modalEvent');
 				if(!locked) {
@@ -69,6 +66,7 @@
 
 			//Closing Animation
 			modal.bind('modal:close', function () {
+			  $('body').removeClass('no-scroll');
 			  if(!locked) {
 					lockModal();
 					if(options.animation == "fade") {
@@ -109,8 +107,7 @@
 			$('body').keyup(function(e) {
 				if(e.which===27){ modal.trigger('modal:close'); }
 			});
-			
-			
+
 			/* Animations Locks */
 			function unlockModal() { 
 				locked = false;
@@ -118,7 +115,7 @@
 			function lockModal() {
 				locked = true;
 			}	
-			
+
 		});
 	}
 })(jQuery);
@@ -135,7 +132,6 @@
 
 	$('body').on('click', '.classTrigger', function(e) {
 		e.preventDefault();
-		// console.log();
 		var divID = $(this).attr('href');
 		if ($(divID).hasClass('opened'))
 			$(divID).removeClass('opened')

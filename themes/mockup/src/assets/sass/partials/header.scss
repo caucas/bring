@@ -7,19 +7,14 @@ header {
 	@extend .clrfix;
 }
 
-.user-area,
-.top-search {
-	// display: inline-block;
-}
 .user-area {
-	// float: right;
-	// text-align: right;
 	position: absolute;
 	top: 0;
 	right: 0;
 
 	.auth-btn,
-	.basket-btn {
+	.basket-btn,
+	.profile-btn {
 		display: inline-block;
 		height: 80px;
 		width: 85px;
@@ -27,6 +22,12 @@ header {
 	}
 	.auth-btn {
 		@include bg($filename: 'icon/icon-login-btn.png', $bgcolor: $bg-dark-color, $pos: center);
+		&:hover {
+			background-color: darken($bg-dark-color, 15%);
+		}
+	}
+	.profile-btn {
+		@include bg($filename: 'icon/icon-profile-btn.png', $bgcolor: $bg-dark-color, $pos: center);
 		&:hover {
 			background-color: darken($bg-dark-color, 15%);
 		}

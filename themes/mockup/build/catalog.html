@@ -41,12 +41,12 @@
           </fieldset>
           <fieldset>
             <button class="btn">Регистрация</button>
-            <label class="chbox">
+            <label class="checkbox">
               <input type="checkbox"><span>Согласен с условиями <br> пользовательского соглашения</span>
             </label><span class="info-block label-required">- Обязательные поля</span>
           </fieldset>
         </fieldset>
-      </form>
+      </form><a href="#auth-block" class="trigger-btn classTrigger"></a>
     </div>
     <div class="main-wrap">
       <aside>
@@ -55,6 +55,8 @@
         <div class="logo-icon"></div>
         <nav>
           <ul>
+            <li><a href="#" data-modal="order">Модальное окно Заказ</a></li>
+            <li><a href="#" data-modal="order" data-animation="fade">Модальное окно Заказ fade</a></li>
             <li><a href="#">ГОТОВЫЕ БЛЮДА</a>
               <ul>
                 <li><a href="#">Мясные продукты</a></li>
@@ -110,7 +112,8 @@
             <input type="text" name="s" placeholder="Поиск (например: Молоко, Ресторан, Скидка)">
             <input type="button" class="search-btn">
           </form>
-          <div class="user-area"><a href="#auth-block" class="auth-btn classTrigger"></a><a href="#" class="basket-btn"></a></div>
+          <div class="user-area"><a href="#auth-block" class="auth-btn classTrigger"></a><a href="#" class="basket-btn"></a>
+          </div>
         </header>
         <div class="breads">
           <ul>
@@ -124,76 +127,76 @@
             <div class="heading"> 
               <div>Категория</div><a href="#" class="clearFilter">Очистить</a>
             </div>
-            <div class="chboxes">
-              <label class="chbox">
+            <div class="checkbox-group">
+              <label class="checkbox">
                 <input type="checkbox"><span>Мясные продукты</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Замороженные продукты</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Молочные продукты</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Рыба</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Кондитерские изделия</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Хлебобулочные изделия</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Овощи</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>фрукты</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Товары для дома</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Косметика и гигиена</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Бытовая техника и электроника</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Всё для детей</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Бакалея</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Напитки</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Подарочные наборы</span>
               </label>
             </div>
             <div class="heading">
               <div>Доп. фильтр</div><a href="#" class="clearFilter">Очистить</a>
             </div>
-            <div class="chboxes">
-              <label class="chbox">
+            <div class="checkbox-group">
+              <label class="checkbox">
                 <input type="checkbox"><span>Вегитарианское</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Разноцветное</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Вкусное</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Черное</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Красное</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Ароматное</span>
               </label>
-              <label class="chbox">
+              <label class="checkbox">
                 <input type="checkbox"><span>Горячее</span>
               </label>
             </div>
@@ -312,6 +315,34 @@
             </p><a href="#" class="to-top-btn"></a>
           </div>
         </footer>
+      </div>
+    </div>
+    <div id="order" class="modal">
+      <div class="head">Заказ<a class="close-modal close-modal-btn">x</a></div>
+      <div class="body wrap">
+        <div class="xl-7-12">
+          <label>ФИО</label>
+          <input type="text" value="Иванов Иван">
+          <label>Адрес доставки</label>
+          <input type="text">
+          <label>Контактный телефон</label>
+          <input type="text">
+          <label>Комментарий</label>
+          <textarea></textarea>
+        </div>
+        <div class="order-summ xl-5-12 right-xl">Сумма заказа:<span>3580р</span></div>
+        <div class="order-payments radio-group xl-1-1">
+          <label class="radio">
+            <input id="pay1" type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
+          </label>
+          <label class="radio">
+            <input id="pay2" type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
+          </label>
+        </div>
+      </div>
+      <div class="foot right-xl">
+        <button class="btn btn-green">Заказать</button>
+        <button class="btn btn-gray close-modal">Назад</button>
       </div>
     </div>
     <script src="./assets/js/vendor.min.js"></script>

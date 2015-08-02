@@ -11,7 +11,6 @@
 
 	$('body').on('click', '.classTrigger', function(e) {
 		e.preventDefault();
-		// console.log();
 		var divID = $(this).attr('href');
 		if ($(divID).hasClass('opened'))
 			$(divID).removeClass('opened')

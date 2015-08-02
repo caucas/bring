@@ -10,22 +10,22 @@ block content
 			.heading 
 				div Категория
 				a.clearFilter(href="#") Очистить
-			.chboxes
+			.checkbox-group
 				- var categoryOptions = ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома', 'Косметика и гигиена', 'Бытовая техника и электроника', 'Всё для детей', 'Бакалея', 'Напитки', 'Подарочные наборы']
 				each item in categoryOptions
-					label.chbox
+					label.checkbox
 						input(type="checkbox")
 						span= item
-
 			.heading
 				div Доп. фильтр
 				a.clearFilter(href="#") Очистить
-			.chboxes
+			.checkbox-group
 				- var addFilterOptions = ['Вегитарианское', 'Разноцветное', 'Вкусное', 'Черное', 'Красное', 'Ароматное', 'Горячее']
 				each item in addFilterOptions
-					label.chbox
+					label.checkbox
 						input(type="checkbox")
 						span= item
+
 		.products.cat.wrap.left-xl
 			- for(var j=0; j<2; j++)
 				h3 продукты (категория)

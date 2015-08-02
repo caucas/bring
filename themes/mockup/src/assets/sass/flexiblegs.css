@@ -9,12 +9,11 @@
 .wrap {
   display: block;
   font-size: 0;
-  text-align: center;
+  text-align: left;
 }
 .wrap > * {
   display: inline-block;
   width: 100%;
-  /*position: relative;*/
   min-height: 1px;
   font-size: 1rem;
   vertical-align: top;
