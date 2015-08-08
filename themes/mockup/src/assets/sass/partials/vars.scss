@@ -34,3 +34,63 @@
 	background-repeat: $repeat;
 	background-position: $pos;
 }
+
+
+// CUSTOM CHECKBOX & RADIO STYLES
+@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
+	.#{$type} {
+		display: block;
+		position: relative;
+		overflow: hidden;
+
+		input[type="#{$type}"] {
+			position: absolute;
+			left: -1000px;
+			opacity: 0;
+		}
+		span {
+			display: block;
+			position: relative;
+			padding-left: 30px;
+			font-size: 16px;
+			color: #1F262C;
+			cursor: pointer;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: $x;
+				height: $x;
+				margin-top: -$x/2;
+				@include bg($filename: 'bg/bg-#{$type}.png');
+			}
+		}
+		input[type="#{$type}"]:checked ~ span:after {
+			background-position: 0 bottom;
+		}
+		b {
+			display: inline-block;
+			position: absolute;
+			top: 0; right: 0;
+			font-weight: normal;
+			font-size: 16px;
+			color: #1F262C;
+		}
+	}
+	.#{$type}-group {
+		.#{$type} + .#{$type} {
+			margin-top: 10px;
+		}
+		&.#{$type}-group-inline {
+			.#{$type} {
+				display: inline-block;
+			}
+			.#{$type} + .#{$type} {
+				margin-left: 20px;
+			}
+		}
+	}
+}

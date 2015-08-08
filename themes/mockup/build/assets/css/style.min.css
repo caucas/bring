@@ -2789,9 +2789,9 @@ textarea {
     left: -1000px;
     opacity: 0; }
   .checkbox span {
-    display: inline-block;
+    display: block;
+    position: relative;
     padding-left: 30px;
-    line-height: 16px;
     font-size: 16px;
     color: #1F262C;
     cursor: pointer; }
@@ -2803,10 +2803,18 @@ textarea {
       left: 0;
       width: 14px;
       height: 14px;
-      margin-top: -6px;
+      margin-top: -7px;
       background: transparent url("../../assets/images/bg/bg-checkbox.png") 0 0 no-repeat; }
   .checkbox input[type="checkbox"]:checked ~ span:after {
     background-position: 0 bottom; }
+  .checkbox b {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: normal;
+    font-size: 16px;
+    color: #1F262C; }
 
 .checkbox-group .checkbox + .checkbox {
   margin-top: 10px; }
@@ -2826,9 +2834,9 @@ textarea {
     left: -1000px;
     opacity: 0; }
   .radio span {
-    display: inline-block;
+    display: block;
+    position: relative;
     padding-left: 30px;
-    line-height: 16px;
     font-size: 16px;
     color: #1F262C;
     cursor: pointer; }
@@ -2838,12 +2846,20 @@ textarea {
       position: absolute;
       top: 50%;
       left: 0;
-      width: 14px;
-      height: 14px;
-      margin-top: -6px;
+      width: 17px;
+      height: 17px;
+      margin-top: -8.5px;
       background: transparent url("../../assets/images/bg/bg-radio.png") 0 0 no-repeat; }
   .radio input[type="radio"]:checked ~ span:after {
     background-position: 0 bottom; }
+  .radio b {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: normal;
+    font-size: 16px;
+    color: #1F262C; }
 
 .radio-group .radio + .radio {
   margin-top: 10px; }
@@ -2875,13 +2891,16 @@ h1, h2, h3, h4, h5 {
   margin: 0; }
 
 h2 {
+  font-size: 40px; }
+
+h2 {
   font-size: 35px; }
 
 h3 {
   font-size: 30px; }
 
 h4 {
-  font-size: 30px;
+  font-size: 22px;
   text-transform: none; }
 
 nav ul {
@@ -2900,6 +2919,9 @@ nav ul {
 
 .small-desc, small {
   font-size: 11px; }
+
+.caps-text {
+  text-transform: uppercase; }
 
 .cost {
   font-size: 30px;
@@ -3063,7 +3085,9 @@ ul.list {
   .modal .head {
     background-color: #FED700;
     font: 30px 'R-700';
-    color: #fff; }
+    color: #000; }
+    .modal .head span {
+      font: inherit; }
   .modal label {
     font-size: 12px; }
   .modal input[type="text"] {
@@ -3073,14 +3097,50 @@ ul.list {
     padding-top: 0; }
   .modal .close-modal-btn {
     position: absolute;
-    top: 25px;
+    top: 33px;
     right: 25px;
-    width: 26px;
-    height: 26px;
-    overflow: hidden;
-    text-indent: -1000px;
+    width: 27px;
+    height: 9px;
+    line-height: 26px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border: 1px solid transparent;
+    text-align: center;
+    font-size: 26px;
+    color: #FFF;
     cursor: pointer;
-    background: transparent url("../../assets/images/icon/icon-close-btn.png") 0 0 no-repeat; }
+    -webkit-transform: rotateZ(-45deg);
+            transform: rotateZ(-45deg);
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease; }
+    .modal .close-modal-btn:before,
+    .modal .close-modal-btn:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: #fff; }
+    .modal .close-modal-btn:before {
+      top: -10px;
+      left: 8px;
+      width: 7px;
+      height: 25px;
+      border: 1px solid #fff;
+      border: 1px solid transparent;
+      -webkit-transition: border-color 0.3s ease;
+              transition: border-color 0.3s ease; }
+    .modal .close-modal-btn:after {
+      top: -2px;
+      left: 7px;
+      width: 11px;
+      height: 11px;
+      border-radius: 100%; }
+    .modal .close-modal-btn:hover, .modal .close-modal-btn:hover:before {
+      border-color: #333; }
   .modal .order-summ {
     font-size: 20px;
     color: #333; }
@@ -3088,8 +3148,36 @@ ul.list {
       display: inline-block;
       position: relative;
       padding-left: 15px;
-      padding-right: 15px;
-      color: #000; }
+      font-size: 22px;
+      color: #666; }
+  .modal .order-payments {
+    margin-top: 10px; }
+    .modal .order-payments .radio-group-title {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: #525261; }
+    .modal .order-payments img {
+      margin: 10px 0 0 30px; }
+  .modal#mods .add-info-text {
+    margin-bottom: 20px; }
+  .modal#mods .radio-group-title,
+  .modal#mods .checkbox-group-title {
+    margin-bottom: 20px; }
+  .modal#mods .radio-group-items,
+  .modal#mods .checkbox-group-items {
+    padding-left: 15px; }
+  .modal#mods .radio-group-items {
+    padding-right: 30px; }
+  .modal#mods .total-cost {
+    display: inline-block;
+    margin-right: 40px;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #333; }
+    .modal#mods .total-cost span {
+      font-size: 20px;
+      margin-left: 15px; }
 
 aside {
   position: absolute;
@@ -3137,6 +3225,8 @@ aside {
     font-family: 'Myriad Pro Condensed';
     color: #DDD;
     text-transform: none; }
+    aside nav ul li span {
+      font: inherit; }
   aside nav > ul > li {
     margin-bottom: 25px;
     color: #00B3D3;
@@ -3161,7 +3251,8 @@ header {
 .user-area {
   position: absolute;
   top: 0;
-  right: 0; }
+  right: 0;
+  z-index: 2; }
   .user-area .auth-btn,
   .user-area .basket-btn,
   .user-area .profile-btn {
@@ -3188,7 +3279,8 @@ header {
 .top-search {
   position: relative;
   width: 100%;
-  padding: 20px 190px 20px 35px; }
+  padding: 20px 190px 20px 35px;
+  background-color: #fff; }
   .top-search .search-btn {
     position: absolute;
     top: 20px;
@@ -3304,7 +3396,7 @@ footer {
   .main-content h3, .main-content h4 {
     font-size: 30px;
     margin-bottom: 20px; }
-  .main-content h2, .main-content h3 {
+  .main-content h2 {
     text-transform: uppercase; }
 
 .cat .cat-item {
@@ -3405,6 +3497,19 @@ footer {
       color: #9E9E9E; }
   .filter .checkbox-group {
     margin-bottom: 50px; }
+    .filter .checkbox-group .checkbox-group-title {
+      position: relative;
+      margin-bottom: 20px; }
+      .filter .checkbox-group .checkbox-group-title div {
+        font: 22px 'Myriad Pro Condensed';
+        color: #00B3D3;
+        text-transform: uppercase; }
+      .filter .checkbox-group .checkbox-group-title .clearFilter {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        font: 14px 'Myriad Pro Condensed';
+        color: #9E9E9E; }
 
 .products {
   padding-left: 340px; }

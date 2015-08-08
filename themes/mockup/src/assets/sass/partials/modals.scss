@@ -25,7 +25,10 @@
 	.head {
 		background-color: $bg-yellow-color;
 		font: 30px 'R-700';
-		color: #fff;
+		color: #000;
+		span {
+			font: inherit;
+		}
 	}
 	label {
 		font-size: 12px;
@@ -39,28 +42,102 @@
 	}
 	.close-modal-btn {
 		position: absolute;
-		top: 25px;
-		right: 25px;
-		width: 26px;
-		height: 26px;
-		overflow: hidden;
-		text-indent: -1000px;
+		top: 33px; right: 25px;
+		width: 27px; height: 9px;
+		line-height: 26px;
+		background-color: #fff;
+		border: 1px solid #fff;
+		border: 1px solid transparent;
+		text-align: center;
+		font-size: 26px;
+		color: #FFF;
 		cursor: pointer;
-		@include bg($filename: 'icon/icon-close-btn.png');
-	}
+		transform: rotateZ(-45deg);
+		transform-origin: center;
+		backface-visibility: hidden;
+		transition: border-color .3s ease;
 
-	// forms
-	.order-summ {
-		font-size: 20px;
-		color: #333;
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			background-color: #fff;
+		}
+		&:before {
+			top: -10px; left: 8px;
+			width: 7px; height: 25px;
+			border: 1px solid #fff;
+			border: 1px solid transparent;
+			transition: border-color .3s ease;
+		}
+		&:after {
+			top: -2px; left: 7px;
+			width: 11px; height: 11px;
+			border-radius: 100%;
+		}
 
-		span {
-			display: inline-block;
-			position: relative;
-			padding-left: 15px;
-			padding-right: 15px;
-			// font-size: 22px;
-			color: #000;
+		&:hover, &:hover:before {
+			border-color: #333
 		}
 	}
+
+// FORMS
+	// Order
+		.order-summ {
+			font-size: 20px;
+			color: #333;
+
+			span {
+				display: inline-block;
+				position: relative;
+				padding-left: 15px;
+				// padding-right: 15px;
+				font-size: 22px;
+				color: #666;
+			}
+		}
+		.order-payments {
+			margin-top: 10px;
+
+			.radio-group-title {
+				display: block;
+				margin-bottom: 10px;
+				font-size: 12px;
+				color: #525261;
+			}
+			img {
+				margin: 10px 0 0 30px;
+			}
+		}
+	
+	// Mods
+		&#mods {
+			.add-info-text {
+				margin-bottom: 20px;
+			}
+
+			.radio-group-title,
+			.checkbox-group-title {
+				margin-bottom: 20px;
+			}
+			.radio-group-items,
+			.checkbox-group-items {
+				padding-left: 15px;
+			}
+				.radio-group-items {
+					padding-right: 30px;
+				}
+			.total-cost {
+				display: inline-block;
+				margin-right: 40px;
+				vertical-align: middle;
+				font-size: 20px;
+				color: #333;
+				span {
+					font-size: 20px;
+					margin-left: 15px;
+				}
+			}
+		}
 }

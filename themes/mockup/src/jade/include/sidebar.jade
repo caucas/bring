@@ -7,9 +7,14 @@ aside
 	nav
 		ul
 			li
-				a(href="#", data-modal="order") Модальное окно Заказ
-			li
-				a(href="#", data-modal="order", data-animation="fade") Модальное окно Заказ fade
+				span Модальное окна
+				ul
+					li
+						a(href="#", data-modal="order", data-animation="fade") Заказ
+					li
+						a(href="#", data-modal="mods") Модификаторы
+					li
+						a(href="#", data-modal="basket") Корзина
 
 			- var sidebarItems = [{parentName: "ГОТОВЫЕ БЛЮДА", childs : ["Мясные продукты","Замороженные продукты","Молочные продукты","Рыба","Кондитерские изделия","Хлебобулочные изделия","Овощи, фрукты"]}, {parentName: "продукты", childs : ["Всё для детей","Бакалея","Напитки","Подарочные наборы"]}, {parentName: "цветы", childs : ["Напитки","Подарочные наборы"]}, {parentName: "аптека", childs : ["Лекартства","Памперсы"]}, {parentName: "разделы", childs : ["Стать паартнером","Пользовательское соглашение","Акции","Новости","Контактная информация","О компании"]}]
 			each item in sidebarItems

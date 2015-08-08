@@ -19,7 +19,7 @@
 		font-size: 30px;
 		margin-bottom: 20px;
 	}
-	h2, h3 {
+	h2 {
 		text-transform: uppercase;
 	}
 }
@@ -162,6 +162,24 @@
 	}
 	.checkbox-group {
 		margin-bottom: 50px;
+
+		.checkbox-group-title {
+			position: relative;
+			margin-bottom: 20px;
+
+			div {
+				font: 22px 'Myriad Pro Condensed';
+				color: $color-light-blue;
+				text-transform: uppercase;
+			}
+			.clearFilter {
+				position: absolute;
+				top: 5px;
+				right: 0;
+				font: 14px 'Myriad Pro Condensed';
+				color: #9E9E9E;
+			}
+		}
 	}
 }
 .products {

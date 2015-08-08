@@ -14,14 +14,14 @@
 
 		var defaults = {  
 			animation: 'none',
-			animationSpeed: 100,
+			animationSpeed: 200,
 			nonModal: true,
 			closeBtn: 'close-modal'
 		}; 
 
 		//Extend dem' options
 		var options = $.extend({}, defaults, options); 
-	
+
 		return this.each(function() {
 
 			var modal = $(this),
@@ -36,8 +36,8 @@
 
 			//Entrance Animations
 			modal.bind('modal:open', function () {
-			  $('body').addClass('no-scroll');
-			  modalBG.unbind('click.modalEvent');
+				// $('body').addClass('no-scroll');
+				modalBG.unbind('click.modalEvent');
 				$('.' + options.closeBtn).unbind('click.modalEvent');
 				if(!locked) {
 					lockModal();
@@ -66,8 +66,8 @@
 
 			//Closing Animation
 			modal.bind('modal:close', function () {
-			  $('body').removeClass('no-scroll');
-			  if(!locked) {
+				// $('body').removeClass('no-scroll');
+				if(!locked) {
 					lockModal();
 					if(options.animation == "fade") {
 						modalBG.delay(options.animationSpeed).fadeOut(options.animationSpeed);
@@ -95,13 +95,13 @@
 			
 			//Close Modal Listeners
 			var closeButton = $('.' + options.closeBtn).bind('click.modalEvent', function () {
-			  modal.trigger('modal:close')
+				modal.trigger('modal:close')
 			});
 			
 			if(options.nonModal) {
 				modalBG.css({"cursor":"pointer"})
 				modalBG.bind('click.modalEvent', function () {
-				  modal.trigger('modal:close')
+					modal.trigger('modal:close')
 				});
 			}
 			$('body').keyup(function(e) {

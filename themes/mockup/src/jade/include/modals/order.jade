@@ -1,7 +1,7 @@
 .modal#order
 	.head
 		Заказ
-		a.close-modal.close-modal-btn x
+		a.close-modal.close-modal-btn
 	.body.wrap
 		.xl-7-12
 			label ФИО
@@ -15,13 +15,14 @@
 		.order-summ.xl-5-12.right-xl Сумма заказа:
 			span 3580р
 		.order-payments.radio-group.xl-1-1
+			label.radio-group-title Методы оплаты
 			label.radio
 				input#pay1(type="radio", name="order-payment", value="1")
 				span Наличными курьеру (3680р)
-
 			label.radio
 				input#pay2(type="radio", name="order-payment", value="2")
 				span Безналичная оплата
+				img(src="/assets/images/payments.jpg", alt="payments")
 
 	.foot.right-xl
 		button.btn.btn-green Заказать

@@ -56,53 +56,5 @@ textarea {
 	@include additional-colors($color-light-blue, blue);
 }
 
-// CUSTOM CHECKBOX & RADIO STYLES
-@each $inputType in checkbox, radio {
-	.#{$inputType} {
-		display: block;
-		position: relative;
-		overflow: hidden;
-
-		input[type="#{$inputType}"] {
-			position: absolute;
-			left: -1000px;
-			opacity: 0;
-		}
-		span {
-			display: inline-block;
-			padding-left: 30px;
-			line-height: 16px;
-			font-size: 16px;
-			color: #1F262C;
-			cursor: pointer;
-
-			&:after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 50%;
-				left: 0;
-				width: 14px;
-				height: 14px;
-				margin-top: -6px;
-				@include bg($filename: 'bg/bg-#{$inputType}.png');
-			}
-		}
-		input[type="#{$inputType}"]:checked ~ span:after {
-			background-position: 0 bottom;
-		}
-	}
-	.#{$inputType}-group {
-		.#{$inputType} + .#{$inputType} {
-			margin-top: 10px;
-		}
-		&.#{$inputType}-group-inline {
-			.#{$inputType} {
-				display: inline-block;
-			}
-			.#{$inputType} + .#{$inputType} {
-				margin-left: 20px;
-			}
-		}
-	}
-}
+@include customInput();
+@include customInput($type: radio, $x: 17px, $y: 17px);

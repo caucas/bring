@@ -11,6 +11,7 @@ header {
 	position: absolute;
 	top: 0;
 	right: 0;
+	z-index: 2;
 
 	.auth-btn,
 	.basket-btn,
@@ -47,6 +48,7 @@ header {
 	position: relative;
 	width: 100%;
 	padding: 20px 190px 20px 35px;
+	background-color: #fff;
 
 	.search-btn {
 		position: absolute;

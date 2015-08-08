@@ -60,6 +60,9 @@ aside {
 				font-family: 'Myriad Pro Condensed';
 				color: $color-light-gray;
 				text-transform: none;
+				span {
+					font: inherit;
+				}
 			}
 		}
 		> ul {
