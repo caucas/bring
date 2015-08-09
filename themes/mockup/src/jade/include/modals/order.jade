@@ -1,8 +1,8 @@
-.modal#order
-	.head
-		Заказ
+.modal.modal-order#order
+	.modal-head 
+		span Заказ
 		a.close-modal.close-modal-btn
-	.body.wrap
+	.modal-body.wrap
 		.xl-7-12
 			label ФИО
 			input(type="text", value="Иванов Иван")
@@ -24,6 +24,6 @@
 				span Безналичная оплата
 				img(src="/assets/images/payments.jpg", alt="payments")
 
-	.foot.right-xl
+	.modal-foot.right-xl
 		button.btn.btn-green Заказать
 		button.btn.btn-gray.close-modal Назад

@@ -326,9 +326,94 @@
         </footer>
       </div>
     </div>
-    <div id="mods" class="modal">
-      <div class="head"><span>Пицца как говорицца</span><a class="close-modal close-modal-btn">x</a></div>
-      <div class="body wrap">
+    <div id="basket" class="modal modal-basket">
+      <div class="modal-head"><span>Корзина</span><a class="close-modal close-modal-btn"></a></div>
+      <div class="modal-body table-layout wrap right-xl">
+        <div class="thead xl-8-12 wrap left-xl">
+          <div class="xl-7-11">Наименование</div>
+          <div class="xl-2-11">Количество</div>
+          <div class="xl-2-11">Цена</div>
+        </div>
+        <div class="tbody">
+          <div class="table-row wrap xl-1-1 left-xl">
+            <div class="table-row-title xl-4-12"><img src="/assets/images/shop1.png" alt="shop logo">
+              <h4>Наименование магазина</h4>
+              <div>г. Владикавказ, <br> ул. Маркова 15Б</div>
+            </div>
+            <div class="table-row-items xl-8-12">
+              <div class="table-row-item wrap">
+                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="custom-input-number xl-2-11">
+                  <button>-</button>
+                  <input value="1">
+                  <button>+</button>
+                </div>
+                <div class="xl-2-11">370р</div>
+              </div>
+              <div class="table-row-item wrap">
+                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="custom-input-number xl-2-11">
+                  <button>-</button>
+                  <input value="1">
+                  <button>+</button>
+                </div>
+                <div class="xl-2-11">370р</div>
+              </div>
+            </div>
+            <div class="table-row-total wrap right-xl">
+              <div class="wrap xl-8-12"> 
+                <div class="xl-1-8">Итого:</div>
+                <div class="total-cost xl-7-8 right-xl">1700р</div>
+              </div>
+              <div class="table-row-noty xl-8-12 left-xl">Минимальная сумма заказа в этом магазине: 3000р</div>
+            </div>
+          </div>
+        </div>
+        <div class="tbody">
+          <div class="table-row wrap xl-1-1 left-xl">
+            <div class="table-row-title xl-4-12"><img src="/assets/images/shop2.png" alt="shop logo">
+              <h4>Наименование магазина</h4>
+              <div>г. Владикавказ, <br> ул. Маркова 15Б</div>
+            </div>
+            <div class="table-row-items xl-8-12">
+              <div class="table-row-item wrap">
+                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="custom-input-number xl-2-11">
+                  <button>-</button>
+                  <input value="1">
+                  <button>+</button>
+                </div>
+                <div class="xl-2-11">370р</div>
+              </div>
+              <div class="table-row-item wrap">
+                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="custom-input-number xl-2-11">
+                  <button>-</button>
+                  <input value="1">
+                  <button>+</button>
+                </div>
+                <div class="xl-2-11">370р</div>
+              </div>
+            </div>
+            <div class="table-row-total wrap right-xl">
+              <div class="wrap xl-8-12"> 
+                <div class="xl-1-8">Итого:</div>
+                <div class="total-cost xl-7-8 right-xl">1700р</div>
+              </div>
+              <div class="table-row-noty xl-8-12 left-xl">Минимальная сумма заказа в этом магазине: 3000р</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot right-xl">
+        <div class="order-summ">Цена итоговая:<span>3580р</span></div>
+        <button class="btn btn-green">Оформить заказ</button>
+        <button class="btn btn-gray close-modal">Очистить</button>
+      </div>
+    </div>
+    <div id="mods" class="modal modal-mods">
+      <div class="modal-head"><span>Пицца как говорицца</span><a class="close-modal close-modal-btn"></a></div>
+      <div class="modal-body wrap">
         <p class="add-info-text">При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
         <div class="radio-group xl-5-11">
           <h4 class="radio-group-title">Выбор варианта:</h4>
@@ -368,14 +453,14 @@
           </div>
         </div>
       </div>
-      <div class="foot right-xl">
+      <div class="modal-foot right-xl">
         <div class="total-cost">Цена итоговая:<span class="cost">200<sub>руб</sub></span></div>
         <button class="btn btn-green">Заказать</button>
       </div>
     </div>
-    <div id="order" class="modal">
-      <div class="head">Заказ<a class="close-modal close-modal-btn"></a></div>
-      <div class="body wrap">
+    <div id="order" class="modal modal-order">
+      <div class="modal-head"> <span>Заказ</span><a class="close-modal close-modal-btn"></a></div>
+      <div class="modal-body wrap">
         <div class="xl-7-12">
           <label>ФИО</label>
           <input type="text" value="Иванов Иван">
@@ -397,7 +482,7 @@
           </label>
         </div>
       </div>
-      <div class="foot right-xl">
+      <div class="modal-foot right-xl">
         <button class="btn btn-green">Заказать</button>
         <button class="btn btn-gray close-modal">Назад</button>
       </div>

@@ -2952,6 +2952,24 @@ ul.list {
       border-radius: 100%;
       background-color: #9E9E9E; }
 
+.custom-input-number {
+  font-size: 0; }
+  .custom-input-number > * {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+    vertical-align: middle; }
+  .custom-input-number input {
+    width: 28px;
+    margin: 0 1px;
+    text-align: center; }
+  .custom-input-number button {
+    background-color: #A4A4A4;
+    border: 0;
+    font-weight: 600;
+    color: #fff; }
+
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -3080,21 +3098,23 @@ ul.list {
   visibility: hidden;
   background: #fff;
   z-index: 101; }
-  .modal .head, .modal .body {
+  .modal .modal-head, .modal .modal-body {
     padding: 20px 30px; }
-  .modal .head {
+  .modal .modal-head {
     background-color: #FED700;
     font: 30px 'R-700';
     color: #000; }
-    .modal .head span {
+    .modal .modal-head span {
       font: inherit; }
   .modal label {
     font-size: 12px; }
   .modal input[type="text"] {
     margin-bottom: 15px; }
-  .modal .foot {
+  .modal .modal-foot {
     padding: 30px;
     padding-top: 0; }
+    .modal .modal-foot button {
+      margin-left: 20px; }
   .modal .close-modal-btn {
     position: absolute;
     top: 33px;
@@ -3106,7 +3126,7 @@ ul.list {
     border: 1px solid #fff;
     border: 1px solid transparent;
     text-align: center;
-    font-size: 26px;
+    font-size: 0;
     color: #FFF;
     cursor: pointer;
     -webkit-transform: rotateZ(-45deg);
@@ -3142,6 +3162,7 @@ ul.list {
     .modal .close-modal-btn:hover, .modal .close-modal-btn:hover:before {
       border-color: #333; }
   .modal .order-summ {
+    display: inline-block;
     font-size: 20px;
     color: #333; }
     .modal .order-summ span {
@@ -3159,25 +3180,93 @@ ul.list {
       color: #525261; }
     .modal .order-payments img {
       margin: 10px 0 0 30px; }
-  .modal#mods .add-info-text {
+  .modal.modal-mods h4 {
+    font-family: R-400; }
+  .modal.modal-mods .body {
     margin-bottom: 20px; }
-  .modal#mods .radio-group-title,
-  .modal#mods .checkbox-group-title {
+  .modal.modal-mods .add-info-text {
     margin-bottom: 20px; }
-  .modal#mods .radio-group-items,
-  .modal#mods .checkbox-group-items {
+  .modal.modal-mods .radio-group-title,
+  .modal.modal-mods .checkbox-group-title {
+    margin-bottom: 20px; }
+  .modal.modal-mods .radio-group-items,
+  .modal.modal-mods .checkbox-group-items {
     padding-left: 15px; }
-  .modal#mods .radio-group-items {
+  .modal.modal-mods .radio-group-items {
     padding-right: 30px; }
-  .modal#mods .total-cost {
+  .modal.modal-mods .total-cost {
     display: inline-block;
-    margin-right: 40px;
+    margin-right: 20px;
     vertical-align: middle;
     font-size: 20px;
     color: #333; }
-    .modal#mods .total-cost span {
+    .modal.modal-mods .total-cost span {
       font-size: 20px;
       margin-left: 15px; }
+  .modal.modal-basket .order-summ {
+    margin-right: 20px; }
+
+.table-layout .thead {
+  padding-bottom: 10px; }
+  .table-layout .thead div {
+    font: 14px 'R-400';
+    color: #A5A5A5;
+    text-align: center; }
+    .table-layout .thead div:first-child {
+      text-align: left; }
+    .table-layout .thead div:last-child {
+      text-align: right;
+      padding-right: 30px; }
+
+.table-layout .tbody {
+  padding: 20px 0;
+  border-top: 1px solid #ccc; }
+
+.table-row-title {
+  position: relative;
+  padding-left: 55px; }
+  .table-row-title img {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .table-row-title h4 {
+    margin-bottom: 5px;
+    font: 18px 'R-400';
+    line-height: 16px; }
+  .table-row-title div {
+    font-size: 10px;
+    color: #666; }
+
+.table-row-items > div + div {
+  margin-top: 20px; }
+
+.table-row-items .table-row-item > div {
+  text-align: center;
+  vertical-align: middle; }
+  .table-row-items .table-row-item > div:first-child {
+    text-align: left;
+    padding-right: 30px; }
+  .table-row-items .table-row-item > div:last-child {
+    text-align: right;
+    padding-right: 30px; }
+
+.table-row-total {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc; }
+  .table-row-total div {
+    font-size: 20px;
+    font-family: 'R-400'; }
+  .table-row-total .total-cost {
+    padding-right: 30px;
+    font-family: 'R-300'; }
+
+div.table-row-noty {
+  font-weight: 300;
+  font-size: 14px;
+  color: #D80000; }
+  div.table-row-noty:before {
+    content: '* '; }
 
 aside {
   position: absolute;

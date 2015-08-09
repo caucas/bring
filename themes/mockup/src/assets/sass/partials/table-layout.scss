@@ -1,0 +1,89 @@
+.table-layout {
+	.thead {
+		padding-bottom: 10px;
+
+		div {
+			font: 14px 'R-400';
+			color: #A5A5A5;
+			text-align: center;
+
+			&:first-child {
+				text-align: left;
+			}
+			&:last-child {
+				text-align: right;
+				padding-right: 30px;
+			}
+		}
+	}
+	.tbody {
+		padding: 20px 0;
+		border-top: 1px solid #ccc;
+		// border-bottom: 1px solid #ccc;
+	}
+	.tfoot {
+
+	}
+}
+.table-row-title {
+	position: relative;
+	padding-left: 55px;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	h4 {
+		margin-bottom: 5px;
+		font: 18px 'R-400';
+		line-height: 16px;
+	}
+	div {
+		font-size: 10px;
+		color: #666;
+	}
+}
+.table-row-items {
+	> div + div {
+		margin-top: 20px;
+	}
+	.table-row-item {
+		> div {
+			text-align: center;
+			vertical-align: middle;
+
+			&:first-child {
+				text-align: left;
+				padding-right: 30px;
+			}
+			&:last-child {
+				text-align: right;
+				padding-right: 30px;
+			}
+		}
+	}
+}
+.table-row-total {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #ccc;
+
+	div {
+		font-size: 20px;
+		font-family: 'R-400';
+	}
+
+	.total-cost {
+		padding-right: 30px;
+		font-family: 'R-300';
+	}
+}
+div.table-row-noty {
+	font-weight: 300;
+	font-size: 14px;
+	color: $color-red;
+	&:before {
+		content: '* ';
+	}
+}
