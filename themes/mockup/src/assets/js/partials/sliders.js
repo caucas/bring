@@ -14,12 +14,14 @@
 		loop: true
 	});
 	var noveltySlider = new Swiper('.novelty-slider', {
-		slidesPerView: 3,
+		slidesPerView: 'auto',
+		spaceBetween: 30,
 		nextButton: '.swiper-button-next',
 		prevButton: '.swiper-button-prev'
 	});
 	var singleProductSlider = new Swiper('.single-product-slider', {
 		pagination: '.single-slider-pagination',
         paginationClickable: true,
+        slidesPerView: 1,
         effect: 'fade'
 	});

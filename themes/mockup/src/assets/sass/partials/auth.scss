@@ -15,7 +15,8 @@
 		border: 0;
 		margin: 0;
 		padding: 0;
-		padding-right: 30px;
+		// padding-right: 30px;
+		font-size: 0;
 		@extend .clrfix;
 
 		legend {
@@ -25,9 +26,17 @@
 			font: 22px 'R-400';
 			color: #fff;
 		}
+
+		// отступ для первого филдсета, а остальным 0 (first-child не работает)
+		fieldset {
+			padding-right: 30px;
+		}
+		~ fieldset {
+			padding-right: 0;
+		}
 	}
 
-	form fieldset:last-child > * {
+	form fieldset > * {
 		vertical-align: middle;
 	}
 

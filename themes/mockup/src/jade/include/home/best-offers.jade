@@ -1,8 +1,8 @@
-section.best-offers
-	.filter
-		.checkbox-group
-			.checkbox-group-title
-				div Кухни/Блюда
+.best-offers.wrap
+	.filter.wrap.xl-3-11.md-1-1
+		#bestOffersFilter.checkbox-group.xl-1-1.md-2-5
+			.checkbox-group-title(data-trigger="bestOffersFilter")
+				span Кухни/Блюда
 				a.clearFilter(href="#") Очистить
 			.checkbox-group-items
 				- var filterOptions = ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома', 'Косметика и гигиена', 'Бытовая техника и электроника', 'Всё для детей', 'Бакалея', 'Напитки', 'Подарочные наборы']
@@ -10,9 +10,9 @@ section.best-offers
 					label.checkbox
 						input(type="checkbox")
 						span= item
-	.products.cat.wrap.left-xl
-		h2 ЛУЧШИЕ ПРЕДЛОЖЕНИЯ НЕДЕЛи
-		- for(var i = 0; i < 4; i++)
+	.cat.wrap.xl-8-11.md-1-1.gutter-15-xl
+		h2 Лучшие предложения недели
+		- for(var i = 0; i < 6; i++)
 			.cat-item.xl-1-2
 				.item-image
 					a(href="#")

@@ -1,19 +1,22 @@
 .top-slider {
+	// height: 300px;
+	@include rem(height, 300px);
 	.slide-bg-image {
 		background-size: cover;
-		height: 300px;
+		height: 100%;
 	}
 	.slide-content {
+		display: table;
 		position: absolute;
 		top: 0;
-		display: table;
 		width: 100%;
-		padding: 20px 45px;
+		height: 100%;
+		// padding: 20px 45px;
+		@include rem(padding, 20px 45px);
 
 		.image {
 			display: table-cell;
-			width: 25%;
-			max-width: 355px;
+			@include rem(width, 355px);
 			overflow: hidden;
 			vertical-align: middle;
 
@@ -24,51 +27,74 @@
 		}
 		.desc {
 			display: table-cell;
-			padding-left: 40px;
+			// padding-left: 40px;
+			@include rem(padding-left, 40px);
 			vertical-align: middle;
 
 			div, p {
-				font-size: 60px;
+				@include fz(60px);
 				color: #fff;
 				text-shadow:1px 1px 2px rgba(0,0,0,0.48);
 			}
 			p {
-				font-size: 28px;
-				line-height: 28px;
+				@include fz(28px);
+				line-height: 100%;
 			}
 		}
 	}
 	.swiper-pagination {
-		padding-right: 45px;
+		// bottom: 45px;
+		// padding-right: 45px;
+		@include rem(bottom, 45px);
+		@include rem(padding-right, 45px);
 		text-align: right;
 	}
 }
 
 .best-offers {
-	padding: 50px 40px 0;
+	// padding: 50px 40px 0;
+	@include rem(padding, 50px 40px 0);
 	@extend .clrfix;
+
+	.cat {
+		// margin: 0;
+		// padding-left: 340px;
+	}
 }
 
 .novelty-slider {
 	background-color: #fff;
-	padding: 40px 50px;
+	// padding: 40px 50px;
+	@include rem(padding, 40px 50px);
 
-	.cat .cat-item {
-		margin-bottom: 10px;
+	.cat {
+		.cat-item {
+			width: 450px;
+			margin-bottom: 10px;
+			// @include rem(width, 450px);
+			@include rem(margin-bottom, 10px);
+		}
 	}
 }
 
 .single-product {
-	padding: 50px;
+	// padding: 50px;
+	@include rem(padding, 50px);
+	@extend .clrfix;
 
 	// SILDER STYLES
-	.swiper-wrapper {
-		padding-bottom: 30px;
+	.single-product-slider {
+		width: 33%;
+		max-width: 600px;
+		// margin-right: 40px;
+		// padding-bottom: 30px;
+		@include rem(padding-bottom, 30px);
+		float: left;
 
 		img {
 			width: 100%;
 		}
-	}	
+	}
 	.swiper-pagination {
 		text-align: left;
 		bottom: 0;
@@ -80,30 +106,42 @@
 	}
 
 	.single-product-desc {
-		margin-bottom: 15px;
-		padding-left: 50px;
+		width: 67%;
+		max-width: 650px;
+		// margin-bottom: 15px;
+		// padding-left: 40px;
+		@include rem(margin-bottom, 15px);
+		@include rem(padding-left, 40px);
+		float: left;
 
-		h2 {
-			font-size: 35px;
-			margin-bottom: 14px;
+		h3 {
+			// font-size: 35px;
+			// margin-bottom: 14px;
+			@include rem(margin-bottom, 14px);
+			@include fz(35px);
 		}
 		span, p {
 			color: $color-gray;
-			font-size: 16px;
+			// font-size: 16px;
+			@include fz(16px);
 		}
 		span {
 			display: inline-block;
-			margin-bottom: 20px;
+			// margin-bottom: 20px;
+			@include rem(margin-bottom, 20px);
 		}
 		.cost {
-			margin-bottom: 25px;
+			// margin-bottom: 25px;
+			@include rem(margin-bottom, 25px);
 		}
 	}
 	.buttons {
-		margin-top: 25px;
+		// margin-top: 25px;
+		@include rem(margin-top, 25px);
 
 		button {
-			margin-right: 20px;
+			// margin-right: 20px;
+			@include rem(margin-right, 20px);
 		}
 	}
 }

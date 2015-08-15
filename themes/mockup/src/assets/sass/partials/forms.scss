@@ -1,3 +1,72 @@
+// Mixins
+	@mixin additional-colors ($color-value, $color-name) {
+		&.btn-#{$color-name} {
+			background-color: $color-value;
+			border-color: $color-value;
+			&:hover {
+				background-color: lighten($color-value, 10%);
+			}
+		}
+	}
+	
+	// CUSTOM CHECKBOX & RADIO STYLES
+		@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
+			.#{$type} {
+				display: block;
+				position: relative;
+				overflow: hidden;
+
+				input[type="#{$type}"] {
+					position: absolute;
+					left: -1000px;
+					opacity: 0;
+				}
+				span {
+					display: block;
+					position: relative;
+					padding-left: 30px;
+					font-size: 16px;
+					color: $color-light-black;
+					cursor: pointer;
+
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 50%;
+						left: 0;
+						width: $x;
+						height: $x;
+						margin-top: -$x/2;
+						@include bg($filename: 'bg/bg-#{$type}.png');
+					}
+				}
+				input[type="#{$type}"]:checked ~ span:after {
+					background-position: 0 bottom;
+				}
+				b {
+					display: inline-block;
+					position: absolute;
+					top: 0; right: 0;
+					font-weight: normal;
+					font-size: 16px;
+					color: $color-light-black;
+				}
+			}
+			.#{$type}-group {
+				.#{$type} + .#{$type} {
+					margin-top: 10px;
+				}
+				&.#{$type}-group-inline {
+					.#{$type} {
+						display: inline-block;
+					}
+					.#{$type} + .#{$type} {
+						margin-left: 20px;
+					}
+				}
+			}
+		}
 button:focus,
 input:focus, 
 textarea {
@@ -40,10 +109,13 @@ textarea {
 // CUSTOM BUTTONS STYLES
 .btn {
 	$button-color: $bg-orange-color;
-	padding: 11px 25px;
+	// padding: 11px 25px;
+	@include rem(padding, 11px 25px);
 	background-color: $button-color;
 	border: 3px solid $button-color;
-	font: 15px 'R-700';
+	// font: 15px 'R-700';
+	font-family: 'R-700';
+	@include fz(15px);
 	color: #fff;
 	transition: background-color .3s ease;
 
@@ -58,3 +130,4 @@ textarea {
 
 @include customInput();
 @include customInput($type: radio, $x: 17px, $y: 17px);
+

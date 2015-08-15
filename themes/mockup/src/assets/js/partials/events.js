@@ -9,9 +9,9 @@
 		$('body').animate({scrollTop:0}, '400');
 	});
 
-	$('body').on('click', '.classTrigger', function(e) {
+	$('body').on('click', '[data-trigger]', function(e) {
 		e.preventDefault();
-		var divID = $(this).attr('href');
+		var divID = '#' + $(this).data('trigger');
 		if ($(divID).hasClass('opened'))
 			$(divID).removeClass('opened')
 		else

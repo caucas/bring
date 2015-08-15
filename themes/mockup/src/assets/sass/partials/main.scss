@@ -4,7 +4,8 @@
 }
 .main-container {}
 .main-content {
-	padding: 50px;
+	// padding: 50px;
+	@include rem(padding, 50px);
 	background-color: $color-light-white;
 
 	&.fluid {
@@ -12,12 +13,16 @@
 	}
 
 	h2 {
-		font-size: 35px;
-		margin-bottom: 30px;
+		// font-size: 35px;
+		// margin-bottom: 30px;
+		@include fz(35px);
+		@include rem(margin-bottom, 30px);
 	}
 	h3, h4 {
-		font-size: 30px;
-		margin-bottom: 20px;
+		// font-size: 30px;
+		// margin-bottom: 20px;
+		@include fz(30px);
+		@include rem(margin-bottom, 20px);
 	}
 	h2 {
 		text-transform: uppercase;
@@ -30,14 +35,17 @@
 
 	.cat-item {
 		position: relative;
-		margin-bottom: 45px;
-		padding-right: 45px;
+		// width: 33%;
 		height: 220px;
+		margin-bottom: 45px;
+		font-size: 0;
 	}
 	.item-image {
-		position: absolute;
-		width: 220px;
+		display: inline-block;
+		width: 50%;
 		height: 100%;
+		overflow: hidden;
+		vertical-align: top;
 
 		a {
 			display: block;
@@ -48,8 +56,11 @@
 		}
 	}
 	.item-desc {
-		height: 220px;
-		padding: 25px 25px 25px 245px;
+		display: inline-block;
+		width: 50%;
+		height: 100%;
+		padding: 25px;
+		vertical-align: top;
 		background-color: #fff;
 		box-shadow:1px 1px 1px rgba(0,0,0,0.12);
 
@@ -139,36 +150,19 @@
 
 // CATALOG FILTER
 .filter {
-	width: 340px;
+	@include rem(margin-bottom, 40px);
 	padding-right: 55px;
 	float: left;
 
-	.heading {
-		position: relative;
-		margin-bottom: 20px;
-
-		div {
-			font: 22px 'Myriad Pro Condensed';
-			color: $color-light-blue;
-			text-transform: uppercase;
-		}
-		.clearFilter {
-			position: absolute;
-			top: 5px;
-			right: 0;
-			font: 14px 'Myriad Pro Condensed';
-			color: #9E9E9E;
-		}
-	}
 	.checkbox-group {
-		margin-bottom: 50px;
+		margin-bottom: 40px;
 
 		.checkbox-group-title {
 			position: relative;
-			margin-bottom: 20px;
+			// margin-bottom: 20px;
 
-			div {
-				font: 22px 'Myriad Pro Condensed';
+			span {
+				font: 22px 'm-cond';
 				color: $color-light-blue;
 				text-transform: uppercase;
 			}
@@ -176,12 +170,12 @@
 				position: absolute;
 				top: 5px;
 				right: 0;
-				font: 14px 'Myriad Pro Condensed';
+				font: 14px 'm-cond';
 				color: #9E9E9E;
 			}
 		}
+		.checkbox-group-items {
+			margin-top: 20px;
+		}
 	}
-}
-.products {
-	padding-left: 340px;
 }

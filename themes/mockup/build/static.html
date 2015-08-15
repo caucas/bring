@@ -46,7 +46,7 @@
             </label><span class="info-block label-required">- Обязательные поля</span>
           </fieldset>
         </fieldset>
-      </form><a href="#auth-block" class="trigger-btn classTrigger"></a>
+      </form><a href="#" data-trigger="auth-block" class="trigger-btn"></a>
     </div>
     <div class="main-wrap">
       <aside>
@@ -55,6 +55,13 @@
         <div class="logo-icon"></div>
         <nav>
           <ul>
+            <li><span>Страницы</span>
+              <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/catalog.html">Каталог</a></li>
+                <li><a href="/static.html">Новость</a></li>
+              </ul>
+            </li>
             <li><span>Модальное окна</span>
               <ul>
                 <li><a href="#" data-modal="order" data-animation="fade">Заказ</a></li>
@@ -113,11 +120,11 @@
       </aside>
       <div class="main-container">
         <header>
-          <div class="user-area"><a href="#auth-block" class="auth-btn classTrigger"></a><a href="#" class="basket-btn"></a>
+          <div class="user-area"><a href="#" data-trigger="auth-block" class="auth-btn"></a><a href="#" data-modal="basket" class="basket-btn"></a>
           </div>
           <form class="top-search">
             <input type="text" name="s" placeholder="Поиск (например: Молоко, Ресторан, Скидка)">
-            <input type="button" class="search-btn">
+            <button type="button" class="search-btn"></button>
           </form>
         </header>
         <div class="breads">
@@ -175,9 +182,9 @@
               Все права защищены
             </p>
           </div>
-          <div class="col-2 add-links wrap center-xl xl-1-4"><a href="#" class="xl-1-3"><img src="/assets/images/icon/icon-lamp.png">
-              <div>Афиша</div></a><a href="#" class="xl-1-3"><img src="/assets/images/icon/icon-streams.png">
-              <div>Трансляции</div></a><a href="#" class="xl-1-3"><img src="/assets/images/icon/icon-star.png">
+          <div class="col-2 add-links wrap center-xl xl-1-4"><a href="#" class="xl-1-3"><img src="/assets/images/icon/icon-lamp.png" alt="lamp">
+              <div>Афиша</div></a><a href="#" class="xl-1-3"><img src="/assets/images/icon/icon-streams.png" alt="streams">
+              <div>Трансляции</div></a><a href="#" class="xl-1-3"><img src="/assets/images/icon/icon-star.png" alt="star">
               <div>Рейтинги</div></a></div>
           <div class="col-3 xl-5-12">
             <div class="social"><a href="#" class="icon icon-tw"></a><a href="#" class="icon icon-fb"></a><a href="#" class="icon icon-yt"></a><a href="#" class="icon icon-ig"></a><a href="#" class="icon icon-gp"></a><a href="#" class="icon icon-wp"></a>
@@ -286,10 +293,10 @@
           <h4 class="radio-group-title">Выбор варианта:</h4>
           <div class="radio-group-items">
             <label class="radio">
-              <input id="pay1" type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
+              <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
             </label>
             <label class="radio">
-              <input id="pay2" type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
+              <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
             </label>
           </div>
         </div>
@@ -342,10 +349,10 @@
         <div class="order-payments radio-group xl-1-1">
           <label class="radio-group-title">Методы оплаты</label>
           <label class="radio">
-            <input id="pay1" type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
+            <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
           </label>
           <label class="radio">
-            <input id="pay2" type="radio" name="order-payment" value="2"><span>Безналичная оплата</span><img src="/assets/images/payments.jpg" alt="payments">
+            <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span><img src="/assets/images/payments.jpg" alt="payments">
           </label>
         </div>
       </div>

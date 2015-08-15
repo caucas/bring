@@ -1,12 +1,14 @@
 * {
 	margin: 0;
 	padding: 0;
-	font: 100% 'R-300';
+	font-family: 'R-300';
+	font-weight: normal;
 	box-sizing: border-box;
 }
 
 html,
 body {
+	font-size: $base-font-size;
 	// height: 100%;
 }
 
@@ -16,6 +18,7 @@ a {
 
 	&.tel {
 		font-size: 20px;
+		// @include fz(20px);
 	}
 }
 
@@ -23,6 +26,7 @@ p {
 	font-size: 13px;
 	& + & {
 		margin-top: 20px;
+		@include rem(margin-top, 20px);
 	}
 }
 
@@ -30,16 +34,20 @@ h1, h2, h3, h4, h5 {
 	margin: 0;
 }
 h2 {
-	font-size: 40px;
+	// font-size: 40px;
+	@include fz(40px);
 }
 h2 {
-	font-size: 35px;
+	// font-size: 35px;
+	@include fz(35px);
 }
 h3 {
-	font-size: 30px;
+	// font-size: 30px;
+	@include fz(30px);
 }
 h4 {
-	font-size: 22px;
+	// font-size: 22px;
+	@include fz(22px);
 	text-transform: none;
 }
 
@@ -72,7 +80,8 @@ nav {
 }
 
 .cost {
-	font-size: 30px;
+	// font-size: 30px;
+	@include fz(30px);
 	color: $color-dark-red;
 
 	sub {
@@ -80,7 +89,8 @@ nav {
 		color: #000;
 	}
 	&.cost-small {
-		font-size: 22px;
+		// font-size: 22px;
+		@include fz(22px);
 
 		sub {
 			font-size: 10px;
@@ -90,6 +100,7 @@ nav {
 
 ul.list {
 	margin: 25px 0 25px 16px;
+	@include rem(margin, 25px 0 25px 16px);
 
 	li {
 		position: relative;

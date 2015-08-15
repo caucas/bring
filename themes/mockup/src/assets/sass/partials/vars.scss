@@ -1,3 +1,6 @@
+// GLOBAL VARS
+	$base-font-size: 16px;
+
 // COLORS
 	// bg colors
 	$bg-dark-color		: #21282E;
@@ -16,83 +19,44 @@
 	$color-red			: #D80000;
 
 // MIXINS
-
-@mixin bg ($filename, $bgcolor:transparent, $pos: 0 0, $repeat:no-repeat) {
-	background: $bgcolor url('../../assets/images/' + $filename) $pos $repeat;
-}
-
-@mixin additional-colors ($color-value, $color-name) {
-	&.btn-#{$color-name} {
-		background-color: $color-value;
-		border-color: $color-value;
-		&:hover {
-			background-color: lighten($color-value, 10%);
-		}
+	@mixin bg ($filename, $bgcolor:transparent, $pos: 0 0, $repeat:no-repeat) {
+		background: $bgcolor url('../../assets/images/' + $filename) $pos $repeat;
 	}
-}
 
-@mixin gradient ($img, $from, $to, $pos: 0 0, $repeat: repeat) {
-	background-image: radial-gradient(circle at center, $from 0%, $to 100%), url('../../assets/images/' + $img);
-	background-repeat: $repeat;
-	background-position: $pos;
-}
-
-
-// CUSTOM CHECKBOX & RADIO STYLES
-@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
-	.#{$type} {
-		display: block;
-		position: relative;
-		overflow: hidden;
-
-		input[type="#{$type}"] {
-			position: absolute;
-			left: -1000px;
-			opacity: 0;
-		}
-		span {
-			display: block;
-			position: relative;
-			padding-left: 30px;
-			font-size: 16px;
-			color: $color-light-black;
-			cursor: pointer;
-
-			&:after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 50%;
-				left: 0;
-				width: $x;
-				height: $x;
-				margin-top: -$x/2;
-				@include bg($filename: 'bg/bg-#{$type}.png');
-			}
-		}
-		input[type="#{$type}"]:checked ~ span:after {
-			background-position: 0 bottom;
-		}
-		b {
-			display: inline-block;
-			position: absolute;
-			top: 0; right: 0;
-			font-weight: normal;
-			font-size: 16px;
-			color: $color-light-black;
-		}
+	@mixin gradient ($img, $from, $to, $pos: 0 0, $repeat: repeat) {
+		background-image: radial-gradient(circle at center, $from 0%, $to 100%), url('../../assets/images/' + $img);
+		background-repeat: $repeat;
+		background-position: $pos;
 	}
-	.#{$type}-group {
-		.#{$type} + .#{$type} {
-			margin-top: 10px;
-		}
-		&.#{$type}-group-inline {
-			.#{$type} {
-				display: inline-block;
+
+	// REM UNIVERSAL MIXIN (with fallbacks)
+		@mixin rem($property, $values) {
+			$font-size: $base-font-size;
+			$px-values: ();
+			$rem-values: ();
+
+			@each $value in $values {
+				@if $value == 0 or $value == 0px {
+					$px-values: join($px-values, 0);
+					$rem-values: join($rem-values, 0);
+				} @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+					$new-rem-value: $value / $font-size;
+					$px-values: join($px-values, round($value));
+					$rem-values: join($rem-values, #{$new-rem-value}rem);
+				} @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+					$px-values: join($px-values, #{$value});
+					$rem-values: join($rem-values, #{$value});
+				} @else if $value == auto {
+					$px-values: join($px-values, auto);
+					$rem-values: join($rem-values, auto);
+				} @else {
+					$px-values: join($px-values, round($value * $font-size));
+					$rem-values: join($rem-values, #{$value}rem);
+				}
 			}
-			.#{$type} + .#{$type} {
-				margin-left: 20px;
-			}
+			#{$property}: $px-values;
+			#{$property}: $rem-values;
 		}
-	}
-}
+			@mixin fz($fz) {
+				@include rem(font-size, $fz);
+			}

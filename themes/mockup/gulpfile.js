@@ -74,7 +74,7 @@ var gulp		= require('gulp'),
 			.pipe(plumber())
 			// .pipe(sass().on('error', sass.logError))
 			.pipe(sass())
-			.pipe(autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']}))
+			.pipe(autoprefixer({browsers: ['last 2 versions', 'Firefox >= 20', 'Opera 12.1', 'ie >= 8']}))
 			.pipe(cssimport())
 			// .pipe(minifyCSS())
 			.pipe(rename('style.min.css'))
