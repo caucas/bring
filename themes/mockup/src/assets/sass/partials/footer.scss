@@ -2,6 +2,7 @@ footer {
 	position: relative;
 	height: 240px;
 	padding: 40px 50px;
+	@include rem(padding, 40px 50px);
 	border-top: 3px solid $color-gray;
 	background-color: $bg-dark-color;
 	color: #B8B8B8;
@@ -21,11 +22,13 @@ footer {
 
 	nav {
 		margin-bottom: 40px;
+		@extend .clrfix;
 		ul {
-			padding-right: 10px;
+			float: left;
+			padding-right: 5%;
 		}
 		li {
-			margin-bottom: 3px;
+			margin-bottom: 5px;
 		}
 		a {
 			color: #E6E6E6;
@@ -45,7 +48,10 @@ footer {
 	}
 
 	.add-links {
+		text-align: center;
 		a {
+			display: inline-block;
+			margin: 0 5px;
 			font-size: 15px;
 			vertical-align: bottom;			
 			text-transform: uppercase;
@@ -63,11 +69,9 @@ footer {
 		}
 	}
 
-	.col-3 {
-		padding-left: 5%;
-	}
 	.social {
 		margin-bottom: 35px;
+		padding-left: 5%;
 
 		.icon {
 			display: inline-block;
@@ -90,6 +94,7 @@ footer {
 		}
 	}
 	.info {
+		padding-left: 5%;
 		font-size: 13px;
 		color: $color-gray;
 		opacity: .8;

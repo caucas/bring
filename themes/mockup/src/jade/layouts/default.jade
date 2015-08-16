@@ -14,13 +14,12 @@ html
 		block head
 	body
 		include ../include/auth.jade
-		.main-wrap
+		include ../include/header.jade
+		.main-container
 			include ../include/sidebar.jade
-			.main-container
-				include ../include/header.jade
-				block breads
-				block content
-				include ../include/footer.jade
+			block breads
+			block content
+			include ../include/footer.jade
 		block modals
 			include ../include/modals.jade
 

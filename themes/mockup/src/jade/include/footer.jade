@@ -1,12 +1,12 @@
-footer.wrap.left-xl
-	.col-1.xl-4-12
-		nav.footer-nav.wrap.left-xl
-			ul.xl-3-5
+footer.wrap
+	.xl-4-12.md-6-12.xs-1-1
+		nav
+			ul
 				li: a(href="#") Раздел для партнеров
 				li: a(href="#") Пользовательское соглашение
 				li: a(href="#") Контакты
 				li: a(href="#") Акции
-			ul.xl-2-5
+			ul
 				li: a(href="#") Доставка пиццы
 				li: a(href="#") Доставка еды
 				li: a(href="#") Метро
@@ -14,22 +14,22 @@ footer.wrap.left-xl
 		p.copy
 			| © 2009-2015 Доставка Владикавказ <br>
 			| Все права защищены
-	.col-2.add-links.wrap.center-xl.xl-1-4
-		a.xl-1-3(href="#")
+	.add-links.xl-1-4.hidden-md
+		a(href="#")
 			img(src="/assets/images/icon/icon-lamp.png", alt="lamp")
 			div Афиша
-		a.xl-1-3(href="#")
+		a(href="#")
 			img(src="/assets/images/icon/icon-streams.png", alt="streams")
 			div Трансляции
-		a.xl-1-3(href="#")
+		a(href="#")
 			img(src="/assets/images/icon/icon-star.png", alt="star")
 			div Рейтинги
-	.col-3.xl-5-12
+	.xl-5-12.md-6-12
 		.social
 			- var socials = ['tw', 'fb', 'yt', 'ig', 'gp', 'wp']
 			each item in socials
 				a(href="#", class="icon icon-#{item}")
-		p.info 
+		p.info.hidden-xs
 			| Доставка — это независимый клубный проект, объединивший сотни служб доставки
 			| пиццы, суши, еды и продуктов в Единую Систему Заказов.
 			| Цель проекта — обеспечить своим пользователям наилучшие условия для быстрого,

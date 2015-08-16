@@ -109,13 +109,13 @@ textarea {
 // CUSTOM BUTTONS STYLES
 .btn {
 	$button-color: $bg-orange-color;
-	// padding: 11px 25px;
-	@include rem(padding, 11px 25px);
+	padding: 11px 25px;
+	// @include rem(padding, 11px 25px);
 	background-color: $button-color;
 	border: 3px solid $button-color;
-	// font: 15px 'R-700';
 	font-family: 'R-700';
-	@include fz(15px);
+	font-size: 15px;
+	// @include fz(15px);
 	color: #fff;
 	transition: background-color .3s ease;
 

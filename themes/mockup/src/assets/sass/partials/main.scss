@@ -1,11 +1,10 @@
-.main-wrap {
+.main-container {
 	position: relative;
-	padding-left: 250px;
+	padding-left: $aside-width;
 }
-.main-container {}
 .main-content {
-	// padding: 50px;
-	@include rem(padding, 50px);
+	position: relative;
+	@include rem(padding, 50px 40px 0);
 	background-color: $color-light-white;
 
 	&.fluid {
@@ -35,7 +34,6 @@
 
 	.cat-item {
 		position: relative;
-		// width: 33%;
 		height: 220px;
 		margin-bottom: 45px;
 		font-size: 0;
@@ -155,6 +153,7 @@
 	float: left;
 
 	.checkbox-group {
+		position: relative;
 		margin-bottom: 40px;
 
 		.checkbox-group-title {
@@ -166,16 +165,16 @@
 				color: $color-light-blue;
 				text-transform: uppercase;
 			}
-			.clearFilter {
-				position: absolute;
-				top: 5px;
-				right: 0;
-				font: 14px 'm-cond';
-				color: #9E9E9E;
-			}
 		}
 		.checkbox-group-items {
 			margin-top: 20px;
+		}
+		.clearFilter {
+			position: absolute;
+			top: 5px;
+			right: 30px;
+			font: 14px 'm-cond';
+			color: #9E9E9E;
 		}
 	}
 }

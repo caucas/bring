@@ -7,21 +7,21 @@ block breads
 block content
 	.main-content.wrap
 		.filter.wrap.xl-3-11.md-1-1
-			#catalogFilter1.checkbox-group.xl-1-1.md-2-5
-				.checkbox-group-title(data-trigger="catalogFilter1")
-					span Категория
+			.checkbox-group.xl-1-1.md-2-5.xs-1-2.xxs-1-1
+				.checkbox-group-title
+					span(data-trigger="catalogFilter1") Категория
 					a.clearFilter(href="#") Очистить
-				.checkbox-group-items
+				#catalogFilter1.checkbox-group-items
 					- var categoryOptions = ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома', 'Косметика и гигиена', 'Бытовая техника и электроника', 'Всё для детей', 'Бакалея', 'Напитки', 'Подарочные наборы']
 					each item in categoryOptions
 						label.checkbox
 							input(type="checkbox")
 							span= item
-			#catalogFilter2.checkbox-group.xl-1-1.md-2-5
-				.checkbox-group-title(data-trigger="catalogFilter2")
-					span Доп. фильтр
+			.checkbox-group.xl-1-1.md-2-5.xs-1-2.xxs-1-1
+				.checkbox-group-title
+					span(data-trigger="catalogFilter2") Доп. фильтр
 					a.clearFilter(href="#") Очистить
-				.checkbox-group-items
+				#catalogFilter2.checkbox-group-items
 					- var addFilterOptions = ['Вегитарианское', 'Разноцветное', 'Вкусное', 'Черное', 'Красное', 'Ароматное', 'Горячее']
 					each item in addFilterOptions
 						label.checkbox

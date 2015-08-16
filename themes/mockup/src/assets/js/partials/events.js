@@ -12,8 +12,15 @@
 	$('body').on('click', '[data-trigger]', function(e) {
 		e.preventDefault();
 		var divID = '#' + $(this).data('trigger');
-		if ($(divID).hasClass('opened'))
-			$(divID).removeClass('opened')
-		else
-			$(divID).addClass('opened')
+		if (!$(divID).hasClass('opened')) {
+			$(divID).addClass('opened');
+			setTimeout(function() {
+				$(document).bind('click.jm-trigger', function(e) {
+					if (!$(e.target).closest(divID).length)  {
+						$(divID).removeClass('opened');
+						$(this).unbind('click.jm-trigger');
+					}
+				})
+			}, 0);
+		}
 	});

@@ -1,10 +1,10 @@
 .best-offers.wrap
 	.filter.wrap.xl-3-11.md-1-1
-		#bestOffersFilter.checkbox-group.xl-1-1.md-2-5
-			.checkbox-group-title(data-trigger="bestOffersFilter")
-				span Кухни/Блюда
+		.checkbox-group.xl-1-1.md-2-5.xs-4-5
+			.checkbox-group-title
+				span(data-trigger="bestOffersFilter") Кухни/Блюда
+			#bestOffersFilter.checkbox-group-items
 				a.clearFilter(href="#") Очистить
-			.checkbox-group-items
 				- var filterOptions = ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома', 'Косметика и гигиена', 'Бытовая техника и электроника', 'Всё для детей', 'Бакалея', 'Напитки', 'Подарочные наборы']
 				each item in filterOptions
 					label.checkbox

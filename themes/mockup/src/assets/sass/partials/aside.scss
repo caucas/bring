@@ -3,11 +3,10 @@ aside {
 	top: 0;
 	// bottom: 0;
 	left: 0;
-	width: 250px;
+	width: $aside-width;
 	min-height: 100%;
-	// padding: 25px 35px 150px;
-	@include rem(padding, 25px 35px 150px);
-	background: $bg-dark-color url(../../assets/images/aside-logo.png) no-repeat 0 80px;
+	padding: 265px 35px 150px;
+	@include bg($bgcolor: $bg-dark-color, $filename: 'aside-logo.png');
 	color: $color-light-white;
 
 	&:after {
@@ -18,39 +17,13 @@ aside {
 		left: 0;
 		width: 100%;
 		height: 140px;
-		background: url(../../assets/images/bg/bg-aside.png) no-repeat left bottom;
+		@include bg($filename: 'bg/bg-aside.png', $pos: -45px bottom);
 	}
 
 	a {
 		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
-		}
-	}
-
-	.logo {
-		margin-bottom: 250px;
-		@extend .clrfix;
-
-		a {
-			display: block;
-		}
-		img {
-			float: left;
-		}
-		div {
-			display: inline-block;
-			height: 33px;
-			line-height: 33px;
-			margin: 0;
-			margin-left: 15px;
-			padding-left: 15px;
-			vertical-align: top;
-			font-size: 18px;
-			font-family: 'm-cond';
-			color: #e3e3e3;
-			text-transform: uppercase;
-			border-left: 1px solid #777;
 		}
 	}
 

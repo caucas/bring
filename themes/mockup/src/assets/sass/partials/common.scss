@@ -12,7 +12,7 @@ body {
 	// height: 100%;
 }
 
-a {
+a, span {
 	color: inherit;
 	font: inherit;
 
@@ -80,8 +80,8 @@ nav {
 }
 
 .cost {
-	// font-size: 30px;
-	@include fz(30px);
+	font-size: 30px;
+	// @include fz(30px);
 	color: $color-dark-red;
 
 	sub {

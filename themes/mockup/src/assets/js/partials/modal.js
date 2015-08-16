@@ -14,7 +14,7 @@
 			animationSpeed: 200,
 			nonModal: true,
 			closeBtn: 'close-modal'
-		}; 
+		};
 
 		//Extend dem' options
 		var options = $.extend({}, defaults, options); 
@@ -33,13 +33,15 @@
 
 			//Entrance Animations
 			modal.bind('modal:open', function () {
-				// $('body').addClass('no-scroll');
+				if ($(window).innerWidth() < 800)
+					$('body').addClass('no-scroll');
 				modalBG.unbind('click.modalEvent');
 				$('.' + options.closeBtn).unbind('click.modalEvent');
 				if(!locked) {
 					lockModal();
 					if(options.animation == "fade") {
 						modal.css({
+							'display' : 'block',
 							'opacity' : 0,
 							'visibility' : 'visible',
 							'top': $(document).scrollTop()+topMeasure
@@ -52,6 +54,7 @@
 					if(options.animation == "none") {
 						modal.css({
 							'visibility' : 'visible',
+							'display' : 'block',
 							'top':$(document).scrollTop()+topMeasure
 						});
 						modalBG.css({"display":"block"});	
@@ -63,7 +66,8 @@
 
 			//Closing Animation
 			modal.bind('modal:close', function () {
-				// $('body').removeClass('no-scroll');
+				if ($('body').hasClass('no-scroll'))
+					$('body').removeClass('no-scroll');
 				if(!locked) {
 					lockModal();
 					if(options.animation == "fade") {
@@ -73,6 +77,7 @@
 						}, options.animationSpeed, function() {
 							modal.css({
 								'opacity' : 1,
+								'display' : 'none',
 								'visibility' : 'hidden',
 								'top' : topMeasure
 							});
@@ -80,7 +85,11 @@
 						});					
 					}  	
 					if(options.animation == "none") {
-						modal.css({'visibility' : 'hidden', 'top' : topMeasure});
+						modal.css({
+							'display' : 'none',
+							'visibility' : 'hidden',
+							'top' : topMeasure
+						});
 						modalBG.css({'display' : 'none'});	
 					}		
 				}

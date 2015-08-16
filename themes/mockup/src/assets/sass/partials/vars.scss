@@ -1,5 +1,7 @@
 // GLOBAL VARS
-	$base-font-size: 16px;
+	$aside-width		: 250px;
+	$user-area-width	: 170px;
+	$base-font-size		: 16px;
 
 // COLORS
 	// bg colors
@@ -19,7 +21,7 @@
 	$color-red			: #D80000;
 
 // MIXINS
-	@mixin bg ($filename, $bgcolor:transparent, $pos: 0 0, $repeat:no-repeat) {
+	@mixin bg ($filename, $bgcolor: null, $pos: 0 0, $repeat:no-repeat) {
 		background: $bgcolor url('../../assets/images/' + $filename) $pos $repeat;
 	}
 

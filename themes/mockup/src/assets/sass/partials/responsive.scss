@@ -12,7 +12,7 @@
 			.cat {
 				width: 77%;
 				.cat-item {
-					width: 33%;
+					// width: 33%;
 				}
 			}
 		}
@@ -21,12 +21,16 @@
 				max-width: 100%;
 			}
 		}
+		// footer.scss
+		footer nav ul {
+			padding-right: 10%;
+		}
 	}
 
 // lg
 	@media only screen and (max-width: 1441px) {
 		html {
-			font-size: 14px;
+			font-size: 15px;
 		}
 		#auth-block {
 			padding: 30px 10%;
@@ -60,7 +64,7 @@
 // md
 	@media only screen and (max-width: 1281px) {
 		html {
-			font-size: 12px;
+			font-size: 13px;
 		}
 		// main.scss
 		.filter {
@@ -100,14 +104,8 @@
 				.checkbox-group-items {
 					display: none;
 					padding-left: 10px;
-				}
-				&.opened {
-					.checkbox-group-title {
-						a {
-							display: inline-block;
-						}
-					}
-					.checkbox-group-items {
+
+					&.opened {
 						display: block;
 					}
 				}
@@ -117,13 +115,245 @@
 
 // sm
 	@media only screen and (max-width: 1025px) {
-		// header.scss
+		// common.scss
+			// цвет заливки стрелки вниз
+			.filter .checkbox-group .checkbox-group-title:after {
+				border-color: #fff transparent transparent transparent;
+			}
+		// main.scss
+		.main-container {
+			padding-left: 0;
+		}
+		.main-content {
+			background-color: #fff;
+		}
+		.filter {
+			padding-left: 15px;
+		}
+		.cat {
+			margin: 0;
+			margin-left: -15px;
+
+			.cat-item {
+				padding: 0;
+				padding-left: 30px;
+			}
+			h2, h3 {
+				padding-left: 30px;
+			}
+		}
+
+		// auth.scss
 		#auth-block {
 			padding: 30px;
 			.info-block {
 				display: none;
 			}
 		}
+
+		// header.scss
+		header {
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+		}
+		.logo {
+			width: auto;
+			button {
+				display: inline-block;
+			}
+		}
+		.top-search {
+			width: 100%;
+			position: relative;
+			left: 0;
+			right: 0;
+		}
+
+		// aside.scss
+		aside {
+			top: -80px;
+			bottom: 0;
+			margin-left: -$aside-width;
+			padding: 35px;
+			background-image: none;
+			transition: margin-left .3s;
+			z-index: 10;
+
+			&.opened {
+				margin-left: 0;
+			}
+		}
+
+		// home.css
+		// .best-offers .filter {
+		// 	padding-left: 30px;
+		// }
+		
+		// footer.scss
+		footer {
+			&:after {
+				display: none;
+			}
+		}
 	}
 
 // xs
+	@media only screen and (max-width: 800px) {
+		html {
+			font-size: 12px;
+		}
+
+		// common.scss
+		.cat {
+			.cat-item {
+				height: auto;
+				.item-image,
+				.item-desc {
+					width: 100%;
+					height: 190px;
+				}
+				.item-desc {
+					box-shadow:1px 2px 1px rgba(0,0,0,0.12);
+					p {
+						height: 55px;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+
+		// modals.scss
+		.modal {
+			position: fixed;
+			top: 0 !important;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			overflow: auto;
+		}
+
+		// header.scss
+		.top-search {
+			input[type="text"] {
+				font-size: 16px;
+			}
+		}
+
+		aside {
+			min-height: 0px;
+			&:after {
+				background-image: none;
+			}
+		}
+
+		.top-slider {
+			.slide-content {
+				.image {
+					width: 50%;
+				}
+				.desc {
+					div {
+						line-height: 90%;
+						margin-bottom: 10px;
+					}
+				}
+			}
+			.swiper-pagination {
+				text-align: center;
+				bottom: 10px;
+			}
+		}
+		.single-product {
+			.single-product-slider {
+				width: 50%;
+				// max-width: 100%
+			}
+			.single-product-desc {
+				width: 50%;
+			}
+		}
+
+		// footer.scss
+		footer {
+			height: 270px;
+			@include bg($bgcolor: $bg-dark-color, $filename: 'bg/bg-aside.png', $pos: 95% bottom);
+
+			nav {
+				margin: 55px 0 40px;
+			}
+			.social {
+				position: absolute;
+				top: 35px;
+				left: 35px;
+				padding: 0;
+			}
+		}
+	}
+
+// xxs
+	@media only screen and (max-width: 600px) {
+		html {
+			font-size: 10px;
+		}
+
+		// main.scss
+		.filter .checkbox-group {
+			margin-bottom: 20px;
+			padding-right: 0;
+		}
+
+		// home.scss
+		.single-product {
+			.single-product-slider {
+				width: 100%;
+				max-width: 100%;
+				margin-bottom: 20px;
+			}
+			.single-product-desc {
+				width: 100%;
+				padding: 0;
+			}
+		}
+	}
+// xxxs
+	@media only screen and (max-width: 480px) {
+		// header.scss
+		.logo div {
+			display: none;
+		}
+
+		// main.scss
+		.cat {
+			.cat-item {
+				width: 100%;
+			}
+		}
+
+		// home.scss
+		.top-slider {
+			.slide-content {
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0; bottom: 0;
+					left: 0; right: 0;
+					background: rgba(0,0,0, .5);
+				}
+				.image {
+					display: block;
+					width: 100%;
+				}
+				.desc {
+					display: block;
+					position: absolute;
+					bottom: 30px;
+					left: 0;
+					width: 100%;
+					max-height: 100%;
+					padding: 30px;
+					overflow: hidden;
+				}
+			}
+		}
+	}
