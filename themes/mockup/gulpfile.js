@@ -24,31 +24,32 @@ var gulp		= require('gulp'),
 
 // paths
 	var build = {
-		root: 	'./build/',
-		html: 	'./build/*.html',
-		js: 	'./build/assets/js/',
-		css: 	'./build/assets/css/',
-		img: 	'./build/assets/images/',
-		fonts: 	'./build/assets/fonts/'
+		root: 		'./build/',
+		templates: 	'./build/jade/',
+		js: 		'./build/assets/js/',
+		css: 		'./build/assets/css/',
+		img: 		'./build/assets/images/',
+		fonts: 		'./build/assets/fonts/'
 	},
 	src = {
 		// html: 	'src/*.html',
-		root: 	'./src/',
-		jade: 	'./src/jade/views/*.jade',
-		js: 	'./src/assets/js/app.js',
-		sass: 	'./src/assets/sass/style.scss',
-		img: 	'./src/assets/images/**/*.*',
-		fonts: 	'./src/assets/fonts/**/*.{ttf,woff,woff2,eot,svg}'
+		root: 		'./src/',
+		templates: 	'./src/jade/**/*.jade',
+		jade:		'./src/jade/views/*.jade',
+		js: 		'./src/assets/js/app.js',
+		sass: 		'./src/assets/sass/style.scss',
+		img: 		'./src/assets/images/**/*.*',
+		fonts: 		'./src/assets/fonts/**/*.{ttf,woff,woff2,eot,svg}'
 	},
 	watch = {
 		// html: 	'src/**/*.html',
-		jade: 	'./src/jade/**/*.jade',
+		jade: 		'./src/jade/**/*.jade',
 		// jade: 	'./src/jade/views/*.jade',
-		js: 	'./src/assets/js/**/*.js',
-		sass: 	'./src/assets/sass/**/*.scss',
-		img: 	'./src/assets/images/**/*.*',
-		fonts: 	'./src/assets/fonts/**/*.*',
-		bower: 	'./bower.json'
+		js: 		'./src/assets/js/**/*.js',
+		sass: 		'./src/assets/sass/**/*.scss',
+		img: 		'./src/assets/images/**/*.*',
+		fonts: 		'./src/assets/fonts/**/*.*',
+		bower: 		'./bower.json'
 	};
 
 // server config
@@ -91,6 +92,16 @@ var gulp		= require('gulp'),
 			.pipe(gulp.dest(build.root))
 			.pipe(connect.reload())
 			.pipe(notify("JADE compiled"));
+	});
+
+// jade preprocessing
+	gulp.task('templates', function () {
+		gulp.src(src.templates)
+			.pipe(plumber())
+			.pipe(jade({pretty: true}))
+			.pipe(gulp.dest(build.templates))
+			.pipe(connect.reload())
+			.pipe(notify("TEMPLATES compiled"));
 	});
 
 // js copy files
@@ -168,4 +179,7 @@ var gulp		= require('gulp'),
 	});
 
 // default
-gulp.task('default', ['connect', 'sass', 'jade',  'js', 'watch']);
+gulp.task('default', ['connect', 'sass', 'jade', 'js', 'fonts', 'img', 'watch']);
+
+// new build
+gulp.task('build', ['sass', 'jade', 'js', 'fonts', 'img']);

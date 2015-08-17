@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bringo</title>
+    <meta charset="UTF-8">
+    <meta name="desciption" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/vendor.min.css">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+  </head>
+  <body>
+    <div id="auth-block" class="wrap left-xl">
+      <form id="login-form" class="xl-4-12">
+        <fieldset>
+          <legend>Авторизация</legend>
+          <label>Имя пользователя</label>
+          <input type="text" required>
+          <label>Пароль</label>
+          <input type="password" required>
+        </fieldset>
+        <fieldset>
+          <button class="btn">Войти</button>
+        </fieldset>
+      </form>
+      <form id="reg-form" class="xl-8-12">
+        <fieldset class="wrap left-xl">
+          <legend>Регистрация</legend>
+          <fieldset class="xl-1-2">
+            <label class="label-required">ФИО</label>
+            <input type="text" required>
+            <label class="label-required">Контактный телефон</label>
+            <input type="tel" required>
+          </fieldset>
+          <fieldset class="xl-1-2">
+            <label class="label-required">E-mail</label>
+            <input type="email" required>
+            <label class="label-required">Пароль</label>
+            <input type="password" required>
+          </fieldset>
+          <fieldset>
+            <button class="btn">Регистрация</button>
+            <label class="checkbox">
+              <input type="checkbox"><span>Согласен с условиями <br> пользовательского соглашения</span>
+            </label><span class="info-block label-required">- Обязательные поля</span>
+          </fieldset>
+        </fieldset>
+      </form><a href="#" data-trigger="auth-block" class="trigger-btn"></a>
+    </div>
+    <header>
+      <div class="logo">
+        <button data-trigger="aside"></button><a href="/"><img src="/assets/images/logo.png" alt="logo">
+          <div>Доставка</div></a>
+      </div>
+      <div class="user-area"><a href="#" data-trigger="auth-block" class="auth-btn"></a><a href="#" data-modal="basket" class="basket-btn"></a>
+      </div>
+      <form class="top-search">
+        <input type="text" name="s" placeholder="Поиск (например: Молоко, Ресторан, Скидка)">
+        <button type="button" class="search-btn"></button>
+      </form>
+    </header>
+    <div class="main-container">
+      <aside id="aside">
+        <nav>
+          <ul>
+            <li><span>Страницы</span>
+              <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/catalog.html">Каталог</a></li>
+                <li><a href="/static.html">Новость</a></li>
+              </ul>
+            </li>
+            <li><span>Модальное окна</span>
+              <ul>
+                <li><a href="#" data-modal="order" data-animation="fade">Заказ</a></li>
+                <li><a href="#" data-modal="mods">Модификаторы</a></li>
+                <li><a href="#" data-modal="basket">Корзина</a></li>
+              </ul>
+            </li>
+            <li><a href="#">ГОТОВЫЕ БЛЮДА</a>
+              <ul>
+                <li><a href="#">Мясные продукты</a></li>
+                <li><a href="#">Замороженные продукты</a></li>
+                <li><a href="#">Молочные продукты</a></li>
+                <li><a href="#">Рыба</a></li>
+                <li><a href="#">Кондитерские изделия</a></li>
+                <li><a href="#">Хлебобулочные изделия</a></li>
+                <li><a href="#">Овощи, фрукты</a></li>
+              </ul>
+            </li>
+            <li><a href="#">продукты</a>
+              <ul>
+                <li><a href="#">Всё для детей</a></li>
+                <li><a href="#">Бакалея</a></li>
+                <li><a href="#">Напитки</a></li>
+                <li><a href="#">Подарочные наборы</a></li>
+              </ul>
+            </li>
+            <li><a href="#">цветы</a>
+              <ul>
+                <li><a href="#">Напитки</a></li>
+                <li><a href="#">Подарочные наборы</a></li>
+              </ul>
+            </li>
+            <li><a href="#">аптека</a>
+              <ul>
+                <li><a href="#">Лекартства</a></li>
+                <li><a href="#">Памперсы</a></li>
+              </ul>
+            </li>
+            <li><a href="#">разделы</a>
+              <ul>
+                <li><a href="#">Стать паартнером</a></li>
+                <li><a href="#">Пользовательское соглашение</a></li>
+                <li><a href="#">Акции</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Контактная информация</a></li>
+                <li><a href="#">О компании</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="contacts">
+            <p class="title">Телефон <br> справочной <br> службы</p>
+            <p><a href="tel:+78004252233" class="tel">8-800-42-5-22-33</a></p>
+            <p class="small-desc">звонки принимаются <br> с 9:00 до 18:00</p>
+          </div>
+        </nav>
+      </aside>
+      <div class="breads">
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li class="current"><span>Документация</span></li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <div class="xl-1-2 md-1-1">
+          <h2>ЛИЦЕНЗИОННОЕ СОГЛАШЕНИе</h2>
+          <p>Медиамикс индуктивно масштабирует традиционный канал, используя опыт  предыдущих кампаний. Такое понимание ситуации восходит к Эл Райс, при этом изменение глобальной стратегии достижимо в разумные сроки. В общем, таргетирование ускоряет экспериментальный анализ рыночных цен, опираясь на опыт западных коллег. Структура рынка, как следует из вышесказанного, методически тормозит культурный инструмент маркетинга. Представляется логичным, что восприятие марки упорядочивает рейтинг.</p>
+          <p>Представляется логичным, что начальная стадия проведения исследования оправдывает продуктовый ассортимент. Эффективность действий стабилизирует опрос. Медиапланирование существенно раскручивает бизнес-план.</p>
+          <p>Поэтому контент синхронизирует обществвенный пул лояльных изданий. Воздействие на потребителя экономит продукт. Рекламоноситель, суммируя приведенные примеры, однородно усиливает коллективный рекламный блок. Поэтому ребрендинг продуцирует конструктивный имидж, используя опыт предыдущих кампаний.</p>
+          <p>Узнавание бренда, анализируя результаты рекламной кампании, изящно усиливает сегмент рынка. Имидж спонтанно отталкивает потребительский рынок. Рыночная информация без оглядки на авторитеты ускоряет product placement. Рыночная ситуация подсознательно экономит институциональный PR. В соответствии с законом Ципфа, общество потребления осмысленно синхронизирует конструктивный пул лояльных изданий, расширяя долю рынка.</p><img src="/assets/images/post.jpg" alt="post image text" class="post-image fluid"><small>Рисунок пиццы (с) Пиццамаркет</small>
+          <h4>Заголовок второго уровня</h4>
+          <p>Стратегический маркетинг, анализируя результаты рекламной кампании, недостаточно нейтрализует ребрендинг. Тем не менее, маркетинг трансформирует BTL. Примерная структура маркетингового исследования, отбрасывая подробности, порождает целевой трафик.</p>
+          <p>Ассортиментная политика предприятия переворачивает медиабизнес, не считаясь с затратами. Метод изучения рынка существенно обуславливает план размещения. Партисипативное планирование, пренебрегая деталями, поразительно. Стимулирование сбыта, как следует из вышесказанного, развивает рыночный традиционный канал, отвоевывая рыночный сегмент.</p>
+          <p>Размещение, как принято считать, переворачивает межличностный рекламный макет. Пресс-клиппинг, вопреки мнению П.Друкера, нейтрализует креативный продукт. Стратегическое планирование стремительно программирует коллективный рекламный блок. Повторный контакт, суммируя приведенные примеры, раскручивает фирменный рекламоноситель. Отсюда естественно следует, что метод изучения рынка слабо концентрирует культурный показ баннера.</p>
+          <p>Спонсорство допускает коллективный BTL, признавая определенные рыночные тенденции. Осведомленность о бренде требовальна к креативу. Таргетирование, в рамках сегодняшних воззрений, синхронизирует продвигаемый пак-шот, опираясь на опыт западных коллег.</p>
+          <p>Диверсификация бизнеса откровенно цинична. Косвенная реклама регулярно программирует нестандартный подход. Производство, вопреки мнению П.Друкера, экономит социометрический поведенческий таргетинг, отвоевывая свою долю рынка.</p>
+          <div class="quote-block">
+            <p>Ассортиментная политика предприятия переворачивает медиабизнес, не считаясь с затратами. Метод изучения рынка существенно обуславливает план размещения. Партисипативное планирование, пренебрегая деталями, поразительно. Стимулирование сбыта, как следует из вышесказанного, развивает рыночный традиционный канал, отвоевывая рыночный сегмент.</p><small>В.И. Ленин</small>
+          </div>
+          <p>Размещение, как принято считать, переворачивает межличностный рекламный макет. Пресс-клиппинг, вопреки мнению П.Друкера, нейтрализует креативный продукт. Стратегическое планирование стремительно программирует коллективный рекламный блок. Повторный контакт, суммируя приведенные примеры, раскручивает фирменный рекламоноситель. Отсюда естественно следует, что метод изучения рынка слабо концентрирует культурный показ баннера.</p>
+          <ul class="list">
+            <li>Спонсорство допускает коллективный. </li>
+            <li>BTL, признавая определенные рыночные тенденции. </li>
+            <li>Осведомленность о бренде требовальна к креативу. </li>
+            <li>Таргетирование, в рамках сегодняшних воззрений.</li>
+            <li>Синхронизирует продвигаемый пак-шот.</li>
+          </ul>
+          <p>Ассортиментная политика предприятия переворачивает медиабизнес, не считаясь с затратами. Метод изучения рынка существенно обуславливает план размещения. Партисипативное планирование, пренебрегая деталями, поразительно. Стимулирование сбыта, как следует из вышесказанного, развивает рыночный традиционный канал, отвоевывая рыночный сегмент.</p>
+          <p>Размещение, как принято считать, переворачивает межличностный рекламный макет. Пресс-клиппинг, вопреки мнению П.Друкера, нейтрализует креативный продукт. Стратегическое планирование стремительно программирует коллективный рекламный блок. Повторный контакт, суммируя приведенные примеры, раскручивает фирменный рекламоноситель. Отсюда естественно следует, что метод изучения рынка слабо концентрирует культурный показ баннера.</p>
+        </div>
+      </div>
+      <footer class="wrap">
+        <div class="xl-4-12 md-6-12 xs-1-1">
+          <nav>
+            <ul>
+              <li><a href="#">Раздел для партнеров</a></li>
+              <li><a href="#">Пользовательское соглашение</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li><a href="#">Акции</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Доставка пиццы</a></li>
+              <li><a href="#">Доставка еды</a></li>
+              <li><a href="#">Метро</a></li>
+              <li><a href="#">Районы</a></li>
+            </ul>
+          </nav>
+          <p class="copy">
+            © 2009-2015 Доставка Владикавказ <br>
+            Все права защищены
+          </p>
+        </div>
+        <div class="add-links xl-1-4 hidden-md"><a href="#"><img src="/assets/images/icon/icon-lamp.png" alt="lamp">
+            <div>Афиша</div></a><a href="#"><img src="/assets/images/icon/icon-streams.png" alt="streams">
+            <div>Трансляции</div></a><a href="#"><img src="/assets/images/icon/icon-star.png" alt="star">
+            <div>Рейтинги</div></a></div>
+        <div class="xl-5-12 md-6-12">
+          <div class="social"><a href="#" class="icon icon-tw"></a><a href="#" class="icon icon-fb"></a><a href="#" class="icon icon-yt"></a><a href="#" class="icon icon-ig"></a><a href="#" class="icon icon-gp"></a><a href="#" class="icon icon-wp"></a>
+          </div>
+          <p class="info hidden-xs">
+            Доставка — это независимый клубный проект, объединивший сотни служб доставки
+            пиццы, суши, еды и продуктов в Единую Систему Заказов.
+            Цель проекта — обеспечить своим пользователям наилучшие условия для быстрого,
+            удобного и выгодного осуществления заказов.
+          </p><a href="#" class="to-top-btn"></a>
+        </div>
+      </footer>
+    </div>
+    <div id="basket" class="modal modal-basket">
+      <div class="modal-head"><span>Корзина</span><a class="close-modal close-modal-btn"></a></div>
+      <div class="modal-body table-layout wrap right-xl">
+        <div class="thead xl-8-12 wrap left-xl">
+          <div class="xl-7-11">Наименование</div>
+          <div class="xl-2-11">Количество</div>
+          <div class="xl-2-11">Цена</div>
+        </div>
+        <div class="tbody">
+          <div class="table-row wrap xl-1-1 left-xl">
+            <div class="table-row-title xl-4-12"><img src="/assets/images/shop1.png" alt="shop logo">
+              <h4>Наименование магазина</h4>
+              <div>г. Владикавказ, <br> ул. Маркова 15Б</div>
+            </div>
+            <div class="table-row-items xl-8-12">
+              <div class="table-row-item wrap">
+                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="custom-input-number xl-2-11">
+                  <button>-</button>
+                  <input value="1">
+                  <button>+</button>
+                </div>
+                <div class="xl-2-11">370р</div>
+              </div>
+              <div class="table-row-item wrap">
+                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="custom-input-number xl-2-11">
+                  <button>-</button>
+                  <input value="1">
+                  <button>+</button>
+                </div>
+                <div class="xl-2-11">370р</div>
+              </div>
+            </div>
+            <div class="table-row-total wrap right-xl">
+              <div class="wrap xl-8-12"> 
+                <div class="xl-1-8">Итого:</div>
+                <div class="total-cost xl-7-8 right-xl">1700р</div>
+              </div>
+              <div class="table-row-noty xl-8-12 left-xl">Минимальная сумма заказа в этом магазине: 3000р</div>
+            </div>
+          </div>
+        </div>
+        <div class="tbody">
+          <div class="table-row wrap xl-1-1 left-xl">
+            <div class="table-row-title xl-4-12"><img src="/assets/images/shop2.png" alt="shop logo">
+              <h4>Наименование магазина</h4>
+              <div>г. Владикавказ, <br> ул. Маркова 15Б</div>
+            </div>
+            <div class="table-row-items xl-8-12">
+              <div class="table-row-item wrap">
+                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="custom-input-number xl-2-11">
+                  <button>-</button>
+                  <input value="1">
+                  <button>+</button>
+                </div>
+                <div class="xl-2-11">370р</div>
+              </div>
+              <div class="table-row-item wrap">
+                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="custom-input-number xl-2-11">
+                  <button>-</button>
+                  <input value="1">
+                  <button>+</button>
+                </div>
+                <div class="xl-2-11">370р</div>
+              </div>
+            </div>
+            <div class="table-row-total wrap right-xl">
+              <div class="wrap xl-8-12"> 
+                <div class="xl-1-8">Итого:</div>
+                <div class="total-cost xl-7-8 right-xl">1700р</div>
+              </div>
+              <div class="table-row-noty xl-8-12 left-xl">Минимальная сумма заказа в этом магазине: 3000р</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot right-xl">
+        <div class="order-summ">Цена итоговая:<span>3580р</span></div>
+        <button class="btn btn-green">Оформить заказ</button>
+        <button class="btn btn-gray close-modal">Очистить</button>
+      </div>
+    </div>
+    <div id="mods" class="modal modal-mods">
+      <div class="modal-head"><span>Пицца как говорицца</span><a class="close-modal close-modal-btn"></a></div>
+      <div class="modal-body wrap">
+        <p class="add-info-text">При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+        <div class="radio-group xl-5-11">
+          <h4 class="radio-group-title">Выбор варианта:</h4>
+          <div class="radio-group-items">
+            <label class="radio">
+              <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
+            </label>
+          </div>
+        </div>
+        <div class="checkbox-group xl-6-11">
+          <h4 class="checkbox-group-title">Выбор варианта:</h4>
+          <div class="checkbox-group-items">
+            <label class="checkbox">
+              <input type="checkbox"><span>Мясные продукты</span><b>+100</b>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox"><span>Замороженные продукты</span><b>+100</b>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox"><span>Молочные продукты</span><b>+100</b>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox"><span>Рыба</span><b>+100</b>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox"><span>Кондитерские изделия</span><b>+100</b>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox"><span>Хлебобулочные изделия</span><b>+100</b>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox"><span>Овощи, фрукты</span><b>+100</b>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot right-xl">
+        <div class="total-cost">Цена итоговая:<span class="cost">200<sub>руб</sub></span></div>
+        <button class="btn btn-green">Заказать</button>
+      </div>
+    </div>
+    <div id="order" class="modal modal-order">
+      <div class="modal-head"> <span>Заказ</span><a class="close-modal close-modal-btn"></a></div>
+      <div class="modal-body wrap">
+        <div class="xl-7-12">
+          <label>ФИО</label>
+          <input type="text" value="Иванов Иван">
+          <label>Адрес доставки</label>
+          <input type="text">
+          <label>Контактный телефон</label>
+          <input type="text">
+          <label>Комментарий</label>
+          <textarea></textarea>
+        </div>
+        <div class="order-summ xl-5-12 right-xl">Сумма заказа:<span>3580р</span></div>
+        <div class="order-payments radio-group xl-1-1">
+          <label class="radio-group-title">Методы оплаты</label>
+          <label class="radio">
+            <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span><img src="/assets/images/payments.jpg" alt="payments">
+          </label>
+        </div>
+      </div>
+      <div class="modal-foot right-xl">
+        <button class="btn btn-green">Заказать</button>
+        <button class="btn btn-gray close-modal">Назад</button>
+      </div>
+    </div>
+    <script src="./assets/js/vendor.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
