@@ -1,24 +1,27 @@
 'use strict';
-var gulp		= require('gulp'),
+var gulp			= require('gulp'),
 
 	autoprefixer	= require('gulp-autoprefixer'),
-	clean			= require('gulp-clean'),
+	browserSync		= require('browser-sync').create(),
 	concatJS		= require('gulp-concat'),
 	concatCSS		= require('gulp-concat-css'),
-	connect			= require('gulp-connect'),
 	cssimport		= require("gulp-cssimport"),
+	del				= require('del'),
 	filter			= require('gulp-filter'),
+	gulpsync		= require('gulp-sync')(gulp),
 	jade			= require('gulp-jade'),
-	livereload		= require('gulp-livereload'),
 	mainBowerFiles	= require('main-bower-files'),	
 	minifyCSS		= require('gulp-minify-css'),
 	minifyIMG		= require('gulp-imagemin'),
+	minifyPNG		= require('imagemin-pngquant'),
 	minifyJS		= require('gulp-uglify'),
 	notify			= require("gulp-notify"),
 	plumber			= require('gulp-plumber'),
 	rename			= require('gulp-rename'),
 	rigger			= require('gulp-rigger'),
-	sass			= require('gulp-sass');
+	sass			= require('gulp-sass'),
+	sourcemaps		= require('gulp-sourcemaps'),
+	reload			= browserSync.reload;
 
 // ----------------------------  CONFIGS  --------------------------
 
@@ -32,7 +35,6 @@ var gulp		= require('gulp'),
 		fonts: 		'./build/assets/fonts/'
 	},
 	src = {
-		// html: 	'src/*.html',
 		root: 		'./src/',
 		templates: 	'./src/jade/**/*.jade',
 		jade:		'./src/jade/views/*.jade',
@@ -42,9 +44,7 @@ var gulp		= require('gulp'),
 		fonts: 		'./src/assets/fonts/**/*.{ttf,woff,woff2,eot,svg}'
 	},
 	watch = {
-		// html: 	'src/**/*.html',
 		jade: 		'./src/jade/**/*.jade',
-		// jade: 	'./src/jade/views/*.jade',
 		js: 		'./src/assets/js/**/*.js',
 		sass: 		'./src/assets/sass/**/*.scss',
 		img: 		'./src/assets/images/**/*.*',
@@ -53,120 +53,125 @@ var gulp		= require('gulp'),
 	};
 
 // server config
-	var server = {
-		root: 'build',
-		port: '8000'
+	var serverConfig = {
+		server: {
+			baseDir: "./build"
+		},
+		host: 'localhost',
+		port: 8000,
+		tunnel: 'bringo'
 	};
 
 // ----------------------------  TASKS  ----------------------------
 
-// server connect
-	gulp.task('connect', function() {
-		connect.server({
-			root: server.root,
-			port: server.port,
-			livereload: true
-		});
-	});
+// server init
+gulp.task('browser-sync', function() {
+	browserSync.init(serverConfig);
+});
 
-// sass preprocessing
+// sass
 	gulp.task("sass", function () {
 		gulp.src(src.sass)
 			.pipe(plumber())
-			// .pipe(sass().on('error', sass.logError))
 			.pipe(sass())
 			.pipe(cssimport())
-			// .pipe(minifyCSS())
 			.pipe(autoprefixer({browsers: ['last 30 versions']}))
-			.pipe(rename('style.min.css'))
+			.pipe(sourcemaps.init())
+			.pipe(minifyCSS({advanced: false}))
+			.pipe(sourcemaps.write())
+			.pipe(rename({suffix: ".min"}))
 			.pipe(gulp.dest(build.css))
-			.pipe(connect.reload())
+			.pipe(reload({stream: true}))
 			.pipe(notify("SASS compiled"));
 	});
 
-// jade preprocessing
+// jade (just views)
 	gulp.task('jade', function () {
 		gulp.src(src.jade)
 			.pipe(plumber())
 			.pipe(jade({pretty: true}))
 			.pipe(gulp.dest(build.root))
-			.pipe(connect.reload())
+			.pipe(reload({stream: true}))
 			.pipe(notify("JADE compiled"));
 	});
 
-// jade preprocessing
+// jade templates
 	gulp.task('templates', function () {
 		gulp.src(src.templates)
 			.pipe(plumber())
 			.pipe(jade({pretty: true}))
 			.pipe(gulp.dest(build.templates))
-			.pipe(connect.reload())
+			.pipe(reload({stream: true}))
 			.pipe(notify("TEMPLATES compiled"));
 	});
 
-// js copy files
+// js
 	gulp.task('js', function () {
 		gulp.src(src.js)
-			.pipe(plumber())
 			.pipe(rigger())
 			.pipe(plumber())
-			// .pipe(minifyJS())
+			.pipe(sourcemaps.init())
+			.pipe(minifyJS())
+			.pipe(sourcemaps.write())
 			.pipe(gulp.dest(build.js))
-			.pipe(connect.reload())
+			.pipe(reload({stream: true}))
 			.pipe(notify("JS concat is done."));
 	});
 
-// images optimization
-	gulp.task('img', function () {
+// images
+	// очищаем таким образом (в отдельном таске)
+	// для синхронного выполнения задач
+	gulp.task('img:clean', function () {
+		del.sync(build.img);
+	});
+	gulp.task('img', ['img:clean'], function () {
 		gulp.src(src.img)
-			.pipe(minifyIMG())
+			.pipe(minifyIMG({
+				progressive: true,
+				use: [minifyPNG()]
+			}))
 			.pipe(gulp.dest(build.img))
 	});
 
 // fonts
-	gulp.task('fonts', function () {
+	gulp.task('fonts:clean', function () {
+		del.sync(build.fonts);
+	});
+	gulp.task('fonts', ['fonts:clean'], function () {
 		gulp.src(src.fonts)
 			.pipe(gulp.dest(build.fonts))
 	});
 
 // bower components auto concat and include
-	gulp.task('bower-log', function () {
-		var mainFiles = mainBowerFiles();
-		console.log(mainFiles);
-		return gulp.src(mainFiles);
-	});
-
 	gulp.task('bower', function () {
-		gulp.src('./build/assets/**/vendor.*', {read: false})
-			.pipe(clean());
-
 		var jsFilter	= filter('**/*.js'),
 			cssFilter	= filter('**/*.css');
+
+		// удаляем все файлы, в названии которых есть слово vendor
+		del.sync('./build/assets/**/vendor.*');
+
+		// получаем пути всех библиотек bower'a и передаем их в src
 		return gulp.src(mainBowerFiles())
+			// берем из них только js файлы
 			.pipe(jsFilter)
+			 // и лепим один vendor.js
 			.pipe(concatJS('vendor.js', {newLine: ';'}))
 			.pipe(minifyJS()).pipe(rename({suffix: ".min"}))
 			.pipe(gulp.dest(build.js))
-			
+
+			// сбрасываем фильтр
 			.pipe(jsFilter.restore())
+
+			// и проделываем тоже самое с css файлами
 			.pipe(cssFilter)
 			.pipe(concatCSS('vendor.css'))
 			.pipe(minifyCSS()).pipe(rename({suffix: ".min"}))
 			.pipe(gulp.dest(build.css));
 	});
 
-// clean build folder
+// build clean
 	gulp.task('clean', function () {
-		return gulp.src('./build/*', {read: false})
-			.pipe(clean());
-	});
-	gulp.task('clean:img', function () {
-		return gulp.src('./build/assets/images', {read: false})
-			.pipe(clean());
-	});
-	gulp.task('clean:fonts', function () {
-		return gulp.src('./build/assets/fonts', {read: false})
-			.pipe(clean());
+		del.sync(build.root)
 	});
 
 // watch
@@ -178,8 +183,9 @@ var gulp		= require('gulp'),
 		gulp.watch(watch.bower, ['bower'])
 	});
 
-// default
-gulp.task('default', ['connect', 'sass', 'jade', 'js', 'fonts', 'img', 'watch']);
 
-// new build
-gulp.task('build', ['sass', 'jade', 'js', 'fonts', 'img']);
+// build
+	gulp.task('build', ['sass', 'jade', 'js', 'fonts', 'img']);
+
+// default
+	gulp.task('default', gulpsync.sync(['build', 'browser-sync', 'watch']));

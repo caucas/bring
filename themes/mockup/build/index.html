@@ -46,14 +46,13 @@
             </label><span class="info-block label-required">- Обязательные поля</span>
           </fieldset>
         </fieldset>
-      </form><a href="#" data-trigger="auth-block" class="trigger-btn"></a>
+      </form><a href="#" data-open="auth-block" data-open-mode="private" class="trigger-btn"></a>
     </div>
     <header>
       <div class="logo">
-        <button data-trigger="aside"></button><a href="/"><img src="/assets/images/logo.png" alt="logo">
-          <div>Доставка</div></a>
+        <button data-open="aside"></button><a href="/"><img src="/assets/images/logo.png" alt="logo"></a>
       </div>
-      <div class="user-area"><a href="#" data-trigger="auth-block" class="auth-btn"></a><a href="#" data-modal="basket" class="basket-btn"></a>
+      <div class="user-area"><a href="#" data-open="auth-block" data-open-mode="private" class="auth-btn"><span>Вход / Регистрация</span></a><a href="#" data-modal="basket" class="basket-btn"></a>
       </div>
       <form class="top-search">
         <input type="text" name="s" placeholder="Поиск (например: Молоко, Ресторан, Скидка)">
@@ -175,10 +174,24 @@
           </div>
           <div class="swiper-pagination top-slider-pagination"></div>
         </div>
-        <div class="best-offers wrap">
+        <section class="shops-category">
+          <div class="cat">
+            <h2 class="caps-text">Категории</h2>
+            <div class="wrap gutter-15-xl"><a href="#" class="cat-item xl-3-12 lg-1-2 xxs-1-1">
+                <div class="image"><img src="/assets/images/bg/bg-category-1.jpg" alt="category 1"></div>
+                <div class="title">Готовые блюда</div></a><a href="#" class="cat-item xl-3-12 lg-1-2 xxs-1-1">
+                <div class="image"><img src="/assets/images/bg/bg-category-2.jpg" alt="category 2"></div>
+                <div class="title">Продукты</div></a><a href="#" class="cat-item xl-3-12 lg-1-2 xxs-1-1">
+                <div class="image"><img src="/assets/images/bg/bg-category-3.jpg" alt="category 3"></div>
+                <div class="title">Цветы</div></a><a href="#" class="cat-item xl-3-12 lg-1-2 xxs-1-1">
+                <div class="image"><img src="/assets/images/bg/bg-category-4.jpg" alt="category 4"></div>
+                <div class="title">Аптека</div></a></div>
+          </div>
+        </section>
+        <section class="best-offers wrap">
           <div class="filter wrap xl-3-11 md-1-1">
             <div class="checkbox-group xl-1-1 md-2-5 xs-4-5">
-              <div class="checkbox-group-title"><span data-trigger="bestOffersFilter">Кухни/Блюда</span></div>
+              <div class="checkbox-group-title"><span data-open="bestOffersFilter" data-open-mode="private">Кухни/Блюда</span></div>
               <div id="bestOffersFilter" class="checkbox-group-items"><a href="#" class="clearFilter">Очистить</a>
                 <label class="checkbox">
                   <input type="checkbox"><span>Мясные продукты</span>
@@ -228,59 +241,61 @@
               </div>
             </div>
           </div>
-          <div class="cat wrap xl-8-11 md-1-1 gutter-15-xl">
-            <h2>Лучшие предложения недели</h2>
-            <div class="cat-item xl-1-2">
-              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-              <div class="item-desc">
-                <div class="item-name">Пицца</div>
-                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-                <button class="btn">Подробнее</button>
+          <div class="cat xl-8-11 md-1-1">
+            <h2 class="caps-text">Лучшие предложения недели</h2>
+            <div class="wrap gutter-15-xl">
+              <div class="cat-item xl-1-2">
+                <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+                <div class="item-desc">
+                  <div class="item-name">Пицца</div>
+                  <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                  <button class="btn">Подробнее</button>
+                </div>
               </div>
-            </div>
-            <div class="cat-item xl-1-2">
-              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-              <div class="item-desc">
-                <div class="item-name">Пицца</div>
-                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-                <button class="btn">Подробнее</button>
+              <div class="cat-item xl-1-2">
+                <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+                <div class="item-desc">
+                  <div class="item-name">Пицца</div>
+                  <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                  <button class="btn">Подробнее</button>
+                </div>
               </div>
-            </div>
-            <div class="cat-item xl-1-2">
-              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-              <div class="item-desc">
-                <div class="item-name">Пицца</div>
-                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-                <button class="btn">Подробнее</button>
+              <div class="cat-item xl-1-2">
+                <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+                <div class="item-desc">
+                  <div class="item-name">Пицца</div>
+                  <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                  <button class="btn">Подробнее</button>
+                </div>
               </div>
-            </div>
-            <div class="cat-item xl-1-2">
-              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-              <div class="item-desc">
-                <div class="item-name">Пицца</div>
-                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-                <button class="btn">Подробнее</button>
+              <div class="cat-item xl-1-2">
+                <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+                <div class="item-desc">
+                  <div class="item-name">Пицца</div>
+                  <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                  <button class="btn">Подробнее</button>
+                </div>
               </div>
-            </div>
-            <div class="cat-item xl-1-2">
-              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-              <div class="item-desc">
-                <div class="item-name">Пицца</div>
-                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-                <button class="btn">Подробнее</button>
+              <div class="cat-item xl-1-2">
+                <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+                <div class="item-desc">
+                  <div class="item-name">Пицца</div>
+                  <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                  <button class="btn">Подробнее</button>
+                </div>
               </div>
-            </div>
-            <div class="cat-item xl-1-2">
-              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-              <div class="item-desc">
-                <div class="item-name">Пицца</div>
-                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-                <button class="btn">Подробнее</button>
+              <div class="cat-item xl-1-2">
+                <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+                <div class="item-desc">
+                  <div class="item-name">Пицца</div>
+                  <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                  <button class="btn">Подробнее</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="novelty-slider swiper-container hidden-sm">
+        </section>
+        <section class="novelty-slider swiper-container hidden-sm">
           <h3 class="caps-text">Новинки</h3>
           <div class="swiper-wrapper cat">
             <div class="swiper-slide cat-item">
@@ -318,8 +333,8 @@
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
-        </div>
-        <div class="single-product">
+        </section>
+        <section class="single-product">
           <div class="single-product-slider swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="/assets/images/single-product-1.jpg" alt="slider image 1"></div>
@@ -328,7 +343,7 @@
             <div class="swiper-pagination gray-dots single-slider-pagination"></div>
           </div>
           <div class="single-product-desc">
-            <h3>Мясной продукт с длинным наименованием</h3><span>150грамм</span>
+            <h2>Мясной продукт с длинным наименованием</h2><span>150грамм</span>
             <div class="cost">200<sub>руб.</sub></div>
             <p>
               Алеаторика, и это особенно заметно у Чарли Паркера или Джона Колтрейна,
@@ -345,10 +360,19 @@
               <button class="btn">Подробнее</button>
             </div>
           </div>
-        </div>
+        </section>
+        <section class="mobile-adv-wrap">
+          <div class="mobile-adv-block">
+            <div class="desc">
+              <h2>Возьми с собой <b>Bringo</b></h2>
+              <p>скачай наше удобное приложение для iPhone и Android бесплатно!</p><a href="#" class="gplay-btn">Google Play</a><a href="#" class="astore-btn">App Store</a>
+            </div>
+            <div class="image"><img src="/assets/images/icon/icon-adv-block.png" alt="adv poster"></div>
+          </div>
+        </section>
       </div>
-      <footer class="wrap">
-        <div class="xl-4-12 md-6-12 xs-1-1">
+      <footer>
+        <div class="footer-col-1">
           <nav>
             <ul>
               <li><a href="#">Раздел для партнеров</a></li>
@@ -368,11 +392,7 @@
             Все права защищены
           </p>
         </div>
-        <div class="add-links xl-1-4 hidden-md"><a href="#"><img src="/assets/images/icon/icon-lamp.png" alt="lamp">
-            <div>Афиша</div></a><a href="#"><img src="/assets/images/icon/icon-streams.png" alt="streams">
-            <div>Трансляции</div></a><a href="#"><img src="/assets/images/icon/icon-star.png" alt="star">
-            <div>Рейтинги</div></a></div>
-        <div class="xl-5-12 md-6-12">
+        <div class="footer-col-2">
           <div class="social"><a href="#" class="icon icon-tw"></a><a href="#" class="icon icon-fb"></a><a href="#" class="icon icon-yt"></a><a href="#" class="icon icon-ig"></a><a href="#" class="icon icon-gp"></a><a href="#" class="icon icon-wp"></a>
           </div>
           <p class="info hidden-xs">

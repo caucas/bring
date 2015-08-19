@@ -4,44 +4,39 @@
 }
 .main-content {
 	position: relative;
-	@include rem(padding, 50px 40px 0);
+	@include rem(padding, 40px);
 	background-color: $color-light-white;
+	@extend .clrfix;
 
 	&.fluid {
 		padding: 0;
-	}
 
-	h2 {
-		// font-size: 35px;
-		// margin-bottom: 30px;
-		@include fz(35px);
-		@include rem(margin-bottom, 30px);
-	}
-	h3, h4 {
-		// font-size: 30px;
-		// margin-bottom: 20px;
-		@include fz(30px);
-		@include rem(margin-bottom, 20px);
-	}
-	h2 {
-		text-transform: uppercase;
+		section, .section {
+			@include rem(padding, 40px);
+		}
 	}
 }
 
 // CATALOG ITEMS STYLES
 .cat {
+	$cat-divider-height: 30px;
+	margin-bottom: -$cat-divider-height;
 	@extend .clrfix;
+
+	h2 {
+		font-size: 30px;
+		// @include fz(30px);
+	}
 
 	.cat-item {
 		position: relative;
-		height: 220px;
-		margin-bottom: 45px;
+		margin-bottom: $cat-divider-height;
 		font-size: 0;
 	}
 	.item-image {
 		display: inline-block;
 		width: 50%;
-		height: 100%;
+		height: 220px;
 		overflow: hidden;
 		vertical-align: top;
 
@@ -56,7 +51,7 @@
 	.item-desc {
 		display: inline-block;
 		width: 50%;
-		height: 100%;
+		height: 220px;
 		padding: 25px;
 		vertical-align: top;
 		background-color: #fff;
@@ -72,6 +67,7 @@
 			margin-bottom: 15px;
 			overflow: hidden;
 			font-size: 15px;
+			line-height: 1.2;
 		}
 		.basket-area {
 			@extend .clrfix;
@@ -115,7 +111,7 @@
 	background-color: #C8C8C8;
 
 	ul {
-		padding: 15px 0;
+		line-height: 50px;
 		li {
 			position: relative;
 			display: inline-block;
@@ -123,6 +119,7 @@
 			margin-right: 20px;
 			vertical-align: middle;
 			font-size: 13px;
+			line-height: 1;
 
 			a {
 				color: #212121;
@@ -148,13 +145,14 @@
 
 // CATALOG FILTER
 .filter {
-	@include rem(margin-bottom, 40px);
-	padding-right: 55px;
+	// @include rem(margin-bottom, 40px);
+	@include rem(padding-right, 40px);
+	// padding-right: 40px;
 	float: left;
 
 	.checkbox-group {
 		position: relative;
-		margin-bottom: 40px;
+		@include rem(margin-bottom, 40px);
 
 		.checkbox-group-title {
 			position: relative;
@@ -172,7 +170,7 @@
 		.clearFilter {
 			position: absolute;
 			top: 5px;
-			right: 30px;
+			right: 0;
 			font: 14px 'm-cond';
 			color: #9E9E9E;
 		}

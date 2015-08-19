@@ -1,8 +1,8 @@
-.best-offers.wrap
+section.best-offers.wrap
 	.filter.wrap.xl-3-11.md-1-1
 		.checkbox-group.xl-1-1.md-2-5.xs-4-5
 			.checkbox-group-title
-				span(data-trigger="bestOffersFilter") Кухни/Блюда
+				span(data-open="bestOffersFilter", data-open-mode="private") Кухни/Блюда
 			#bestOffersFilter.checkbox-group-items
 				a.clearFilter(href="#") Очистить
 				- var filterOptions = ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома', 'Косметика и гигиена', 'Бытовая техника и электроника', 'Всё для детей', 'Бакалея', 'Напитки', 'Подарочные наборы']
@@ -10,14 +10,15 @@
 					label.checkbox
 						input(type="checkbox")
 						span= item
-	.cat.wrap.xl-8-11.md-1-1.gutter-15-xl
-		h2 Лучшие предложения недели
-		- for(var i = 0; i < 6; i++)
-			.cat-item.xl-1-2
-				.item-image
-					a(href="#")
-						img(src="/assets/images/cat-item.png", alt="cat item name")
-				.item-desc
-					.item-name Пицца
-					p При заказе от 1200 руб. пицца Моцарелла классик в подарок!
-					button.btn Подробнее
+	.cat.xl-8-11.md-1-1
+		h2.caps-text Лучшие предложения недели
+		.wrap.gutter-15-xl
+			- for(var i = 0; i < 6; i++)
+				.cat-item.xl-1-2
+					.item-image
+						a(href="#")
+							img(src="/assets/images/cat-item.png", alt="cat item name")
+					.item-desc
+						.item-name Пицца
+						p При заказе от 1200 руб. пицца Моцарелла классик в подарок!
+						button.btn Подробнее

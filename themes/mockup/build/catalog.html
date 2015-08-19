@@ -46,14 +46,13 @@
             </label><span class="info-block label-required">- Обязательные поля</span>
           </fieldset>
         </fieldset>
-      </form><a href="#" data-trigger="auth-block" class="trigger-btn"></a>
+      </form><a href="#" data-open="auth-block" data-open-mode="private" class="trigger-btn"></a>
     </div>
     <header>
       <div class="logo">
-        <button data-trigger="aside"></button><a href="/"><img src="/assets/images/logo.png" alt="logo">
-          <div>Доставка</div></a>
+        <button data-open="aside"></button><a href="/"><img src="/assets/images/logo.png" alt="logo"></a>
       </div>
-      <div class="user-area"><a href="#" data-trigger="auth-block" class="auth-btn"></a><a href="#" data-modal="basket" class="basket-btn"></a>
+      <div class="user-area"><a href="#" data-open="auth-block" data-open-mode="private" class="auth-btn"><span>Вход / Регистрация</span></a><a href="#" data-modal="basket" class="basket-btn"></a>
       </div>
       <form class="top-search">
         <input type="text" name="s" placeholder="Поиск (например: Молоко, Ресторан, Скидка)">
@@ -137,8 +136,8 @@
       <div class="main-content wrap">
         <div class="filter wrap xl-3-11 md-1-1">
           <div class="checkbox-group xl-1-1 md-2-5 xs-1-2 xxs-1-1">
-            <div class="checkbox-group-title"><span data-trigger="catalogFilter1">Категория</span><a href="#" class="clearFilter">Очистить</a></div>
-            <div id="catalogFilter1" class="checkbox-group-items">
+            <div class="checkbox-group-title"><span data-open="catalogFilter1" data-open-mode="private">Категория</span></div>
+            <div id="catalogFilter1" class="checkbox-group-items"><a href="#" class="clearFilter">Очистить</a>
               <label class="checkbox">
                 <input type="checkbox"><span>Мясные продукты</span>
               </label>
@@ -187,8 +186,8 @@
             </div>
           </div>
           <div class="checkbox-group xl-1-1 md-2-5 xs-1-2 xxs-1-1">
-            <div class="checkbox-group-title"><span data-trigger="catalogFilter2">Доп. фильтр</span><a href="#" class="clearFilter">Очистить</a></div>
-            <div id="catalogFilter2" class="checkbox-group-items">
+            <div class="checkbox-group-title"><span data-open="catalogFilter2" data-open-mode="private">Доп. фильтр</span></div>
+            <div id="catalogFilter2" class="checkbox-group-items"><a href="#" class="clearFilter">Очистить</a>
               <label class="checkbox">
                 <input type="checkbox"><span>Вегитарианское</span>
               </label>
@@ -213,85 +212,89 @@
             </div>
           </div>
         </div>
-        <div class="cat wrap xl-8-11 md-1-1 gutter-15-xl">
-          <h3 class="caps-text">продукты (категория)</h3>
-          <div class="cat-item xl-1-2">
-            <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-            <div class="item-desc">
-              <div class="item-name">Пицца</div>
-              <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-              <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
-                  <button></button></span></div>
+        <div class="cat xl-8-11 md-1-1">
+          <h2 class="caps-text">продукты (категория)</h2>
+          <div class="wrap gutter-15-xl">
+            <div class="cat-item xl-1-2">
+              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+              <div class="item-desc">
+                <div class="item-name">Пицца</div>
+                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
+                    <button></button></span></div>
+              </div>
+            </div>
+            <div class="cat-item xl-1-2">
+              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+              <div class="item-desc">
+                <div class="item-name">Пицца</div>
+                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
+                    <button></button></span></div>
+              </div>
+            </div>
+            <div class="cat-item xl-1-2">
+              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+              <div class="item-desc">
+                <div class="item-name">Пицца</div>
+                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
+                    <button></button></span></div>
+              </div>
+            </div>
+            <div class="cat-item xl-1-2">
+              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+              <div class="item-desc">
+                <div class="item-name">Пицца</div>
+                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
+                    <button></button></span></div>
+              </div>
             </div>
           </div>
-          <div class="cat-item xl-1-2">
-            <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-            <div class="item-desc">
-              <div class="item-name">Пицца</div>
-              <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-              <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
-                  <button></button></span></div>
+          <h2 class="caps-text">продукты (категория)</h2>
+          <div class="wrap gutter-15-xl">
+            <div class="cat-item xl-1-2">
+              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+              <div class="item-desc">
+                <div class="item-name">Пицца</div>
+                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
+                    <button></button></span></div>
+              </div>
             </div>
-          </div>
-          <div class="cat-item xl-1-2">
-            <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-            <div class="item-desc">
-              <div class="item-name">Пицца</div>
-              <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-              <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
-                  <button></button></span></div>
+            <div class="cat-item xl-1-2">
+              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+              <div class="item-desc">
+                <div class="item-name">Пицца</div>
+                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
+                    <button></button></span></div>
+              </div>
             </div>
-          </div>
-          <div class="cat-item xl-1-2">
-            <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-            <div class="item-desc">
-              <div class="item-name">Пицца</div>
-              <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-              <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
-                  <button></button></span></div>
+            <div class="cat-item xl-1-2">
+              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+              <div class="item-desc">
+                <div class="item-name">Пицца</div>
+                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
+                    <button></button></span></div>
+              </div>
             </div>
-          </div>
-          <h3 class="caps-text">продукты (категория)</h3>
-          <div class="cat-item xl-1-2">
-            <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-            <div class="item-desc">
-              <div class="item-name">Пицца</div>
-              <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-              <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
-                  <button></button></span></div>
-            </div>
-          </div>
-          <div class="cat-item xl-1-2">
-            <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-            <div class="item-desc">
-              <div class="item-name">Пицца</div>
-              <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-              <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
-                  <button></button></span></div>
-            </div>
-          </div>
-          <div class="cat-item xl-1-2">
-            <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-            <div class="item-desc">
-              <div class="item-name">Пицца</div>
-              <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-              <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
-                  <button></button></span></div>
-            </div>
-          </div>
-          <div class="cat-item xl-1-2">
-            <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
-            <div class="item-desc">
-              <div class="item-name">Пицца</div>
-              <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-              <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
-                  <button></button></span></div>
+            <div class="cat-item xl-1-2">
+              <div class="item-image"><a href="#"><img src="/assets/images/cat-item.png" alt="cat item name"></a></div>
+              <div class="item-desc">
+                <div class="item-name">Пицца</div>
+                <p>При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
+                <div class="basket-area"><span class="cost cost-small">200<sub>руб</sub></span><span class="add-to-basket"><span>1шт.</span>
+                    <button></button></span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <footer class="wrap">
-        <div class="xl-4-12 md-6-12 xs-1-1">
+      <footer>
+        <div class="footer-col-1">
           <nav>
             <ul>
               <li><a href="#">Раздел для партнеров</a></li>
@@ -311,11 +314,7 @@
             Все права защищены
           </p>
         </div>
-        <div class="add-links xl-1-4 hidden-md"><a href="#"><img src="/assets/images/icon/icon-lamp.png" alt="lamp">
-            <div>Афиша</div></a><a href="#"><img src="/assets/images/icon/icon-streams.png" alt="streams">
-            <div>Трансляции</div></a><a href="#"><img src="/assets/images/icon/icon-star.png" alt="star">
-            <div>Рейтинги</div></a></div>
-        <div class="xl-5-12 md-6-12">
+        <div class="footer-col-2">
           <div class="social"><a href="#" class="icon icon-tw"></a><a href="#" class="icon icon-fb"></a><a href="#" class="icon icon-yt"></a><a href="#" class="icon icon-ig"></a><a href="#" class="icon icon-gp"></a><a href="#" class="icon icon-wp"></a>
           </div>
           <p class="info hidden-xs">

@@ -1,5 +1,6 @@
 // GLOBAL VARS
 	$aside-width		: 250px;
+	$header-height		: 80px;
 	$user-area-width	: 170px;
 	$base-font-size		: 16px;
 
@@ -16,9 +17,12 @@
 	$color-light-gray	: #DDD;
 	$color-light-gray-2	: #B8B8B8;
 	$color-light-blue	: #00B3D3;
+	$color-light-blue-2	: #00BFFF;
 	$color-light-green	: #BBCC29;
+	$color-green		: #008C23;
 	$color-dark-red		: #993300;
 	$color-red			: #D80000;
+	$color-orange		: #FF4000;
 
 // MIXINS
 	@mixin bg ($filename, $bgcolor: null, $pos: 0 0, $repeat:no-repeat) {
@@ -62,3 +66,74 @@
 			@mixin fz($fz) {
 				@include rem(font-size, $fz);
 			}
+
+	@mixin additional-colors ($color-value, $color-name) {
+		&.btn-#{$color-name} {
+			background-color: $color-value;
+			border-color: $color-value;
+			&:hover {
+				background-color: lighten($color-value, 10%);
+			}
+		}
+	}
+	
+	// CUSTOM CHECKBOX & RADIO STYLES
+	@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
+		.#{$type} {
+			display: block;
+			position: relative;
+			overflow: hidden;
+
+			input[type="#{$type}"] {
+				position: absolute;
+				left: -1000px;
+				opacity: 0;
+			}
+			span {
+				display: block;
+				position: relative;
+				padding-left: 30px;
+				min-height: $y;
+				font-size: 16px;
+				font-family: 'r-400';
+				color: $color-light-black;
+				cursor: pointer;
+
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					width: $x;
+					height: $y;
+					margin-top: -$y/2;
+					@include bg($filename: 'bg/bg-#{$type}.png');
+				}
+			}
+			input[type="#{$type}"]:checked ~ span:after {
+				background-position: 0 bottom;
+			}
+			b {
+				display: inline-block;
+				position: absolute;
+				top: 0; right: 0;
+				font-weight: normal;
+				font-size: 16px;
+				color: $color-light-black;
+			}
+		}
+		.#{$type}-group {
+			.#{$type} + .#{$type} {
+				margin-top: 10px;
+			}
+			&.#{$type}-group-inline {
+				.#{$type} {
+					display: inline-block;
+				}
+				.#{$type} + .#{$type} {
+					margin-left: 20px;
+				}
+			}
+		}
+	}

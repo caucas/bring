@@ -1,11 +1,10 @@
 aside {
 	position: absolute;
 	top: 0;
-	// bottom: 0;
 	left: 0;
 	width: $aside-width;
 	min-height: 100%;
-	padding: 265px 35px 150px;
+	padding: 165px 35px 150px;
 	@include bg($bgcolor: $bg-dark-color, $filename: 'aside-logo.png');
 	color: $color-light-white;
 
@@ -35,9 +34,6 @@ aside {
 				font-family: 'm-cond';
 				color: $color-light-gray;
 				text-transform: none;
-				span {
-					font: inherit;
-				}
 			}
 			ul {
 				// margin-top: 10px;

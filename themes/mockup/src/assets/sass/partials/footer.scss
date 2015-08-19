@@ -1,11 +1,12 @@
 footer {
 	position: relative;
-	height: 240px;
-	padding: 40px 50px;
+	// height: 240px;
+	// padding: 40px 50px;
 	@include rem(padding, 40px 50px);
 	border-top: 3px solid $color-gray;
 	background-color: $bg-dark-color;
 	color: #B8B8B8;
+	@extend .clrfix;
 
 	&:after {
 		content: '';
@@ -20,9 +21,20 @@ footer {
 		border-color: #ffffff transparent transparent transparent;
 	}
 
+	.footer-col-1, .footer-col-2 {
+		display: inline-block;
+		width: 50%;
+	}
+	.footer-col-2 {
+		width: 40%;
+		max-width: 500px;
+		float: right;
+	}
+
 	nav {
 		margin-bottom: 40px;
 		@extend .clrfix;
+
 		ul {
 			float: left;
 			padding-right: 5%;

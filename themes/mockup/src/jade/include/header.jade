@@ -1,11 +1,12 @@
 header
 	.logo
-		button(data-trigger="aside")
+		button(data-open="aside")
 		a(href="/")
 			img(src="/assets/images/logo.png", alt="logo")
-			div Доставка
+			//- div Доставка
 	.user-area
-		a.auth-btn(href="#", data-trigger="auth-block")
+		a.auth-btn(href="#", data-open="auth-block", data-open-mode="private")
+			span Вход / Регистрация
 		a.basket-btn(href="#", data-modal="basket")
 		//- a.profile-btn(href="#")
 		//- a.basket-btn.full(href="#")

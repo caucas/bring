@@ -9,8 +9,10 @@ header {
 .logo {
 	display: block;
 	width: $aside-width;
-	height: 80px;
-	padding: 25px 35px;
+	height: $header-height;
+	padding: 23px 35px;
+	@include rem(padding-left, 35px);
+	@include rem(padding-right, 35px);
 	float: left;
 	// @extend .clrfix;
 
@@ -19,7 +21,7 @@ header {
 		position: relative;
 		width: 28px;
 		height: 26px;
-		margin-right: 35px;
+		@include rem(margin-right, 35px);
 		float: left;
 		border: 0;
 		border-top: 4px solid #fff;
@@ -70,15 +72,14 @@ header {
 
 .user-area {
 	width: $user-area-width;
-	height: 80px;
+	height: $header-height;
 	float: right;
 	z-index: 2;
 
-	.auth-btn,
-	.basket-btn,
-	.profile-btn {
+	a {
 		display: inline-block;
-		height: 80px;
+		position: relative;
+		height: $header-height;
 		width: 85px;
 		transition: background-color .3s ease;
 	}
@@ -86,6 +87,20 @@ header {
 		@include bg($filename: 'icon/icon-login-btn.png', $bgcolor: $bg-dark-color, $pos: center);
 		&:hover {
 			background-color: darken($bg-dark-color, 15%);
+
+			span {
+				color: #666;
+			}
+		}
+		span {
+			position: absolute;
+			top: 0;
+			left: -180px;
+			@include rem(left, -200px);
+			line-height: $header-height;
+			color: #D2D2D2;
+			z-index: 1;
+			transition: color .3s ease;
 		}
 	}
 	.profile-btn {
