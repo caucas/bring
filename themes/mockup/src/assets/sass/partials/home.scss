@@ -1,18 +1,18 @@
 .top-slider {
+	position: relative;
 	height: 300px;
-	// @include rem(height, 300px);
-	.slide-bg-image {
-		background-size: cover;
-		height: 100%;
-	}
-	.slide-content {
+	overflow: hidden;
+
+	.swiper-slide {
 		display: table;
-		position: absolute;
-		top: 0;
+		// position: absolute;
+		// top: 0;
 		width: 100%;
 		height: 100%;
 		// padding: 20px 45px;
 		@include rem(padding, 20px 45px);
+		background-color: #333;
+		background-size: cover;
 
 		.image {
 			display: table-cell;
@@ -44,6 +44,7 @@
 			}
 		}
 	}
+
 	.swiper-pagination {
 		@include rem(bottom, 45px);
 		@include rem(padding-right, 45px);

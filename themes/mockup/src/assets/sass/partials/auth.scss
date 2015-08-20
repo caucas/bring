@@ -1,11 +1,13 @@
-#auth-block {
+#authBlock {
 	position: relative;
 	height: 320px;
 	margin-top: -320px;
 	width: 100%;
 	padding: 30px 20%;
-	transition: margin-top .3s ease;
+	background-color: #333;
 	@include gradient($img: 'bg/bg-auth.png', $from: rgba(0,0,0,0), $to: rgba(0,0,0,0.35));
+	text-shadow: 1px 1px #333;
+	transition: margin-top .3s ease;
 
 	&.opened {
 		margin-top: 0;
@@ -23,16 +25,31 @@
 			height: 36px;
 			margin-bottom: 25px;
 			padding: 5px 0 0 50px;
-			font: 22px 'R-400';
+			font-family: 'R-400';
+			font-size: 22px;
 			color: #fff;
+
+			span, a, b {
+				position: relative;
+				padding-right: 15px;
+				font-size: inherit;
+			}
+			a, b {
+				display: none;
+				cursor: pointer;
+			}
+			a {
+				text-decoration: underline;
+			}
 		}
 
-		// отступ для первого филдсета, а остальным 0 (first-child не работает)
 		fieldset {
-			padding-right: 30px;
+			margin-bottom: 10px;
 		}
-		~ fieldset {
-			padding-right: 0;
+
+		a {
+			font-size: 13px;
+			color: #fff;
 		}
 	}
 
@@ -56,10 +73,10 @@
 	}
 
 	.checkbox {
-		margin-left: 30px;
+		padding-left: 30px;
 
 		span {
-			line-height: 10px;
+			// line-height: 10px;
 			font-size: 12px;
 			color: #fff;
 		}
@@ -78,6 +95,7 @@
 	}
 
 	.btn {
+		// margin-right: 20px;
 		padding: 11px 40px;
 	}
 
@@ -92,18 +110,25 @@
 		legend {
 			@include bg($filename: 'icon/icon-reg-btn.png');
 		}
+		fieldset {
+			fieldset:nth-child(2) {
+				padding-right: 15px;
+			}
+			fieldset:nth-child(3) {
+				padding-left: 15px;
+			}
+		}
 	}
 
 	.trigger-btn {
-		display: inline-block;
 		position: absolute;
 		top: 30px;
 		right: 107px;
 		width: 35px;
 		height: 18px;
 		opacity: .8;
-		// transition: opacity .3s ease;
 		@include bg($filename: 'icon/icon-arrow-down.png');
+		z-index: 2;
 
 		&:hover {
 			opacity: 1;

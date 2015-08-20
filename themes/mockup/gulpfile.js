@@ -180,7 +180,7 @@ gulp.task('browser-sync', function() {
 		gulp.watch(watch.img, ['img'])
 		gulp.watch(watch.jade, ['jade'])
 		gulp.watch(watch.sass, ['sass'])
-		gulp.watch(watch.bower, ['bower'])
+		// gulp.watch(watch.bower, ['bower'])
 	});
 
 

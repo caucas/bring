@@ -1,20 +1,16 @@
 .top-slider.swiper-container
 	.swiper-wrapper
 		- for(var i = 1; i < 4; i++)
-			.swiper-slide
-				.slide-bg-image(
-					style="background-image: url(/assets/images/bg-slider.jpg)"
-				)
-				.slide-content
-					.image 
-						img(
-							src="/assets/images/slide1.png",
-							alt="slider image 1"
-						)
-					.desc
-						div Лучшие предложения #{i}
-						p
-							| ежедневно на сайте десятки <br>
-							| эксклюзивных акций от <br>
-							| партнеров клуба
+			.swiper-slide(style="background-image: url(/assets/images/bg-slider.jpg)")
+				.image 
+					img(
+						src="/assets/images/slide1.png",
+						alt="slider image 1"
+					)
+				.desc
+					div Лучшие предложения #{i}
+					p
+						| ежедневно на сайте десятки <br>
+						| эксклюзивных акций от <br>
+						| партнеров клуба
 	.swiper-pagination.top-slider-pagination

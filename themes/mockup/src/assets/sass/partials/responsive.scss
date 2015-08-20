@@ -1,7 +1,7 @@
 // xl
 	@media only screen and (min-width: 1601px) {
 		// header.scss
-		#auth-block {
+		#authBlock {
 			padding: 30px 20%;
 		}
 		// home.scss
@@ -34,7 +34,7 @@
 		html {
 			font-size: 15px;
 		}
-		#auth-block {
+		#authBlock {
 			padding: 30px 10%;
 		}
 		// vertical catalog
@@ -132,7 +132,7 @@
 		}
 
 		// auth.scss
-		#auth-block {
+		#authBlock {
 			padding: 30px;
 			.info-block {
 				display: none;
@@ -295,15 +295,22 @@
 		h4 {font-size: 17px;}
 
 		// auth.scss
-		#auth-block {
+		#authBlock {
 			padding: 0;
-			overflow: auto;
-			white-space: nowrap;
 
 			form {
-				width: auto;
+				width: 100%;
 				padding: 30px;
-				white-space: normal;
+			}
+			fieldset {
+				legend {
+					padding: 0;
+					background-image: none !important;
+
+					a, b {
+						display: inline-block;
+					}
+				}
 			}
 			#login-form {
 				padding-right: 30px;
@@ -372,6 +379,13 @@
 
 // xmin
 	@media only screen and (max-width: 480px) {
+		// auth.scss
+		#authBlock {
+			.trigger-btn {
+				right: 30px;
+			}
+		}
+
 		// header.scss
 		.logo div {
 			display: none;

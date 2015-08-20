@@ -25,15 +25,17 @@
 	$color-orange		: #FF4000;
 
 // MIXINS
-	@mixin bg ($filename, $bgcolor: null, $pos: 0 0, $repeat:no-repeat) {
-		background: $bgcolor url('../../assets/images/' + $filename) $pos $repeat;
-	}
+	// background shortcut
+		@mixin bg ($filename, $bgcolor: null, $pos: 0 0, $repeat:no-repeat) {
+			background: $bgcolor url('../../assets/images/' + $filename) $pos $repeat;
+		}
 
-	@mixin gradient ($img, $from, $to, $pos: 0 0, $repeat: repeat) {
-		background-image: radial-gradient(circle at center, $from 0%, $to 100%), url('../../assets/images/' + $img);
-		background-repeat: $repeat;
-		background-position: $pos;
-	}
+	// css gradient shortcut
+		@mixin gradient ($img, $from, $to, $pos: 0 0, $repeat: repeat) {
+			background-image: radial-gradient(circle at center, $from 0%, $to 100%), url('../../assets/images/' + $img);
+			background-repeat: $repeat;
+			background-position: $pos;
+		}
 
 	// REM UNIVERSAL MIXIN (with fallbacks)
 		@mixin rem($property, $values) {
@@ -67,15 +69,16 @@
 				@include rem(font-size, $fz);
 			}
 
-	@mixin additional-colors ($color-value, $color-name) {
-		&.btn-#{$color-name} {
-			background-color: $color-value;
-			border-color: $color-value;
-			&:hover {
-				background-color: lighten($color-value, 10%);
+	// additional colors for buttons
+		@mixin additional-colors ($color-value, $color-name) {
+			&.btn-#{$color-name} {
+				background-color: $color-value;
+				border-color: $color-value;
+				&:hover {
+					background-color: lighten($color-value, 10%);
+				}
 			}
 		}
-	}
 	
 	// CUSTOM CHECKBOX & RADIO STYLES
 	@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
@@ -86,8 +89,9 @@
 
 			input[type="#{$type}"] {
 				position: absolute;
-				left: -1000px;
-				opacity: 0;
+				top: 50%;
+				left: 31px;
+				margin-top: -5px;
 			}
 			span {
 				display: block;

@@ -82,7 +82,7 @@
 
 // COMMON STYLES
 	.wrap {
-		display: block;
+		// display: block;
 		font-size: 0;
 		text-align: left;
 	}
@@ -97,22 +97,8 @@
 
 @include jm-grid($prefix: xl);
 
-@media only screen and (max-width: 1441px) {
-	@include jm-grid($prefix: lg);
-}
-
-@media only screen and (max-width: 1367px) {
-	@include jm-grid($prefix: md);
-}
-
-@media only screen and (max-width: 1100px) {
-	@include jm-grid($prefix: sm);
-}
-
-@media only screen and (max-width: 801px) {
-	@include jm-grid($prefix: xs);
-}
-
-@media only screen and (max-width: 641px) {
-	@include jm-grid($prefix: xxs);
-}
+@media only screen and (max-width: 1441px)	{@include jm-grid($prefix: lg);}
+@media only screen and (max-width: 1367px)	{@include jm-grid($prefix: md);}
+@media only screen and (max-width: 1100px)	{@include jm-grid($prefix: sm);}
+@media only screen and (max-width: 801px)	{@include jm-grid($prefix: xs);}
+@media only screen and (max-width: 641px)	{@include jm-grid($prefix: xxs);}
