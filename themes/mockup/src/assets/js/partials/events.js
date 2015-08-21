@@ -17,25 +17,25 @@
 		});
 	});
 
-	$('body').on('click', '[data-open]', function(e) {
+	$('body').on('click', '[data-expand]', function(e) {
 		e.preventDefault();
-		var divID = '#' + $(this).data('open');
-		var mode = $(this).data('open-mode');
+		var divID = '#' + $(this).data('expand');
+		var mode = $(this).data('expand-mode');
 		// debugger
 		if (mode == 'private') {
-			if (!$(divID).hasClass('opened'))
-				$(divID).addClass('opened');
+			if (!$(divID).hasClass('expanded'))
+				$(divID).addClass('expanded');
 			else
-				$(divID).removeClass('opened');
+				$(divID).removeClass('expanded');
 		}
 		else {
-			if (!$(divID).hasClass('opened')) {
-				$(divID).addClass('opened');
+			if (!$(divID).hasClass('expanded')) {
+				$(divID).addClass('expanded');
 				setTimeout(function() {
-					$(document).bind('click.data-open', function(e) {
+					$(document).bind('click.data-expand', function(e) {
 						if (!$(e.target).closest(divID).length)  {
-							$(divID).removeClass('opened');
-							$(this).unbind('click.data-open');
+							$(divID).removeClass('expanded');
+							$(this).unbind('click.data-expand');
 						}
 					})
 				}, 0);

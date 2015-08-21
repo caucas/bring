@@ -9,7 +9,7 @@
 	text-shadow: 1px 1px #333;
 	transition: margin-top .3s ease;
 
-	&.opened {
+	&.expanded {
 		margin-top: 0;
 	}
 
@@ -73,10 +73,9 @@
 	}
 
 	.checkbox {
-		padding-left: 30px;
+		margin-left: 30px;
 
 		span {
-			// line-height: 10px;
 			font-size: 12px;
 			color: #fff;
 		}

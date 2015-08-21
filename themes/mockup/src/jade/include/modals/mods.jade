@@ -2,27 +2,28 @@
 	.modal-head
 		span Пицца как говорицца
 		a.close-modal.close-modal-btn
-	.modal-body.wrap
+	.modal-body
 		p.add-info-text При заказе от 1200 руб. пицца Моцарелла классик в подарок!
-		.radio-group.xl-5-11
-			h4.radio-group-title Выбор варианта:
-			.radio-group-items
-				label.radio
-					input(type="radio", name="order-payment", value="1")
-					span Наличными курьеру (3680р)
-				label.radio
-					input(type="radio", name="order-payment", value="2")
-					span Безналичная оплата
-				
-		.checkbox-group.xl-6-11
-			h4.checkbox-group-title Выбор варианта:
-			.checkbox-group-items
-				- var categoryOptions = ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи, фрукты']
-					each item in categoryOptions
-						label.checkbox
-							input(type="checkbox")
-							span= item
-							b +100
+		.wrap
+			.radio-group.xl-5-11.xxs-1-1
+				h4.radio-group-title Выбор варианта:
+				.radio-group-items
+					label.radio
+						input(type="radio", name="order-payment", value="1")
+						span Наличными курьеру (3680р)
+					label.radio
+						input(type="radio", name="order-payment", value="2")
+						span Безналичная оплата
+					
+			.checkbox-group.xl-6-11.xxs-1-1
+				h4.checkbox-group-title Выбор варианта:
+				.checkbox-group-items
+					- var categoryOptions = ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи, фрукты']
+						each item in categoryOptions
+							label.checkbox
+								input(type="checkbox")
+								span= item
+								b +100
 
 	.modal-foot.right-xl
 		.total-cost Цена итоговая:

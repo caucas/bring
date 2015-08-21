@@ -58,8 +58,8 @@ var gulp			= require('gulp'),
 			baseDir: "./build"
 		},
 		host: 'localhost',
-		port: 8000,
-		tunnel: 'bringo'
+		port: 8080
+		// tunnel: 'bringo'
 	};
 
 // ----------------------------  TASKS  ----------------------------

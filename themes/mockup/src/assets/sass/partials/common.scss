@@ -94,7 +94,6 @@ nav {
 
 .cost {
 	font-size: 30px;
-	// @include fz(30px);
 	color: $color-dark-red;
 
 	sub {
@@ -102,7 +101,6 @@ nav {
 		color: #000;
 	}
 	&.cost-small {
-		// font-size: 22px;
 		@include fz(22px);
 
 		sub {
@@ -134,24 +132,37 @@ ul.list {
 		}
 	}
 }
-.custom-input-number {
-	font-size: 0;
-	& > * {
-		display: inline-block;
-		width: 28px;
-		height: 28px;
-		font-size: 15px;
-		vertical-align: middle;
+
+.gplay-btn, .astore-btn {
+	display: inline-block;
+	position: relative;
+	width: 130px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	color: #fff;
+	opacity: .8;
+	text-decoration: none;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		@include bg($filename: '/icon/icon-gplay-btn.png');
+		border: 2px solid #dedede;
+		border-radius: 8px;
+		transition: border-color .3s;
+		z-index: 1;
 	}
-	input {
-		width: 28px;
-		margin: 0 1px;
-		text-align: center;
+
+	&:hover {
+		text-decoration: underline;
+		&:after {
+			border-color: #fff;
+		}
 	}
-	button {
-		background-color: #A4A4A4;
-		border: 0;
-		font-weight: 600;
-		color: #fff;
-	}
+}
+.astore-btn:after {
+	@include bg($filename: '/icon/icon-astore-btn.png');
 }

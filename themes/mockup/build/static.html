@@ -50,13 +50,13 @@
             </fieldset>
           </fieldset>
         </form>
-      </div><a href="#" data-open="authBlock" data-open-mode="private" class="trigger-btn"></a>
+      </div><a href="#" data-expand="authBlock" data-expand-mode="private" class="trigger-btn"></a>
     </div>
     <header>
       <div class="logo">
-        <button data-open="aside"></button><a href="/"><img src="/assets/images/logo.png" alt="logo"></a>
+        <button data-expand="aside"></button><a href="/"><img src="/assets/images/logo.png" alt="logo"></a>
       </div>
-      <div class="user-area"><a href="#" data-open="authBlock" data-open-mode="private" class="auth-btn"><span>Вход / Регистрация</span></a><a href="#" data-modal="basket" class="basket-btn"></a>
+      <div class="user-area"><a href="#" data-expand="authBlock" data-expand-mode="private" class="auth-btn"><span>Вход / Регистрация</span></a><a href="#" data-modal="basket" class="basket-btn"></a>
       </div>
       <form class="top-search">
         <input type="text" name="s" placeholder="Поиск (например: Молоко, Ресторан, Скидка)">
@@ -200,127 +200,127 @@
     <div id="basket" class="modal modal-basket">
       <div class="modal-head"><span>Корзина</span><a class="close-modal close-modal-btn"></a></div>
       <div class="modal-body table-layout wrap right-xl">
-        <div class="thead xl-8-12 wrap left-xl">
-          <div class="xl-7-11">Наименование</div>
-          <div class="xl-2-11">Количество</div>
-          <div class="xl-2-11">Цена</div>
+        <div class="thead xl-8-12 xxs-1-1">
+          <div class="col-name">Наименование</div>
+          <div class="col-count">Количество</div>
+          <div class="col-cost">Цена</div>
         </div>
         <div class="tbody">
-          <div class="table-row wrap xl-1-1 left-xl">
+          <div class="table-row wrap">
             <div class="table-row-title xl-4-12"><img src="/assets/images/shop1.png" alt="shop logo">
               <h4>Наименование магазина</h4>
               <div>г. Владикавказ, <br> ул. Маркова 15Б</div>
             </div>
-            <div class="table-row-items xl-8-12">
-              <div class="table-row-item wrap">
-                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
-                <div class="custom-input-number xl-2-11">
+            <div class="table-row-items xl-8-12 xxs-1-1">
+              <div class="table-row-item">
+                <div class="col-name">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="col-count">
                   <button>-</button>
                   <input value="1">
                   <button>+</button>
                 </div>
-                <div class="xl-2-11">370р</div>
+                <div class="col-cost">370р</div>
               </div>
-              <div class="table-row-item wrap">
-                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
-                <div class="custom-input-number xl-2-11">
+              <div class="table-row-item">
+                <div class="col-name">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="col-count">
                   <button>-</button>
                   <input value="1">
                   <button>+</button>
                 </div>
-                <div class="xl-2-11">370р</div>
+                <div class="col-cost">370р</div>
               </div>
             </div>
             <div class="table-row-total wrap right-xl">
-              <div class="wrap xl-8-12"> 
+              <div class="wrap xl-8-12 xxs-1-1">
                 <div class="xl-1-8">Итого:</div>
                 <div class="total-cost xl-7-8 right-xl">1700р</div>
               </div>
-              <div class="table-row-noty xl-8-12 left-xl">Минимальная сумма заказа в этом магазине: 3000р</div>
+              <div class="table-row-noty xl-8-12 xxs-1-1 left-xl">Минимальная сумма заказа в этом магазине: 3000р</div>
             </div>
           </div>
-        </div>
-        <div class="tbody">
-          <div class="table-row wrap xl-1-1 left-xl">
+          <div class="table-row wrap">
             <div class="table-row-title xl-4-12"><img src="/assets/images/shop2.png" alt="shop logo">
               <h4>Наименование магазина</h4>
               <div>г. Владикавказ, <br> ул. Маркова 15Б</div>
             </div>
-            <div class="table-row-items xl-8-12">
-              <div class="table-row-item wrap">
-                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
-                <div class="custom-input-number xl-2-11">
+            <div class="table-row-items xl-8-12 xxs-1-1">
+              <div class="table-row-item">
+                <div class="col-name">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="col-count">
                   <button>-</button>
                   <input value="1">
                   <button>+</button>
                 </div>
-                <div class="xl-2-11">370р</div>
+                <div class="col-cost">370р</div>
               </div>
-              <div class="table-row-item wrap">
-                <div class="xl-7-11">Вкусное блюдо с доставкой 30см 480гр</div>
-                <div class="custom-input-number xl-2-11">
+              <div class="table-row-item">
+                <div class="col-name">Вкусное блюдо с доставкой 30см 480гр</div>
+                <div class="col-count">
                   <button>-</button>
                   <input value="1">
                   <button>+</button>
                 </div>
-                <div class="xl-2-11">370р</div>
+                <div class="col-cost">370р</div>
               </div>
             </div>
             <div class="table-row-total wrap right-xl">
-              <div class="wrap xl-8-12"> 
+              <div class="wrap xl-8-12 xxs-1-1">
                 <div class="xl-1-8">Итого:</div>
                 <div class="total-cost xl-7-8 right-xl">1700р</div>
               </div>
-              <div class="table-row-noty xl-8-12 left-xl">Минимальная сумма заказа в этом магазине: 3000р</div>
+              <div class="table-row-noty xl-8-12 xxs-1-1 left-xl">Минимальная сумма заказа в этом магазине: 3000р</div>
             </div>
           </div>
         </div>
       </div>
       <div class="modal-foot right-xl">
-        <div class="order-summ">Цена итоговая:<span>3580р</span></div>
+        <div class="order-summ xxs-1-1">Цена итоговая:<span>3580р</span></div>
         <button class="btn btn-green">Оформить заказ</button>
-        <button class="btn btn-gray close-modal">Очистить</button>
+        <button class="btn btn-gray">Очистить</button>
       </div>
     </div>
     <div id="mods" class="modal modal-mods">
       <div class="modal-head"><span>Пицца как говорицца</span><a class="close-modal close-modal-btn"></a></div>
-      <div class="modal-body wrap">
+      <div class="modal-body">
         <p class="add-info-text">При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
-        <div class="radio-group xl-5-11">
-          <h4 class="radio-group-title">Выбор варианта:</h4>
-          <div class="radio-group-items">
-            <label class="radio">
-              <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
-            </label>
-            <label class="radio">
-              <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
-            </label>
+        <div class="wrap">
+          <div class="radio-group xl-5-11 xxs-1-1">
+            <h4 class="radio-group-title">Выбор варианта:</h4>
+            <div class="radio-group-items">
+              <label class="radio">
+                <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="checkbox-group xl-6-11">
-          <h4 class="checkbox-group-title">Выбор варианта:</h4>
-          <div class="checkbox-group-items">
-            <label class="checkbox">
-              <input type="checkbox"><span>Мясные продукты</span><b>+100</b>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox"><span>Замороженные продукты</span><b>+100</b>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox"><span>Молочные продукты</span><b>+100</b>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox"><span>Рыба</span><b>+100</b>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox"><span>Кондитерские изделия</span><b>+100</b>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox"><span>Хлебобулочные изделия</span><b>+100</b>
-            </label>
-            <label class="checkbox">
-              <input type="checkbox"><span>Овощи, фрукты</span><b>+100</b>
-            </label>
+          <div class="checkbox-group xl-6-11 xxs-1-1">
+            <h4 class="checkbox-group-title">Выбор варианта:</h4>
+            <div class="checkbox-group-items">
+              <label class="checkbox">
+                <input type="checkbox"><span>Мясные продукты</span><b>+100</b>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox"><span>Замороженные продукты</span><b>+100</b>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox"><span>Молочные продукты</span><b>+100</b>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox"><span>Рыба</span><b>+100</b>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox"><span>Кондитерские изделия</span><b>+100</b>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox"><span>Хлебобулочные изделия</span><b>+100</b>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox"><span>Овощи, фрукты</span><b>+100</b>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -332,7 +332,7 @@
     <div id="order" class="modal modal-order">
       <div class="modal-head"> <span>Заказ</span><a class="close-modal close-modal-btn"></a></div>
       <div class="modal-body wrap">
-        <div class="xl-7-12">
+        <div class="xl-7-12 xxs-1-1">
           <label>ФИО</label>
           <input type="text" value="Иванов Иван">
           <label>Адрес доставки</label>
@@ -342,15 +342,15 @@
           <label>Комментарий</label>
           <textarea></textarea>
         </div>
-        <div class="order-summ xl-5-12 right-xl">Сумма заказа:<span>3580р</span></div>
+        <div class="order-summ xl-5-12 xxs-1-1 right-xl left-xxs">Сумма заказа:<span>3580р</span></div>
         <div class="order-payments radio-group xl-1-1">
           <label class="radio-group-title">Методы оплаты</label>
           <label class="radio">
             <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
           </label>
           <label class="radio">
-            <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span><img src="/assets/images/payments.jpg" alt="payments">
-          </label>
+            <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
+          </label><img src="/assets/images/payments.jpg" alt="payments">
         </div>
       </div>
       <div class="modal-foot right-xl">

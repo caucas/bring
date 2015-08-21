@@ -71,46 +71,23 @@
 		// main.scss
 		.filter {
 			.checkbox-group {
-				// margin-bottom: 0;
-				// padding-right: 30px;
 				margin-right: 30px;
-
-				.checkbox-group-title {
-					position: relative;
+			}
+			.expand-block {
+				.expand-trigger {
 					padding-left: 40px;
-
-					span {
-						cursor: pointer;
-					}
-					a {
-						display: none;
-					}
 
 					&:before, &:after {
 						content: '';
-						position: absolute;
-						top: 7px;
-						left: 0;
-						width: 0;
-						height: 0;
-						border-style: solid;
-						border-width: 14px;
-						border-color: $color-light-blue transparent transparent transparent;
-						cursor: pointer;
-					}
-					&:after {
-						left: 3px;
-						border-width: 11px;
-						border-color: $color-light-white transparent transparent transparent;
 					}
 				}
-				.checkbox-group-items {
-					display: none;
-					padding-left: 10px;
+			}
+			.expand-content {
+				display: none;
+				padding-left: 10px;
 
-					&.opened {
-						display: block;
-					}
+				&.expanded {
+					display: block;
 				}
 			}
 		}
@@ -166,7 +143,7 @@
 			transition: margin-left .3s;
 			z-index: 10;
 
-			&.opened {
+			&.expanded {
 				margin-left: 0;
 			}
 		}
@@ -297,6 +274,7 @@
 		// auth.scss
 		#authBlock {
 			padding: 0;
+			overflow: hidden;
 
 			form {
 				width: 100%;
@@ -327,6 +305,45 @@
 			.checkbox-group {
 				margin-bottom: 20px;
 				padding-right: 0;
+
+				.checkbox-group-title {
+					position: relative;
+					padding-left: 40px;
+
+					span {
+						cursor: pointer;
+					}
+					a {
+						display: none;
+					}
+
+					&:before, &:after {
+						content: '';
+						position: absolute;
+						top: 7px;
+						left: 0;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 14px;
+						border-color: $color-light-blue transparent transparent transparent;
+						cursor: pointer;
+					}
+					&:after {
+						left: 3px;
+						border-width: 11px;
+						border-color: #fff transparent transparent transparent;
+						// border-color: $color-light-white transparent transparent transparent;
+					}
+				}
+				.checkbox-group-items {
+					display: none;
+					padding-left: 10px;
+
+					&.expanded {
+						display: block;
+					}
+				}
 			}
 		}
 
@@ -340,6 +357,13 @@
 		}
 
 		// home.scss
+		.top-slider {
+			.swiper-slide {
+				.image {
+					width: 50%;
+				}
+			}
+		}
 		.single-product {
 			.single-product-slider {
 				width: 100%;
@@ -367,6 +391,28 @@
 			}
 		}
 
+		// table-layout.scss
+		.table-row-title {
+			display: none;
+		}
+
+		// modals.scss
+		.modal-basket {
+			.order-summ {
+				margin-bottom: 20px;
+			}
+		}
+		.modal-mods {
+			.radio-group {
+				margin-bottom: 20px;
+			}
+		}
+		.modal-order {
+			.order-summ {
+				margin: 10px 0;
+			}
+		}
+
 		// footer.scss
 		footer {
 			.social {
@@ -378,11 +424,20 @@
 	}
 
 // xmin
-	@media only screen and (max-width: 480px) {
+	@media only screen and (max-width: 481px) {
 		// auth.scss
 		#authBlock {
 			.trigger-btn {
 				right: 30px;
+			}
+			fieldset:last-child {
+				.btn {
+					float: left;
+				}
+				.checkbox {
+					margin: 0;
+					float: right;
+				}
 			}
 		}
 
@@ -400,7 +455,7 @@
 
 		// home.scss
 		.top-slider {
-			.slide-content {
+			.swiper-slide {
 
 				&:before {
 					content: '';
@@ -424,6 +479,36 @@
 					overflow: hidden;
 				}
 			}
+		}
+		.shops-category {
+			// h2 {
+			// 	position: relative;
+			// 	font-size: 23px;
+
+			// }
+			// span.expand-trigger {
+			// 	position: absolute;
+			// 	top: 0;
+			// 	right: 0;
+			// 	width: 16px;
+			// 	height: 16px;
+			// 	// background-color: #333;
+			// 	background-image: url(https://cdn2.iconfinder.com/data/icons/enter-and-exit-fullscreen/100/Fullscreen-Set-11-16.png);
+			// 	cursor: pointer;
+			// }
+
+			// .wrap {
+			// 	display: none;
+			// }
+
+			// &.expanded {
+			// 	.wrap {
+			// 		display: block;
+			// 	}
+			// 	span.expand-trigger {
+			// 		background-image: url(https://cdn2.iconfinder.com/data/icons/enter-and-exit-fullscreen/100/Fullscreen-Set-12-16.png);
+			// 	}
+			// }
 		}
 
 		// footer.scss
