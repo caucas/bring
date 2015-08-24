@@ -12,10 +12,6 @@
 			.cat {
 				width: 77%;
 				float: right;
-
-				.cat-item {
-					// width: 33%;
-				}
 			}
 		}
 		.single-product {
@@ -424,7 +420,7 @@
 	}
 
 // xmin
-	@media only screen and (max-width: 481px) {
+	@media only screen and (max-width: 480px) {
 		// auth.scss
 		#authBlock {
 			.trigger-btn {
@@ -443,6 +439,9 @@
 
 		// header.scss
 		.logo div {
+			display: none;
+		}
+		.user-area {
 			display: none;
 		}
 

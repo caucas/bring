@@ -57,17 +57,17 @@ var gulp			= require('gulp'),
 		server: {
 			baseDir: "./build"
 		},
+		// tunnel: 'bringo',
 		host: 'localhost',
-		port: 8080
-		// tunnel: 'bringo'
+		port: 8000
 	};
 
 // ----------------------------  TASKS  ----------------------------
 
 // server init
-gulp.task('browser-sync', function() {
-	browserSync.init(serverConfig);
-});
+	gulp.task('serve', function() {
+		browserSync.init(serverConfig);
+	});
 
 // sass
 	gulp.task("sass", function () {
@@ -76,13 +76,13 @@ gulp.task('browser-sync', function() {
 			.pipe(sass())
 			.pipe(cssimport())
 			.pipe(autoprefixer({browsers: ['last 30 versions']}))
-			.pipe(sourcemaps.init())
-			.pipe(minifyCSS({advanced: false}))
-			.pipe(sourcemaps.write())
+			// .pipe(sourcemaps.init())
+			// .pipe(minifyCSS({advanced: false}))
 			.pipe(rename({suffix: ".min"}))
+			// .pipe(sourcemaps.write())
 			.pipe(gulp.dest(build.css))
 			.pipe(reload({stream: true}))
-			.pipe(notify("SASS compiled"));
+			.pipe(notify("SASS compiled"))
 	});
 
 // jade (just views)
@@ -91,17 +91,16 @@ gulp.task('browser-sync', function() {
 			.pipe(plumber())
 			.pipe(jade({pretty: true}))
 			.pipe(gulp.dest(build.root))
+			.pipe(notify("JADE compiled"))
 			.pipe(reload({stream: true}))
-			.pipe(notify("JADE compiled"));
 	});
 
-// jade templates
-	gulp.task('templates', function () {
+// compile all jade templates
+	gulp.task('getTemplates', function () {
 		gulp.src(src.templates)
 			.pipe(plumber())
 			.pipe(jade({pretty: true}))
 			.pipe(gulp.dest(build.templates))
-			.pipe(reload({stream: true}))
 			.pipe(notify("TEMPLATES compiled"));
 	});
 
@@ -124,7 +123,15 @@ gulp.task('browser-sync', function() {
 	gulp.task('img:clean', function () {
 		del.sync(build.img);
 	});
-	gulp.task('img', ['img:clean'], function () {
+	gulp.task('img:update', ['img:clean'], function () {
+		gulp.src(src.img)
+			.pipe(minifyIMG({
+				progressive: true,
+				use: [minifyPNG()]
+			}))
+			.pipe(gulp.dest(build.img))
+	});
+	gulp.task('img:build', function () {
 		gulp.src(src.img)
 			.pipe(minifyIMG({
 				progressive: true,
@@ -137,7 +144,11 @@ gulp.task('browser-sync', function() {
 	gulp.task('fonts:clean', function () {
 		del.sync(build.fonts);
 	});
-	gulp.task('fonts', ['fonts:clean'], function () {
+	gulp.task('fonts:update', ['fonts:clean'], function () {
+		gulp.src(src.fonts)
+			.pipe(gulp.dest(build.fonts))
+	});
+	gulp.task('fonts:build', function () {
 		gulp.src(src.fonts)
 			.pipe(gulp.dest(build.fonts))
 	});
@@ -180,12 +191,15 @@ gulp.task('browser-sync', function() {
 		gulp.watch(watch.img, ['img'])
 		gulp.watch(watch.jade, ['jade'])
 		gulp.watch(watch.sass, ['sass'])
-		// gulp.watch(watch.bower, ['bower'])
 	});
 
-
 // build
-	gulp.task('build', ['sass', 'jade', 'js', 'fonts', 'img']);
+	gulp.task('build',  gulpsync.sync(['sass', 'jade', 'js', 'fonts:build', 'img:build', 'bower']));
 
 // default
-	gulp.task('default', gulpsync.sync(['build', 'browser-sync', 'watch']));
+	// gulp.task('default', gulpsync.sync(['build', 'serve']), function () {
+	// 	gulp.watch(watch.js, ['js'], reload);
+	// 	gulp.watch(watch.jade, ['jade'], reload);
+	// 	gulp.watch(watch.sass, ['sass'], reload);
+	// });
+	gulp.task('default', gulpsync.sync(['build', 'serve', 'watch']));
