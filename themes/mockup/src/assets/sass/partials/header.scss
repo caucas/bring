@@ -124,8 +124,9 @@ header {
 	position: absolute;
 	left: $aside-width;
 	right: $user-area-width;
+	height: $header-height;
 	padding: 20px 35px;
-	@include rem(padding, 20px 35px);
+	// @include rem(padding, 20px 35px);
 	float: left;
 	background-color: #fff;
 
@@ -143,10 +144,10 @@ header {
 		height: 40px;
 		padding: 0;
 		padding-left: 40px;
+		@include bg($filename: 'icon/icon-search.png', $pos: left center);
 		border: 0;
 		font-size: 18px;
-		// @include fz(18px);
-		@include bg($filename: 'icon/icon-search.png', $pos: left center);
+		text-overflow: ellipsis;
 		color: #aaa;
 
 		&:focus {

@@ -1,15 +1,29 @@
 header
 	.logo
-		button(data-expand="aside")
+		button(
+			data-expand="aside",
+			data-expand-classes="mobile-wrap"
+		)
 		a(href="/")
 			img(src="/assets/images/logo.png", alt="logo")
 			//- div Доставка
 	.user-area
-		a.auth-btn(href="#", data-expand="authBlock", data-expand-mode="private")
+		a.auth-btn(
+			href="#",
+			data-expand="authBlock",
+			data-expand-mode="private"
+		)
 			span Вход / Регистрация
-		a.basket-btn(href="#", data-modal="basket")
-		//- a.profile-btn(href="#")
+		a.basket-btn(
+			href="#",
+			data-modal="basket"
+		)
+		//- a.profile-btn(href="/profile")
 		//- a.basket-btn.full(href="#")
 	form.top-search
-		input(type="text",name="s",placeholder="Поиск (например: Молоко, Ресторан, Скидка)")
+		input(
+			type="text",
+			name="s",
+			placeholder="Поиск (например: Молоко, Ресторан, Скидка)"
+		)
 		//- button.search-btn(type="button")

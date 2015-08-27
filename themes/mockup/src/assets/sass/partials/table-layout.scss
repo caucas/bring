@@ -55,7 +55,7 @@
 		font: 18px 'R-400';
 		line-height: 16px;
 	}
-	div {
+	.address {
 		font-size: 10px;
 		color: #666;
 	}
@@ -90,13 +90,13 @@
 		padding-right: 30px;
 		font-family: 'R-300';
 	}
-}
-.table-row-noty {
-	margin-top: 10px;
-	font-size: 14px !important;
-	color: $color-red;
+	.table-row-noty {
+		margin-top: 10px;
+		font-size: 14px;
+		color: $color-red;
 
-	&:before {
-		content: '* ';
+		&:before {
+			content: '* ';
+		}
 	}
 }

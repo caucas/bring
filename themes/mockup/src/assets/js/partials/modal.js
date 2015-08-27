@@ -1,7 +1,7 @@
-'use strict';
+;
 (function($) {
 
-	$('a[data-modal]').on('click', function(e) {
+	$('[data-modal]').on('click', function(e) {
 		e.preventDefault();
 		var modalLocation = $(this).attr('data-modal');
 		$('#'+modalLocation).modal($(this).data());

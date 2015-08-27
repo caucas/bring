@@ -27,36 +27,34 @@ aside {
 	}
 
 	nav {
+		// элементы 1го уровня
 		ul {
 			li {
-				font-size: 16px;
-				// @include fz(16px);
-				font-family: 'm-cond';
-				color: $color-light-gray;
-				text-transform: none;
-			}
-			ul {
-				// margin-top: 10px;
-				@include rem(margin-top, 10px);
-			}
-		}
-		// элементы 1го уровня
-		> ul {
-			> li {
-				// margin-bottom: 25px;
+				position: relative;
 				@include rem(margin-bottom, 25px);
 				color: $color-light-blue;
 				font-size: 18px;
-				// @include fz(18px);
+				font-family: 'm-cond';
 				text-transform: uppercase;
+
+				li {
+					margin: 0;
+					font-size: 16px;
+					color: $color-light-gray;
+					text-transform: none;
+				}
+			}
+			ul {
+				padding-top: 10px;
+				// @include rem(padding-top, 10px);
 			}
 		}
 	}
 
 	.contacts {
 		p.title {
-			// font-size: 18px;
-			@include fz(18px);
+			font-size: 18px;
+			// @include fz(18px);
 			font-family: 'R-400';
 			font-weight: bold;
 		}

@@ -21,14 +21,55 @@
 	z-index: 101;
 
 	.modal-head, .modal-body {
+		position: relative;
 		padding: 20px 30px;
+		font-family: 'r-400';
 	}
 	.modal-head {
+		padding-right: 60px;
 		background-color: $bg-yellow-color;
-		font: 30px 'R-700';
+		font-size: 30px;
+		font-family: 'r-700';
 		color: #000;
-		span {
-			font: inherit;
+
+		.close-modal-btn {
+			position: absolute;
+			top: 50%; right: 25px;
+			width: 27px; height: 9px;
+			margin-top: -5px;
+			line-height: 26px;
+			background-color: #fff;
+			border: 1px solid #fff;
+			text-align: center;
+			font-size: 0;
+			cursor: pointer;
+			transform: rotate(-45deg);
+			transform-origin: center;
+			transition: border-color .3s ease;
+
+			&:before,
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				background-color: #fff;
+			}
+			&:before {
+				top: -10px; left: 8px;
+				width: 7px; height: 25px;
+				border: 1px solid #fff;
+				border: 1px solid transparent;
+				transition: border-color .3s ease;
+			}
+			&:after {
+				top: -2px; left: 7px;
+				width: 11px; height: 11px;
+				border-radius: 100%;
+			}
+
+			&:hover, &:hover:before {
+				border-color: #333
+			}
 		}
 	}
 	.modal-body {
@@ -44,53 +85,10 @@
 		margin-bottom: 15px;
 	}
 	.modal-foot {
-		padding: 30px;
-		padding-top: 0;
+		padding: 0 30px 20px;
 
 		button {
-			// margin-left: 20px;
 			@include rem(margin-left, 20px);
-		}
-	}
-	.close-modal-btn {
-		position: absolute;
-		top: 33px; right: 25px;
-		width: 27px; height: 9px;
-		line-height: 26px;
-		background-color: #fff;
-		border: 1px solid #fff;
-		border: 1px solid transparent;
-		text-align: center;
-		font-size: 0;
-		color: #FFF;
-		cursor: pointer;
-		transform: rotate(-45deg);
-		transform-origin: center;
-		backface-visibility: hidden;
-		transition: border-color .3s ease;
-
-		&:before,
-		&:after {
-			content: '';
-			display: block;
-			position: absolute;
-			background-color: #fff;
-		}
-		&:before {
-			top: -10px; left: 8px;
-			width: 7px; height: 25px;
-			border: 1px solid #fff;
-			border: 1px solid transparent;
-			transition: border-color .3s ease;
-		}
-		&:after {
-			top: -2px; left: 7px;
-			width: 11px; height: 11px;
-			border-radius: 100%;
-		}
-
-		&:hover, &:hover:before {
-			border-color: #333
 		}
 	}
 
@@ -105,8 +103,7 @@
 				display: inline-block;
 				position: relative;
 				padding-left: 15px;
-				// padding-right: 15px;
-				font-size: 22px;
+				font-size: 1.1em;
 				color: #666;
 			}
 		}
@@ -126,9 +123,6 @@
 	
 	// Mods
 		&.modal-mods {
-			h4 {
-				font-family: R-400;
-			}
 			.body {
 				margin-bottom: 20px;
 			}

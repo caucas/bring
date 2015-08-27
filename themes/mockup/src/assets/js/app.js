@@ -6,5 +6,6 @@
 //= partials/modal.js
 
 // app js
+//= partials/expand.js
 //= partials/events.js
 //= partials/sliders.js

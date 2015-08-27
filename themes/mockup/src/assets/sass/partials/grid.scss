@@ -78,6 +78,8 @@
 	.center-#{$prefix} {text-align: center;}
 	.left-#{$prefix} {text-align: left;}
 	.right-#{$prefix} {text-align: right;}
+
+	.no-scroll-#{$prefix} {overflow: hidden;}
 }
 
 // COMMON STYLES

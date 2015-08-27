@@ -1,6 +1,10 @@
 aside#aside
 	nav
 		ul
+			li.single-item.mobile-menu-item
+				span(data-expand="authBlock", data-expand-mode="private") Авторизация / Регистрация
+			li.single-item.mobile-menu-item
+				span(data-modal="basket") Корзина
 			li
 				span Страницы
 				ul
@@ -21,7 +25,7 @@ aside#aside
 					ul
 						each childItem in item.childs
 							li: a(href="#")= childItem
-		.contacts
-			p.title Телефон <br> справочной <br> службы
-			p: a.tel(href="tel:+78004252233") 8-800-42-5-22-33
-			p.small-desc звонки принимаются <br> с 9:00 до 18:00
+	.contacts
+		p.title Телефон <br> справочной <br> службы
+		p: a.tel(href="tel:+78004252233") 8-800-42-5-22-33
+		p.small-desc звонки принимаются <br> с 9:00 до 18:00

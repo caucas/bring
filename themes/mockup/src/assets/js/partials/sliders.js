@@ -4,7 +4,7 @@
 ----------------------------*/
 
 	// auth form slides (<= 640px)
-	var authSlider = new Swiper('#authBlock', {
+	var authSlider = new Swiper('#authBlock > div', {
 		slidesPerView: 'auto',
 		nextButton: '#authBlock .button-next',
 		prevButton: '#authBlock .button-prev',

@@ -1,9 +1,5 @@
 // xl
 	@media only screen and (min-width: 1601px) {
-		// header.scss
-		#authBlock {
-			padding: 30px 20%;
-		}
 		// home.scss
 		.best-offers {
 			.filter {
@@ -30,7 +26,7 @@
 		html {
 			font-size: 15px;
 		}
-		#authBlock {
+		#authBlock .auth-container{
 			padding: 30px 10%;
 		}
 		// vertical catalog
@@ -93,8 +89,10 @@
 	@media only screen and (max-width: 1100px) {
 		// common.scss
 		// цвет заливки стрелки вниз
-		.filter .checkbox-group .checkbox-group-title:after {
-			border-color: #fff transparent transparent transparent;
+		.filter .checkbox-group {
+			>span:after {
+				border-color: #fff transparent transparent transparent;
+			}
 		}
 		// main.scss
 		.main-container {
@@ -106,7 +104,9 @@
 
 		// auth.scss
 		#authBlock {
-			padding: 30px;
+			.auth-container {
+				padding: 30px;
+			}
 			.info-block {
 				display: none;
 			}
@@ -199,11 +199,12 @@
 				font-size: 16px;
 			}
 		}
-
+		
+		// aside.scss
 		aside {
 			min-height: 0px;
 			&:after {
-				background-image: none;
+				display: none;
 			}
 		}
 
@@ -269,8 +270,13 @@
 
 		// auth.scss
 		#authBlock {
-			padding: 0;
-			overflow: hidden;
+			.trigger-btn {
+				right: 30px;
+			}
+			.auth-container {
+				padding: 0;
+				overflow: hidden;
+			}
 
 			form {
 				width: 100%;
@@ -302,7 +308,7 @@
 				margin-bottom: 20px;
 				padding-right: 0;
 
-				.checkbox-group-title {
+				> span {
 					position: relative;
 					padding-left: 40px;
 
@@ -332,9 +338,9 @@
 						// border-color: $color-light-white transparent transparent transparent;
 					}
 				}
-				.checkbox-group-items {
+				ul {
 					display: none;
-					padding-left: 10px;
+					padding-left: 7px;
 
 					&.expanded {
 						display: block;
@@ -389,7 +395,12 @@
 
 		// table-layout.scss
 		.table-row-title {
-			display: none;
+			margin-bottom: 10px;
+			padding: 0;
+
+			img, .address {
+				display: none;
+			}
 		}
 
 		// modals.scss
@@ -421,28 +432,153 @@
 
 // xmin
 	@media only screen and (max-width: 480px) {
+		// forms.scss
+		.btn {padding: 11px 20px;}
+		// common.scss
+		.mobile-menu-item {display: block;}
+
 		// auth.scss
 		#authBlock {
-			.trigger-btn {
-				right: 30px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			z-index: 11;
+
+			&.expanded {
+				height: auto;
 			}
-			fieldset:last-child {
-				.btn {
-					float: left;
-				}
-				.checkbox {
-					margin: 0;
-					float: right;
-				}
+			fieldset {
+				width: 100%;
+				padding: 0 !important;
+			}
+			.checkbox {
+				margin: 0;
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			.btn {
+				position: absolute;
+				bottom: 0;
 			}
 		}
 
 		// header.scss
-		.logo div {
-			display: none;
-		}
+			// .logo div {
+			// 	display: none;
+			// }
 		.user-area {
 			display: none;
+		}
+
+		// aside.scss
+		aside {
+			nav {
+				ul {
+					background-color: darken(#21282E, 2%);
+					ul {
+						height: 0;
+						padding: 0;
+						list-style-type: square;
+						list-style-position: inside;
+						overflow: hidden;
+						background-color: lighten(#21282E, 5%);
+						box-shadow: inset 1px 1px 1px #111;
+
+						&:after {
+							content: '+';
+							display: block;
+							position: absolute;
+							top: 0;
+							right: 0;
+							width: 35px;
+							padding: 15px 0;
+							background-color: rgba(0,0,0, .2);
+							text-align: center;
+							cursor: pointer;
+						}
+						ul {
+							box-shadow: none;
+							&:after {
+								content: none !important;
+							}
+						}
+					}
+					li {
+						margin: 0;
+						border-top: 1px solid #444;
+						border-bottom: 1px solid #111;
+						cursor: pointer;
+
+						span, a {
+							display: inline-block;
+							padding: 15px 20px;
+						}
+						a {
+							padding-left: 40px;
+							@include bg($filename: 'icon/icon-link.png', $pos: 20px center);
+							background-size: 10px;
+						}
+
+						// элементы 2го уровня
+						li {
+							border: 0;
+							padding: 15px 20px 0;
+
+							span, a {
+								padding: 0;
+								color: #eee;
+								background: none;
+							}
+
+							&:after {
+								content: none;
+							}
+							&:hover {
+								background: none;
+								a {
+									text-decoration: underline;
+								}
+							}
+						}
+						&.single-item {
+							span, a {
+								display: block;
+							}
+						}
+						&.expanded {
+							ul {
+								height: auto;
+
+								&:after {
+									content: '-';
+								}
+							}
+							// 2nd ul (container)
+							> ul {
+								padding-bottom: 15px;
+							}
+						}
+						&:hover {
+							background-color: darken(#21282E, 5%);
+							a {
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+			.contacts {
+				padding: 0 20px 20px;
+			}
+			> * {
+				padding-bottom: 20px;
+				background-color: inherit;
+			}
+
+			&.expanded {
+				width: 100%;
+			}
 		}
 
 		// main.scss
@@ -519,6 +655,112 @@
 				bottom: -40px;
 				width: 100%;
 				height: 40px;
+			}
+		}
+
+		// mobile wrap
+		.mobile-wrap {
+			$top-search-height: 65px;
+			overflow: hidden;
+
+			aside {
+				position: fixed;
+				top: $header-height;
+				padding: 0;
+				overflow: hidden;
+				overflow-y: auto;
+			}
+		}
+		.mobile-menu-item {
+			display: block;
+		}
+
+		// table-layout.scss
+		.table-layout {
+			.thead {
+				display: none;
+			}
+			.table-row-title {
+				padding: 0 20px;
+			}
+			.table-row-item {
+				padding: 0 20px;
+
+				div {
+					font-size: 12px;
+				}
+			}
+				.col-count {
+					width: 70px;
+				} 
+				.col-cost {
+					width: 50px;
+					text-align: right;
+				}
+				.col-count {
+					input, button {
+						width: 20px;
+						height: 20px;
+						font-size: 13px;
+					}
+					input {
+						width: 28px;
+					}
+				}
+			.table-row-total {
+				padding: 15px 20px 0;
+
+				div {
+					font-size: 16px;
+				}
+
+				.total-cost {
+					padding-right: 0;
+				}
+				.table-row-noty {
+					margin-top: 5px;
+					font-size: 12px;
+				}
+			}
+		}
+
+		// modals.scss
+		.modal {
+			.modal-head {
+				padding: 20px 60px 20px 20px;
+				font-size: 25px;
+
+				.close-modal-btn {
+					right: 20px;
+				}
+			}
+			.modal-foot {
+				padding: 0 20px 20px;
+
+				button {
+					font-size: 13px;
+					padding: 9px;
+				}
+			}
+			.order-summ {
+				font-size: 18px;
+			}
+				
+			// modal forms
+			&.modal-mods {
+				.total-cost {
+					display: block;
+					margin: 0 0 20px;
+				}
+				.radio-group-items,
+				ul {
+					padding: 0;
+				}
+			}
+			&.modal-basket {
+				.modal-body {
+					padding: 0;
+				}
 			}
 		}
 	}

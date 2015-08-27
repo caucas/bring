@@ -1,16 +1,23 @@
 #authBlock {
 	position: relative;
-	height: 320px;
-	margin-top: -320px;
+	// height: 320px;
+	// margin-top: -320px;
+	height: 0;
+	overflow: hidden;
 	width: 100%;
-	padding: 30px 20%;
 	background-color: #333;
 	@include gradient($img: 'bg/bg-auth.png', $from: rgba(0,0,0,0), $to: rgba(0,0,0,0.35));
 	text-shadow: 1px 1px #333;
-	transition: margin-top .3s ease;
+	// transition: margin-top .3s ease;
+	transition: height .3s ease;
+
+	.auth-container {
+		padding: 30px 20%;
+	}
 
 	&.expanded {
-		margin-top: 0;
+		// margin-top: 0;
+		height: 320px;
 	}
 
 	fieldset {

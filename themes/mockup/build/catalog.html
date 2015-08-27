@@ -12,49 +12,51 @@
   </head>
   <body>
     <div id="authBlock">
-      <div class="swiper-wrapper wrap">
-        <form id="login-form" class="swiper-slide xl-4-12">
-          <fieldset>
-            <legend><span>Авторизация</span><b>/</b><a class="button-next">Регистрация</a></legend>
+      <div class="auth-container">
+        <div class="swiper-wrapper wrap">
+          <form id="login-form" class="swiper-slide xl-4-12">
             <fieldset>
-              <label>Имя пользователя</label>
-              <input type="text" required>
-              <label>Пароль</label>
-              <input type="password" required>
+              <legend><span>Авторизация</span><b>/</b><a class="button-next">Регистрация</a></legend>
+              <fieldset>
+                <label>Имя пользователя</label>
+                <input type="text" required>
+                <label>Пароль</label>
+                <input type="password" required>
+              </fieldset>
+              <fieldset>
+                <button class="btn">Войти</button>
+              </fieldset>
             </fieldset>
-            <fieldset>
-              <button class="btn">Войти</button>
+          </form>
+          <form id="reg-form" class="swiper-slide xl-8-12">
+            <fieldset class="wrap left-xl">
+              <legend><a class="button-prev">Авторизация</a><b>/</b><span>Регистрация</span></legend>
+              <fieldset class="xl-1-2">
+                <label class="label-required">ФИО</label>
+                <input type="text" required>
+                <label class="label-required">Контактный телефон</label>
+                <input type="tel" required>
+              </fieldset>
+              <fieldset class="xl-1-2">
+                <label class="label-required">E-mail</label>
+                <input type="email" required>
+                <label class="label-required">Пароль</label>
+                <input type="password" required>
+              </fieldset>
+              <fieldset>
+                <button class="btn">Регистрация</button>
+                <label class="checkbox xxs-1-2">
+                  <input type="checkbox"><span>Согласен с условиями <br> пользовательского соглашения</span>
+                </label><span class="info-block label-required">- Обязательные поля</span>
+              </fieldset>
             </fieldset>
-          </fieldset>
-        </form>
-        <form id="reg-form" class="swiper-slide xl-8-12">
-          <fieldset class="wrap left-xl">
-            <legend><a class="button-prev">Авторизация</a><b>/</b><span>Регистрация</span></legend>
-            <fieldset class="xl-1-2">
-              <label class="label-required">ФИО</label>
-              <input type="text" required>
-              <label class="label-required">Контактный телефон</label>
-              <input type="tel" required>
-            </fieldset>
-            <fieldset class="xl-1-2">
-              <label class="label-required">E-mail</label>
-              <input type="email" required>
-              <label class="label-required">Пароль</label>
-              <input type="password" required>
-            </fieldset>
-            <fieldset>
-              <button class="btn">Регистрация</button>
-              <label class="checkbox xxs-1-2">
-                <input type="checkbox"><span>Согласен с условиями <br> пользовательского соглашения</span>
-              </label><span class="info-block label-required">- Обязательные поля</span>
-            </fieldset>
-          </fieldset>
-        </form>
-      </div><a href="#" data-expand="authBlock" data-expand-mode="private" class="trigger-btn"></a>
+          </form>
+        </div><a href="#" data-expand="authBlock" data-expand-mode="private" class="trigger-btn"></a>
+      </div>
     </div>
     <header>
       <div class="logo">
-        <button data-expand="aside"></button><a href="/"><img src="/assets/images/logo.png" alt="logo"></a>
+        <button data-expand="aside" data-expand-classes="mobile-wrap"></button><a href="/"><img src="/assets/images/logo.png" alt="logo"></a>
       </div>
       <div class="user-area"><a href="#" data-expand="authBlock" data-expand-mode="private" class="auth-btn"><span>Вход / Регистрация</span></a><a href="#" data-modal="basket" class="basket-btn"></a>
       </div>
@@ -66,6 +68,8 @@
       <aside id="aside">
         <nav>
           <ul>
+            <li class="single-item mobile-menu-item"><span data-expand="authBlock" data-expand-mode="private">Авторизация / Регистрация</span></li>
+            <li class="single-item mobile-menu-item"><span data-modal="basket">Корзина</span></li>
             <li><span>Страницы</span>
               <ul>
                 <li><a href="/">Главная</a></li>
@@ -122,12 +126,12 @@
               </ul>
             </li>
           </ul>
-          <div class="contacts">
-            <p class="title">Телефон <br> справочной <br> службы</p>
-            <p><a href="tel:+78004252233" class="tel">8-800-42-5-22-33</a></p>
-            <p class="small-desc">звонки принимаются <br> с 9:00 до 18:00</p>
-          </div>
         </nav>
+        <div class="contacts">
+          <p class="title">Телефон <br> справочной <br> службы</p>
+          <p><a href="tel:+78004252233" class="tel">8-800-42-5-22-33</a></p>
+          <p class="small-desc">звонки принимаются <br> с 9:00 до 18:00</p>
+        </div>
       </aside>
       <div class="breads">
         <ul>
@@ -138,81 +142,123 @@
       </div>
       <div class="main-content wrap">
         <div class="filter wrap xl-3-11 md-1-1">
-          <div class="checkbox-group xl-1-1 md-2-5 xs-1-2 xxs-1-1">
-            <div class="checkbox-group-title"><span data-expand="catalogFilter1" data-expand-mode="private">Категория</span></div>
-            <div id="catalogFilter1" class="checkbox-group-items"><a href="#" class="clearFilter">Очистить</a>
-              <label class="checkbox">
-                <input type="checkbox"><span>Мясные продукты</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Замороженные продукты</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Молочные продукты</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Рыба</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Кондитерские изделия</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Хлебобулочные изделия</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Овощи</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>фрукты</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Товары для дома</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Косметика и гигиена</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Бытовая техника и электроника</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Всё для детей</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Бакалея</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Напитки</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Подарочные наборы</span>
-              </label>
-            </div>
+          <div class="checkbox-group xl-1-1 md-2-5 xs-1-2 xxs-1-1"><span data-expand="catalogFilter1" data-expand-mode="private">Категория</span>
+            <ul id="catalogFilter1"><a href="#" class="clearFilter">Очистить</a>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Мясные продукты</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Замороженные продукты</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Молочные продукты</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Рыба</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Кондитерские изделия</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Хлебобулочные изделия</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Овощи</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>фрукты</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Товары для дома</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Косметика и гигиена</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Бытовая техника и электроника</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Всё для детей</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Бакалея</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Напитки</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Подарочные наборы</span>
+                </label>
+              </li>
+            </ul>
           </div>
-          <div class="checkbox-group xl-1-1 md-2-5 xs-1-2 xxs-1-1">
-            <div class="checkbox-group-title"><span data-expand="catalogFilter2" data-expand-mode="private">Доп. фильтр</span></div>
-            <div id="catalogFilter2" class="checkbox-group-items"><a href="#" class="clearFilter">Очистить</a>
-              <label class="checkbox">
-                <input type="checkbox"><span>Вегитарианское</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Разноцветное</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Вкусное</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Черное</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Красное</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Ароматное</span>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Горячее</span>
-              </label>
-            </div>
+          <div class="checkbox-group xl-1-1 md-2-5 xs-1-2 xxs-1-1"><span data-expand="catalogFilter2" data-expand-mode="private">Доп. фильтр</span>
+            <ul id="catalogFilter2"><a href="#" class="clearFilter">Очистить</a>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Вегитарианское</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Разноцветное</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Вкусное</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Черное</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Красное</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Ароматное</span>
+                </label>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Горячее</span>
+                </label>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="cat xl-8-11 md-1-1">
@@ -339,9 +385,9 @@
         </div>
         <div class="tbody">
           <div class="table-row wrap">
-            <div class="table-row-title xl-4-12"><img src="/assets/images/shop1.png" alt="shop logo">
+            <div class="table-row-title xl-4-12 xxs-1-1"><img src="/assets/images/shop1.png" alt="shop logo">
               <h4>Наименование магазина</h4>
-              <div>г. Владикавказ, <br> ул. Маркова 15Б</div>
+              <div class="address">г. Владикавказ, <br> ул. Маркова 15Б</div>
             </div>
             <div class="table-row-items xl-8-12 xxs-1-1">
               <div class="table-row-item">
@@ -372,9 +418,9 @@
             </div>
           </div>
           <div class="table-row wrap">
-            <div class="table-row-title xl-4-12"><img src="/assets/images/shop2.png" alt="shop logo">
+            <div class="table-row-title xl-4-12 xxs-1-1"><img src="/assets/images/shop2.png" alt="shop logo">
               <h4>Наименование магазина</h4>
-              <div>г. Владикавказ, <br> ул. Маркова 15Б</div>
+              <div class="address">г. Владикавказ, <br> ул. Маркова 15Б</div>
             </div>
             <div class="table-row-items xl-8-12 xxs-1-1">
               <div class="table-row-item">
@@ -418,41 +464,59 @@
         <p class="add-info-text">При заказе от 1200 руб. пицца Моцарелла классик в подарок!</p>
         <div class="wrap">
           <div class="radio-group xl-5-11 xxs-1-1">
-            <h4 class="radio-group-title">Выбор варианта:</h4>
-            <div class="radio-group-items">
-              <label class="radio">
-                <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
-              </label>
-              <label class="radio">
-                <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
-              </label>
-            </div>
+            <h4>Выбор варианта:</h4>
+            <ul>
+              <li class="radio">
+                <label>
+                  <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
+                </label>
+              </li>
+              <li class="radio">
+                <label>
+                  <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
+                </label>
+              </li>
+            </ul>
           </div>
           <div class="checkbox-group xl-6-11 xxs-1-1">
-            <h4 class="checkbox-group-title">Выбор варианта:</h4>
-            <div class="checkbox-group-items">
-              <label class="checkbox">
-                <input type="checkbox"><span>Мясные продукты</span><b>+100</b>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Замороженные продукты</span><b>+100</b>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Молочные продукты</span><b>+100</b>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Рыба</span><b>+100</b>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Кондитерские изделия</span><b>+100</b>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Хлебобулочные изделия</span><b>+100</b>
-              </label>
-              <label class="checkbox">
-                <input type="checkbox"><span>Овощи, фрукты</span><b>+100</b>
-              </label>
-            </div>
+            <h4>Выбор варианта:</h4>
+            <ul>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Мясные продукты</span>
+                </label><b>+100</b>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Замороженные продукты</span>
+                </label><b>+100</b>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Молочные продукты</span>
+                </label><b>+100</b>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Рыба</span>
+                </label><b>+100</b>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Кондитерские изделия</span>
+                </label><b>+100</b>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Хлебобулочные изделия</span>
+                </label><b>+100</b>
+              </li>
+              <li class="checkbox">
+                <label>
+                  <input type="checkbox"><span>Овощи, фрукты</span>
+                </label><b>+100</b>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -475,14 +539,20 @@
           <textarea></textarea>
         </div>
         <div class="order-summ xl-5-12 xxs-1-1 right-xl left-xxs">Сумма заказа:<span>3580р</span></div>
-        <div class="order-payments radio-group xl-1-1">
-          <label class="radio-group-title">Методы оплаты</label>
-          <label class="radio">
-            <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
-          </label>
-          <label class="radio">
-            <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
-          </label><img src="/assets/images/payments.jpg" alt="payments">
+        <div class="order-payments radio-group">
+          <div class="radio-group-title">Методы оплаты</div>
+          <ul>
+            <li class="radio">
+              <label>
+                <input type="radio" name="order-payment" value="1"><span>Наличными курьеру (3680р)</span>
+              </label>
+            </li>
+            <li class="radio">
+              <label>
+                <input type="radio" name="order-payment" value="2"><span>Безналичная оплата</span>
+              </label>
+            </li><img src="/assets/images/payments.jpg" alt="payment types">
+          </ul>
         </div>
       </div>
       <div class="modal-foot right-xl">

@@ -14,15 +14,16 @@
 			textarea
 		.order-summ.xl-5-12.xxs-1-1.right-xl.left-xxs Сумма заказа:
 			span 3580р
-		.order-payments.radio-group.xl-1-1
-			label.radio-group-title Методы оплаты
-			label.radio
-				input(type="radio", name="order-payment", value="1")
-				span Наличными курьеру (3680р)
-			label.radio
-				input(type="radio", name="order-payment", value="2")
-				span Безналичная оплата
-			img(src="/assets/images/payments.jpg", alt="payments")
+		.order-payments.radio-group
+			div.radio-group-title Методы оплаты
+			ul
+				li.radio: label
+					input(type="radio", name="order-payment", value="1")
+					span Наличными курьеру (3680р)
+				li.radio: label
+					input(type="radio", name="order-payment", value="2")
+					span Безналичная оплата
+				img(src="/assets/images/payments.jpg", alt="payment types")
 
 	.modal-foot.right-xl
 		button.btn.btn-green Заказать

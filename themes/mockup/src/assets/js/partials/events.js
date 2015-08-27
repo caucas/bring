@@ -1,44 +1,37 @@
-;
+﻿;
 /*---------------------------
 			EVENTS
 ----------------------------*/
 
 	// GO TOP BUTTON
-	$('body').on('click', '.to-top-btn', function(e) {
+	$('.to-top-btn').on('click', function(e) {
 		e.preventDefault();
 		$('body').animate({scrollTop:0}, '400');
 	});
 
 	//  CLEAR FILTER BUTTON
-	$('body').on('click', '.clearFilter', function(e) {
+	$('.filter .clearFilter').on('click', function(e) {
 		e.preventDefault();
-		$(this).siblings('label').children('input').each(function() {
+		$(this).siblings('li').find('input').each(function() {
 			$(this).attr('checked', false);
 		});
 	});
 
-	$('body').on('click', '[data-expand]', function(e) {
-		e.preventDefault();
-		var divID = '#' + $(this).data('expand');
-		var mode = $(this).data('expand-mode');
-		// debugger
-		if (mode == 'private') {
-			if (!$(divID).hasClass('expanded'))
-				$(divID).addClass('expanded');
-			else
-				$(divID).removeClass('expanded');
-		}
-		else {
-			if (!$(divID).hasClass('expanded')) {
-				$(divID).addClass('expanded');
-				setTimeout(function() {
-					$(document).bind('click.data-expand', function(e) {
-						if (!$(e.target).closest(divID).length)  {
-							$(divID).removeClass('expanded');
-							$(this).unbind('click.data-expand');
-						}
-					})
-				}, 0);
+	// EXPAND ASIDE SUBMENUS
+	$('aside li').on('click', function(e) {
+		// проверяем, если клик не по самому <li> и по дочернему <a>
+		// то не обрабатываем и переходим по ссыле
+		if ((e.target != this) && (e.target.getAttribute('href'))) return;
+
+		// проверяем, есть ли вложенные подменю
+		if ($(this).children('ul').length) {
+			// если есть, то показываем или скрываем
+			if (!$(this).hasClass('expanded')) {
+				$('aside li').removeClass('expanded');
+				$(this).addClass('expanded')
 			}
-		}
+			else {
+				$(this).removeClass('expanded')	
+			}
+		};
 	});

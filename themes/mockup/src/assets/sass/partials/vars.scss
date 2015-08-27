@@ -121,23 +121,23 @@
 			b {
 				display: inline-block;
 				position: absolute;
-				top: 0; right: 0;
+				top: 3px; right: 0;
 				font-weight: normal;
 				font-size: 16px;
 				color: $color-light-black;
 			}
 		}
 		.#{$type}-group {
-			.#{$type} + .#{$type} {
-				margin-top: 10px;
+			ul {
+				list-style: none;
 			}
-			&.#{$type}-group-inline {
-				.#{$type} {
+			li {
+				label {
 					display: inline-block;
 				}
-				.#{$type} + .#{$type} {
-					margin-left: 20px;
-				}
+			}
+			.#{$type} + .#{$type} {
+				margin-top: 10px;
 			}
 		}
 	}
