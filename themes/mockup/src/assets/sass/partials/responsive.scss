@@ -104,11 +104,143 @@
 
 		// auth.scss
 		#authBlock {
+			transition: none;
 			.auth-container {
 				padding: 30px;
 			}
 			.info-block {
 				display: none;
+			}
+		}
+
+		// aside.scss
+		aside {
+			top: -80px;
+			bottom: 0;
+			padding: 35px;
+			margin-left: -$aside-width;
+			background-image: none;
+			transition: margin-left .3s;
+			z-index: 10;
+
+			// new
+			position: fixed;
+			top: $header-height;
+			padding: 0;
+			min-height: 0;
+			overflow: hidden;
+			overflow-y: auto;
+
+			nav {
+				ul {
+					background-color: darken(#21282E, 2%);
+					ul {
+						height: 0;
+						padding: 0;
+						list-style-type: square;
+						list-style-position: inside;
+						overflow: hidden;
+						background-color: lighten(#21282E, 5%);
+						box-shadow: inset 1px 1px 1px #111;
+
+						&:after {
+							content: '+';
+							display: block;
+							position: absolute;
+							top: 0;
+							right: 0;
+							width: 35px;
+							padding: 15px 0;
+							background-color: rgba(0,0,0, .2);
+							text-align: center;
+							cursor: pointer;
+						}
+						ul {
+							box-shadow: none;
+							&:after {
+								content: none !important;
+							}
+						}
+					}
+					li {
+						margin: 0;
+						border-top: 1px solid #444;
+						border-bottom: 1px solid #111;
+						cursor: pointer;
+
+						span, a {
+							display: inline-block;
+							padding: 15px 20px;
+						}
+						a {
+							padding-left: 40px;
+							@include bg($filename: 'icon/icon-link.png', $pos: 20px center);
+							background-size: 10px;
+						}
+
+						// элементы 2го уровня
+						li {
+							border: 0;
+							padding: 15px 20px 0;
+
+							span, a {
+								padding: 0;
+								color: #eee;
+								background: none;
+							}
+
+							&:after {
+								content: none;
+							}
+							&:hover {
+								background: none;
+								a {
+									text-decoration: underline;
+								}
+							}
+						}
+						&.single-item {
+							span, a {
+								display: block;
+							}
+						}
+						&.expanded {
+							ul {
+								height: auto;
+
+								&:after {
+									content: '-';
+								}
+							}
+							// 2nd ul (container)
+							> ul {
+								padding-bottom: 15px;
+							}
+						}
+						&:hover {
+							background-color: darken(#21282E, 5%);
+							a {
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+			.contacts {
+				padding: 0 20px 20px;
+			}
+			> * {
+				padding-bottom: 20px;
+				background-color: inherit;
+			}
+			
+			&:after {
+				content: none;
+			}
+
+			&.expanded {
+				width: 50%;
+				margin-left: 0;
 			}
 		}
 
@@ -127,21 +259,6 @@
 			position: relative;
 			left: 0;
 			right: 0;
-		}
-
-		// aside.scss
-		aside {
-			top: -80px;
-			bottom: 0;
-			margin-left: -$aside-width;
-			padding: 35px;
-			background-image: none;
-			transition: margin-left .3s;
-			z-index: 10;
-
-			&.expanded {
-				margin-left: 0;
-			}
 		}
 
 		// home.css
@@ -472,110 +589,115 @@
 		}
 
 		// aside.scss
+			// aside {
+			// 	nav {
+			// 		ul {
+			// 			background-color: darken(#21282E, 2%);
+			// 			ul {
+			// 				height: 0;
+			// 				padding: 0;
+			// 				list-style-type: square;
+			// 				list-style-position: inside;
+			// 				overflow: hidden;
+			// 				background-color: lighten(#21282E, 5%);
+			// 				box-shadow: inset 1px 1px 1px #111;
+
+			// 				&:after {
+			// 					content: '+';
+			// 					display: block;
+			// 					position: absolute;
+			// 					top: 0;
+			// 					right: 0;
+			// 					width: 35px;
+			// 					padding: 15px 0;
+			// 					background-color: rgba(0,0,0, .2);
+			// 					text-align: center;
+			// 					cursor: pointer;
+			// 				}
+			// 				ul {
+			// 					box-shadow: none;
+			// 					&:after {
+			// 						content: none !important;
+			// 					}
+			// 				}
+			// 			}
+			// 			li {
+			// 				margin: 0;
+			// 				border-top: 1px solid #444;
+			// 				border-bottom: 1px solid #111;
+			// 				cursor: pointer;
+
+			// 				span, a {
+			// 					display: inline-block;
+			// 					padding: 15px 20px;
+			// 				}
+			// 				a {
+			// 					padding-left: 40px;
+			// 					@include bg($filename: 'icon/icon-link.png', $pos: 20px center);
+			// 					background-size: 10px;
+			// 				}
+
+			// 				// элементы 2го уровня
+			// 				li {
+			// 					border: 0;
+			// 					padding: 15px 20px 0;
+
+			// 					span, a {
+			// 						padding: 0;
+			// 						color: #eee;
+			// 						background: none;
+			// 					}
+
+			// 					&:after {
+			// 						content: none;
+			// 					}
+			// 					&:hover {
+			// 						background: none;
+			// 						a {
+			// 							text-decoration: underline;
+			// 						}
+			// 					}
+			// 				}
+			// 				&.single-item {
+			// 					span, a {
+			// 						display: block;
+			// 					}
+			// 				}
+			// 				&.expanded {
+			// 					ul {
+			// 						height: auto;
+
+			// 						&:after {
+			// 							content: '-';
+			// 						}
+			// 					}
+			// 					// 2nd ul (container)
+			// 					> ul {
+			// 						padding-bottom: 15px;
+			// 					}
+			// 				}
+			// 				&:hover {
+			// 					background-color: darken(#21282E, 5%);
+			// 					a {
+			// 						text-decoration: none;
+			// 					}
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// 	.contacts {
+			// 		padding: 0 20px 20px;
+			// 	}
+			// 	> * {
+			// 		padding-bottom: 20px;
+			// 		background-color: inherit;
+			// 	}
+
+			// 	&.expanded {
+			// 		width: 100%;
+			// 	}
+			// }
 		aside {
-			nav {
-				ul {
-					background-color: darken(#21282E, 2%);
-					ul {
-						height: 0;
-						padding: 0;
-						list-style-type: square;
-						list-style-position: inside;
-						overflow: hidden;
-						background-color: lighten(#21282E, 5%);
-						box-shadow: inset 1px 1px 1px #111;
-
-						&:after {
-							content: '+';
-							display: block;
-							position: absolute;
-							top: 0;
-							right: 0;
-							width: 35px;
-							padding: 15px 0;
-							background-color: rgba(0,0,0, .2);
-							text-align: center;
-							cursor: pointer;
-						}
-						ul {
-							box-shadow: none;
-							&:after {
-								content: none !important;
-							}
-						}
-					}
-					li {
-						margin: 0;
-						border-top: 1px solid #444;
-						border-bottom: 1px solid #111;
-						cursor: pointer;
-
-						span, a {
-							display: inline-block;
-							padding: 15px 20px;
-						}
-						a {
-							padding-left: 40px;
-							@include bg($filename: 'icon/icon-link.png', $pos: 20px center);
-							background-size: 10px;
-						}
-
-						// элементы 2го уровня
-						li {
-							border: 0;
-							padding: 15px 20px 0;
-
-							span, a {
-								padding: 0;
-								color: #eee;
-								background: none;
-							}
-
-							&:after {
-								content: none;
-							}
-							&:hover {
-								background: none;
-								a {
-									text-decoration: underline;
-								}
-							}
-						}
-						&.single-item {
-							span, a {
-								display: block;
-							}
-						}
-						&.expanded {
-							ul {
-								height: auto;
-
-								&:after {
-									content: '-';
-								}
-							}
-							// 2nd ul (container)
-							> ul {
-								padding-bottom: 15px;
-							}
-						}
-						&:hover {
-							background-color: darken(#21282E, 5%);
-							a {
-								text-decoration: none;
-							}
-						}
-					}
-				}
-			}
-			.contacts {
-				padding: 0 20px 20px;
-			}
-			> * {
-				padding-bottom: 20px;
-				background-color: inherit;
-			}
-
 			&.expanded {
 				width: 100%;
 			}
@@ -615,7 +737,7 @@
 				}
 			}
 		}
-		.shops-category {
+		// .shops-category {
 			// h2 {
 			// 	position: relative;
 			// 	font-size: 23px;
@@ -644,7 +766,7 @@
 			// 		background-image: url(https://cdn2.iconfinder.com/data/icons/enter-and-exit-fullscreen/100/Fullscreen-Set-12-16.png);
 			// 	}
 			// }
-		}
+		// }
 
 		// footer.scss
 		footer {
@@ -658,19 +780,7 @@
 			}
 		}
 
-		// mobile wrap
-		.mobile-wrap {
-			$top-search-height: 65px;
-			overflow: hidden;
-
-			aside {
-				position: fixed;
-				top: $header-height;
-				padding: 0;
-				overflow: hidden;
-				overflow-y: auto;
-			}
-		}
+		// other.scss
 		.mobile-menu-item {
 			display: block;
 		}

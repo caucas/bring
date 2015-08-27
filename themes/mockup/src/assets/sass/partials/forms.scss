@@ -7,6 +7,14 @@ textarea {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="password"],
+input[type="checkbox"] {
+	border-radius: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 input[type="password"], 
 textarea {
 	width: 100%;

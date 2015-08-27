@@ -77,7 +77,7 @@ var gulp			= require('gulp'),
 			.pipe(cssimport())
 			.pipe(autoprefixer({browsers: ['last 30 versions']}))
 			// .pipe(sourcemaps.init())
-			// .pipe(minifyCSS({advanced: false}))
+			.pipe(minifyCSS({advanced: false}))
 			.pipe(rename({suffix: ".min"}))
 			// .pipe(sourcemaps.write())
 			.pipe(gulp.dest(build.css))
@@ -96,7 +96,7 @@ var gulp			= require('gulp'),
 	});
 
 // compile all jade templates
-	gulp.task('getTemplates', function () {
+	gulp.task('templates', function () {
 		gulp.src(src.templates)
 			.pipe(plumber())
 			.pipe(jade({pretty: true}))

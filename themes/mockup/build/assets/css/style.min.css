@@ -1783,6 +1783,14 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"],
+input[type="checkbox"] {
+  -webkit-border-radius: 0;
+          border-radius: 0; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
 textarea {
   width: 100%;
   padding: 12px 18px;
@@ -1848,7 +1856,9 @@ textarea {
     position: absolute;
     top: 50%;
     left: 1px;
-    margin-top: -5px; }
+    width: 12px;
+    height: 12px;
+    margin-top: -7px; }
   .checkbox span {
     display: block;
     position: relative;
@@ -1896,7 +1906,9 @@ textarea {
     position: absolute;
     top: 50%;
     left: 1px;
-    margin-top: -5px; }
+    width: 15px;
+    height: 15px;
+    margin-top: -8.5px; }
   .radio span {
     display: block;
     position: relative;
@@ -1956,6 +1968,9 @@ body {
 
 body {
   background-color: #333; }
+  body.no-scroll {
+    position: fixed;
+    width: 100%; }
 
 a, span {
   color: inherit;
@@ -2438,6 +2453,8 @@ ul.list {
   text-align: center; }
 
 .table-layout .col-count input {
+  -webkit-border-radius: 0;
+          border-radius: 0;
   margin: 0 1px; }
 
 .table-layout .col-count button {
@@ -3142,10 +3159,107 @@ footer {
     padding-left: 0; }
   .main-content {
     background-color: #fff; }
-  #authBlock .auth-container {
-    padding: 30px; }
-  #authBlock .info-block {
-    display: none; }
+  #authBlock {
+    -webkit-transition: none;
+       -moz-transition: none;
+         -o-transition: none;
+            transition: none; }
+    #authBlock .auth-container {
+      padding: 30px; }
+    #authBlock .info-block {
+      display: none; }
+  aside {
+    top: -80px;
+    bottom: 0;
+    padding: 35px;
+    margin-left: -250px;
+    background-image: none;
+    -webkit-transition: margin-left 0.3s;
+       -moz-transition: margin-left 0.3s;
+         -o-transition: margin-left 0.3s;
+            transition: margin-left 0.3s;
+    z-index: 10;
+    position: fixed;
+    top: 80px;
+    padding: 0;
+    min-height: 0;
+    overflow: hidden;
+    overflow-y: auto; }
+    aside nav ul {
+      background-color: #1d2328; }
+      aside nav ul ul {
+        height: 0;
+        padding: 0;
+        list-style-type: square;
+        list-style-position: inside;
+        overflow: hidden;
+        background-color: #2c353d;
+        -webkit-box-shadow: inset 1px 1px 1px #111;
+                box-shadow: inset 1px 1px 1px #111; }
+        aside nav ul ul:after {
+          content: '+';
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 35px;
+          padding: 15px 0;
+          background-color: rgba(0, 0, 0, 0.2);
+          text-align: center;
+          cursor: pointer; }
+        aside nav ul ul ul {
+          -webkit-box-shadow: none;
+                  box-shadow: none; }
+          aside nav ul ul ul:after {
+            content: none !important; }
+      aside nav ul li {
+        margin: 0;
+        border-top: 1px solid #444;
+        border-bottom: 1px solid #111;
+        cursor: pointer; }
+        aside nav ul li span, aside nav ul li a {
+          display: inline-block;
+          padding: 15px 20px; }
+        aside nav ul li a {
+          padding-left: 40px;
+          background: url("../../assets/images/icon/icon-link.png") 20px center no-repeat;
+          -o-background-size: 10px;
+             background-size: 10px; }
+        aside nav ul li li {
+          border: 0;
+          padding: 15px 20px 0; }
+          aside nav ul li li span, aside nav ul li li a {
+            padding: 0;
+            color: #eee;
+            background: none; }
+          aside nav ul li li:after {
+            content: none; }
+          aside nav ul li li:hover {
+            background: none; }
+            aside nav ul li li:hover a {
+              text-decoration: underline; }
+        aside nav ul li.single-item span, aside nav ul li.single-item a {
+          display: block; }
+        aside nav ul li.expanded ul {
+          height: auto; }
+          aside nav ul li.expanded ul:after {
+            content: '-'; }
+        aside nav ul li.expanded > ul {
+          padding-bottom: 15px; }
+        aside nav ul li:hover {
+          background-color: #161b1f; }
+          aside nav ul li:hover a {
+            text-decoration: none; }
+    aside .contacts {
+      padding: 0 20px 20px; }
+    aside > * {
+      padding-bottom: 20px;
+      background-color: inherit; }
+    aside:after {
+      content: none; }
+    aside.expanded {
+      width: 50%;
+      margin-left: 0; }
   header {
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
@@ -3158,19 +3272,6 @@ footer {
     position: relative;
     left: 0;
     right: 0; }
-  aside {
-    top: -80px;
-    bottom: 0;
-    margin-left: -250px;
-    padding: 35px;
-    background-image: none;
-    -webkit-transition: margin-left 0.3s;
-       -moz-transition: margin-left 0.3s;
-         -o-transition: margin-left 0.3s;
-            transition: margin-left 0.3s;
-    z-index: 10; }
-    aside.expanded {
-      margin-left: 0; }
   footer:after {
     display: none; } }
 
@@ -3346,76 +3447,6 @@ footer {
       bottom: 0; }
   .user-area {
     display: none; }
-  aside nav ul {
-    background-color: #1d2328; }
-    aside nav ul ul {
-      height: 0;
-      padding: 0;
-      list-style-type: square;
-      list-style-position: inside;
-      overflow: hidden;
-      background-color: #2c353d;
-      -webkit-box-shadow: inset 1px 1px 1px #111;
-              box-shadow: inset 1px 1px 1px #111; }
-      aside nav ul ul:after {
-        content: '+';
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 35px;
-        padding: 15px 0;
-        background-color: rgba(0, 0, 0, 0.2);
-        text-align: center;
-        cursor: pointer; }
-      aside nav ul ul ul {
-        -webkit-box-shadow: none;
-                box-shadow: none; }
-        aside nav ul ul ul:after {
-          content: none !important; }
-    aside nav ul li {
-      margin: 0;
-      border-top: 1px solid #444;
-      border-bottom: 1px solid #111;
-      cursor: pointer; }
-      aside nav ul li span, aside nav ul li a {
-        display: inline-block;
-        padding: 15px 20px; }
-      aside nav ul li a {
-        padding-left: 40px;
-        background: url("../../assets/images/icon/icon-link.png") 20px center no-repeat;
-        -o-background-size: 10px;
-           background-size: 10px; }
-      aside nav ul li li {
-        border: 0;
-        padding: 15px 20px 0; }
-        aside nav ul li li span, aside nav ul li li a {
-          padding: 0;
-          color: #eee;
-          background: none; }
-        aside nav ul li li:after {
-          content: none; }
-        aside nav ul li li:hover {
-          background: none; }
-          aside nav ul li li:hover a {
-            text-decoration: underline; }
-      aside nav ul li.single-item span, aside nav ul li.single-item a {
-        display: block; }
-      aside nav ul li.expanded ul {
-        height: auto; }
-        aside nav ul li.expanded ul:after {
-          content: '-'; }
-      aside nav ul li.expanded > ul {
-        padding-bottom: 15px; }
-      aside nav ul li:hover {
-        background-color: #161b1f; }
-        aside nav ul li:hover a {
-          text-decoration: none; }
-  aside .contacts {
-    padding: 0 20px 20px; }
-  aside > * {
-    padding-bottom: 20px;
-    background-color: inherit; }
   aside.expanded {
     width: 100%; }
   .cat .cat-item {
@@ -3447,14 +3478,6 @@ footer {
       bottom: -40px;
       width: 100%;
       height: 40px; }
-  .mobile-wrap {
-    overflow: hidden; }
-    .mobile-wrap aside {
-      position: fixed;
-      top: 80px;
-      padding: 0;
-      overflow: hidden;
-      overflow-y: auto; }
   .mobile-menu-item {
     display: block; }
   .table-layout .thead {

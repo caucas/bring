@@ -19,6 +19,12 @@ body {
 }
 body {
 	background-color: #333;
+
+	&.no-scroll {
+		//ios safari bugfix
+		position: fixed;
+		width: 100%;
+	}
 }
 
 a, span {

@@ -10,11 +10,11 @@ $('[data-expand]').on('click', function(e) {
 	e.preventDefault();
 	var targetID	= '#' + $(this).data('expand'),
 		expandMode	= $(this).data('expand-mode'),
-		bodyClasses = $(this).data('expand-classes');
+		noscroll 	= $(this).data('expand-noscroll');
 
 	if (!$(targetID).hasClass('expanded')) {
 		// если указаны доп классы для body, проставим их
-		if (bodyClasses) $('body').addClass(bodyClasses);
+		if (noscroll) $('body').addClass('no-scroll');
 
 		// раскрываем целевой блок в зависимости от режима
 		if (expandMode == 'private') {
@@ -26,7 +26,7 @@ $('[data-expand]').on('click', function(e) {
 				$(document).bind('click.expandTrigger', function(e) {
 					if (!$(e.target).closest(targetID).length)  {
 						$(targetID).removeClass('expanded');
-						$('body').removeClass(bodyClasses);
+						$('body').removeClass('no-scroll');
 						$(this).unbind('click.expandTrigger');
 					}
 				})
@@ -34,7 +34,7 @@ $('[data-expand]').on('click', function(e) {
 		}
 	}
 	else {
-		$('body').removeClass(bodyClasses);
+		$('body').removeClass('no-scroll');
 		$(targetID).removeClass('expanded');
 	}
 });
