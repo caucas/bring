@@ -5,7 +5,6 @@ var gulp			= require('gulp'),
 	browserSync		= require('browser-sync').create(),
 	concatJS		= require('gulp-concat'),
 	concatCSS		= require('gulp-concat-css'),
-	cssimport		= require("gulp-cssimport"),
 	del				= require('del'),
 	filter			= require('gulp-filter'),
 	gulpsync		= require('gulp-sync')(gulp),
@@ -74,7 +73,6 @@ var gulp			= require('gulp'),
 		gulp.src(src.sass)
 			.pipe(plumber())
 			.pipe(sass())
-			.pipe(cssimport())
 			.pipe(autoprefixer({browsers: ['last 30 versions']}))
 			// .pipe(sourcemaps.init())
 			.pipe(minifyCSS({advanced: false}))

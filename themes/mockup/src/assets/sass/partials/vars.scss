@@ -81,65 +81,65 @@
 		}
 	
 	// CUSTOM CHECKBOX & RADIO STYLES
-	@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
-		.#{$type} {
-			display: block;
-			position: relative;
-			overflow: hidden;
-
-			input[type="#{$type}"] {
-				position: absolute;
-				top: 50%;
-				left: 1px;
-				width: $x/1 -2;
-				height: $y/1-2;
-				margin-top: -$y/2;
-			}
-			span {
+		@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
+			.#{$type} {
 				display: block;
 				position: relative;
-				padding-left: 30px;
-				min-height: $y;
-				font-size: 16px;
-				font-family: 'r-400';
-				color: $color-light-black;
-				cursor: pointer;
+				overflow: hidden;
 
-				&:after {
-					content: '';
-					display: block;
+				input[type="#{$type}"] {
 					position: absolute;
 					top: 50%;
-					left: 0;
-					width: $x;
-					height: $y;
+					left: 1px;
+					width: $x/1 -2;
+					height: $y/1-2;
 					margin-top: -$y/2;
-					@include bg($filename: 'bg/bg-#{$type}.png');
 				}
-			}
-			input[type="#{$type}"]:checked ~ span:after {
-				background-position: 0 bottom;
-			}
-			b {
-				display: inline-block;
-				position: absolute;
-				top: 3px; right: 0;
-				font-weight: normal;
-				font-size: 16px;
-				color: $color-light-black;
-			}
-		}
-		.#{$type}-group {
-			ul {
-				list-style: none;
-			}
-			li {
-				label {
+				span {
+					display: block;
+					position: relative;
+					padding-left: 30px;
+					min-height: $y;
+					font-size: 16px;
+					font-family: 'r-400';
+					color: $color-light-black;
+					cursor: pointer;
+
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 50%;
+						left: 0;
+						width: $x;
+						height: $y;
+						margin-top: -$y/2;
+						@include bg($filename: 'bg/bg-#{$type}.png');
+					}
+				}
+				input[type="#{$type}"]:checked ~ span:after {
+					background-position: 0 bottom;
+				}
+				b {
 					display: inline-block;
+					position: absolute;
+					top: 3px; right: 0;
+					font-weight: normal;
+					font-size: 16px;
+					color: $color-light-black;
 				}
 			}
-			.#{$type} + .#{$type} {
-				margin-top: 10px;
+			.#{$type}-group {
+				ul {
+					list-style: none;
+				}
+				li {
+					label {
+						display: inline-block;
+					}
+				}
+				.#{$type} + .#{$type} {
+					margin-top: 10px;
+				}
 			}
 		}
-	}
