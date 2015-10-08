@@ -4,22 +4,8 @@ header
 			data-expand="aside",
 			data-expand-noscroll="true"
 		)
-		a(href="/")
-			img(src="/assets/images/logo.png", alt="logo")
-			//- div Доставка
-	.user-area
-		a.auth-btn(
-			href="#",
-			data-expand="authBlock",
-			data-expand-mode="private"
-		)
-			span Вход / Регистрация
-		a.basket-btn(
-			href="#",
-			data-modal="basket"
-		)
-		//- a.profile-btn(href="/profile")
-		//- a.basket-btn.full(href="#")
+		a(href="/"): img(src="/assets/images/logo.png", alt="logo")
+
 	form.top-search
 		input(
 			type="text",
@@ -27,3 +13,16 @@ header
 			placeholder="Поиск (например: Молоко, Ресторан, Скидка)"
 		)
 		//- button.search-btn(type="button")
+
+	.user-area
+		#user-block.profile-btn.header-btn-black(data-expand="user-block")
+			.title Иванов Иван
+			ul.dropdown-menu.align-right
+				li: a(href="#") Мои заказы
+				li: a(href="#") Профиль
+				li: a(href="#") Призы
+				li: a(href="#") Напоминания
+				li.divider
+				li: a(href="#") Выход
+		.basket-btn.header-btn-yellow(data-modal="basket")
+		//- .basket-btn.full.header-btn-yellow(data-modal="basket")

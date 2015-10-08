@@ -58,17 +58,36 @@
       <div class="logo">
         <button data-expand="aside" data-expand-noscroll="true"></button><a href="/"><img src="/assets/images/logo.png" alt="logo"></a>
       </div>
-      <div class="user-area"><a href="#" data-expand="authBlock" data-expand-mode="private" class="auth-btn"><span>Вход / Регистрация</span></a><a href="#" data-modal="basket" class="basket-btn"></a>
-      </div>
       <form class="top-search">
         <input type="text" name="s" placeholder="Поиск (например: Молоко, Ресторан, Скидка)">
       </form>
+      <div class="user-area">
+        <div id="user-block" data-expand="user-block" class="profile-btn header-btn-black">
+          <div class="title">Иванов Иван</div>
+          <ul class="dropdown-menu align-right">
+            <li><a href="#">Мои заказы</a></li>
+            <li><a href="#">Профиль</a></li>
+            <li><a href="#">Призы</a></li>
+            <li><a href="#">Напоминания</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Выход</a></li>
+          </ul>
+        </div>
+        <div data-modal="basket" class="basket-btn header-btn-yellow"></div>
+      </div>
     </header>
     <div class="main-container">
       <aside id="aside">
         <nav>
           <ul>
             <li class="single-item mobile-menu-item"><span data-expand="authBlock" data-expand-mode="private">Авторизация / Регистрация</span></li>
+            <li class="mobile-menu-item"><span>Профиль</span>
+              <ul>
+                <li><a href="#">Профиль</a></li>
+                <li><a href="#">Мои заказы</a></li>
+                <li><a href="#">Напоминания</a></li>
+              </ul>
+            </li>
             <li class="single-item mobile-menu-item"><span data-modal="basket">Корзина</span></li>
             <li><span>Страницы</span>
               <ul>

@@ -183,3 +183,40 @@ ul.list {
 .mobile-menu-item {
 	display: none;
 }
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: 175px;
+	padding: 20px 25px;
+	background-color: #21282E;
+	color: #fff;
+	list-style: none;
+	cursor: default;
+	li {
+		a {
+			font-family: m-cond;
+			font-size: 18px;
+			color: #dadada;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		&.divider {
+			height: 1px;
+			margin: 20px 0 15px;
+			background-color: #ccc;
+		}
+	}
+	li + li {
+		margin-top: 15px;
+	}
+	&.align-right {
+		left: auto;
+		right: 0;
+	}
+}

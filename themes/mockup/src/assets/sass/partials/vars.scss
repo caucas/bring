@@ -1,7 +1,6 @@
 // GLOBAL VARS
 	$aside-width		: 250px;
 	$header-height		: 80px;
-	$user-area-width	: 170px;
 	$base-font-size		: 16px;
 
 // COLORS
@@ -136,6 +135,7 @@
 				li {
 					label {
 						display: inline-block;
+						position: relative;
 					}
 				}
 				.#{$type} + .#{$type} {

@@ -195,9 +195,4 @@ var gulp			= require('gulp'),
 	gulp.task('build',  gulpsync.sync(['sass', 'jade', 'js', 'fonts:build', 'img:build', 'bower']));
 
 // default
-	// gulp.task('default', gulpsync.sync(['build', 'serve']), function () {
-	// 	gulp.watch(watch.js, ['js'], reload);
-	// 	gulp.watch(watch.jade, ['jade'], reload);
-	// 	gulp.watch(watch.sass, ['sass'], reload);
-	// });
-	gulp.task('default', gulpsync.sync(['build', 'serve', 'watch']));
+	gulp.task('default', gulpsync.sync(['serve', 'watch']));

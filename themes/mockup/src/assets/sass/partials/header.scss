@@ -1,33 +1,90 @@
 header {
 	position: relative;
+	display: table;
+	width: 100%;
 	background-color: $bg-dark-color;
 	box-shadow: 250px 1px 4px rgba(0, 0, 0, 0.15);
 	z-index: 2;
-	@extend .clrfix;
+
+	> * {
+		display: table-cell;
+		vertical-align: middle;
+		white-space: nowrap;
+		line-height: 0;
+	}
 }
+
+[class*='header-btn'] {
+	display: inline-block;
+	position: relative;
+	width: 85px;
+	height: $header-height;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	transition: background-color .3s ease;
+
+	.title {
+		position: absolute;
+		right: 100%;
+		padding: 0 30px;
+		font-size: 16px;
+		line-height: $header-height;
+		color: #D2D2D2;
+		transition: color .3s ease;
+		z-index: 1;
+	}
+	&:hover {
+		.title {
+			color: #666;
+		}
+	}
+	&.expanded {
+		.title {
+			color: #666;
+		}
+		.dropdown-menu {
+			display: block;
+		}
+	}
+}
+	.header-btn-black {
+		background-color: $bg-dark-color;
+		&:hover {
+			background-color: darken($bg-dark-color, 15%);
+		}
+		&.expanded:hover {
+			background-color: $bg-dark-color;
+		}
+	}
+	.header-btn-yellow {
+		background-color: $bg-yellow-color;
+		&:hover,
+		&.expanded {
+			background-color: darken($bg-yellow-color, 15%);
+		}
+	}
 
 .logo {
 	display: block;
-	width: $aside-width;
-	height: $header-height;
-	padding: 23px 35px;
-	@include rem(padding-left, 35px);
-	@include rem(padding-right, 35px);
-	float: left;
-	// @extend .clrfix;
+	width: 1px;
+	min-width: 250px;
+	padding: 21px 35px;
+	// @include rem(padding, 20px 35px);
 
 	button {
 		display: none;
 		position: relative;
 		width: 28px;
 		height: 26px;
+		margin-top: 3px;
 		@include rem(margin-right, 35px);
-		float: left;
 		border: 0;
 		border-top: 4px solid #fff;
 		border-bottom: 4px solid #fff;
 		background: #21282E;
 		opacity: .7;
+		vertical-align: top;
 		transition: opacity .3s;
 
 		&:after {
@@ -51,9 +108,6 @@ header {
 		display: inline-block;
 	}
 
-	img {
-		float: left;
-	}
 	div {
 		display: inline-block;
 		height: 33px;
@@ -71,63 +125,33 @@ header {
 }
 
 .user-area {
-	width: $user-area-width;
-	height: $header-height;
-	float: right;
+	width: 1px;
+	font-size: 0;
 	z-index: 2;
 
-	a {
-		display: inline-block;
-		position: relative;
-		height: $header-height;
-		width: 85px;
-		transition: background-color .3s ease;
-	}
 	.auth-btn {
-		@include bg($filename: 'icon/icon-login-btn.png', $bgcolor: $bg-dark-color, $pos: center);
-		&:hover {
-			background-color: darken($bg-dark-color, 15%);
-
-			span {
-				color: #666;
-			}
-		}
-		span {
-			position: absolute;
-			top: 0;
-			left: -180px;
-			@include rem(left, -200px);
-			line-height: $header-height;
-			color: #D2D2D2;
-			z-index: 1;
-			transition: color .3s ease;
-		}
+		background-image: url(../images/icon/icon-login-btn.png);
 	}
 	.profile-btn {
-		@include bg($filename: 'icon/icon-profile-btn.png', $bgcolor: $bg-dark-color, $pos: center);
-		&:hover {
-			background-color: darken($bg-dark-color, 15%);
-		}
+		background-image: url(../images/icon/icon-profile-btn.png);
 	}
 	.basket-btn {
-		@include bg($filename: 'icon/icon-basket-empty.png', $bgcolor: $bg-yellow-color, $pos: center);
+		background-image: url(../images/icon/icon-basket-empty.png);
 		&.full {
-			background-image: url(../../assets/images/icon/icon-basket-full.png);
+			background-image: url(../images/icon/icon-basket-full.png);
 		}
-		&:hover {
-			background-color: darken($bg-yellow-color, 5%);
+	}
+
+	.dropdown-menu {
+		a {
+			text-decoration: none;
 		}
 	}
 }
 
 .top-search {
-	position: absolute;
-	left: $aside-width;
-	right: $user-area-width;
-	height: $header-height;
-	padding: 20px 220px 20px 35px;
-	// @include rem(padding, 20px 35px);
-	float: left;
+	width: 100%;
+	padding: 20px 35px;
 	background-color: #fff;
 
 	// .search-btn {

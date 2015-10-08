@@ -242,7 +242,12 @@
 
 		// header.scss
 		header {
+			display: block;
 			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+			> * {
+				display: block;
+				height: 80px;
+			}
 		}
 		.logo {
 			width: auto;
@@ -251,10 +256,18 @@
 			}
 		}
 		.top-search {
-			width: 100%;
 			position: relative;
-			left: 0;
+			width: 100%;
+		}
+		.user-area {
+			position: absolute;
+			top: 0;
 			right: 0;
+			width: auto;
+
+			[class*=header-btn] .title {
+				display: none;
+			}
 		}
 
 		// home.css
