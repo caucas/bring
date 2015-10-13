@@ -6,9 +6,9 @@ block breads
 			+breads(items)
 block content
 	.main-content.wrap
-		.filter.wrap.xl-3-11.md-1-1
+		.nav-tree.wrap.xl-3-11.md-1-1
 			.checkbox-group.xl-1-1.md-2-5.xs-1-2.xxs-1-1
-				span(
+				span.nav-title(
 					data-expand="catalogFilter1",
 					data-expand-mode="private"
 				) Категория
@@ -18,9 +18,9 @@ block content
 					each item in categoryOptions
 						li.checkbox: label
 							input(type="checkbox")
-							span= item
+							div= item
 			.checkbox-group.xl-1-1.md-2-5.xs-1-2.xxs-1-1
-				span(
+				span.nav-title(
 					data-expand="catalogFilter2",
 					data-expand-mode="private"
 				) Доп. фильтр
@@ -30,7 +30,7 @@ block content
 					each item in addFilterOptions
 						li.checkbox: label
 							input(type="checkbox")
-							span= item
+							div= item
 
 		.cat.xl-8-11.md-1-1
 			- for(var j=0; j<2; j++)

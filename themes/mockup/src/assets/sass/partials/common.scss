@@ -69,10 +69,10 @@ h4 {
 	// @include fz(22px);
 }
 
+ul {
+	list-style: none;
+}
 nav {
-	ul {
-		list-style: none;
-	}
 }
 
 // flexible fix
@@ -122,7 +122,6 @@ nav {
 }
 
 ul.list {
-	margin: 25px 0 25px 16px;
 	@include rem(margin, 25px 0 25px 16px);
 
 	li {
@@ -135,7 +134,7 @@ ul.list {
 			content: '';
 			display: inline-block;
 			position: absolute;
-			top: 5px;
+			top: 4px;
 			left: -16px;
 			width: 6px;
 			height: 6px;
@@ -195,6 +194,8 @@ ul.list {
 	color: #fff;
 	list-style: none;
 	cursor: default;
+	box-shadow: 0 3px 5px 0px rgba(0,0,0, .5);
+
 	li {
 		a {
 			font-family: m-cond;

@@ -1,0 +1,40 @@
+extends ../layouts/default.jade
+block breads
+	- items = ['Главная', 'Доставка еды', 'Вкусняшки']
+	.breads
+		ul
+			+breads(items)
+block content
+	.main-content.fluid
+		.section.wrap
+			.nav-tree.wrap.xl-3-11.md-1-1
+				ul.nav-expand
+					- var lvl1 = [ {'title': 'Мясные продукты'}, {'title': 'Замороженные продукты'}, {'title': 'Молочные продукты'}, {'title': 'Рыба', 'subItems': ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома']}, { 'title': 'Кондитерские изделия', 'subItems': ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома'] }, {'title': 'Хлебобулочные изделия'}, {'title': 'Овощи'}, {'title': 'фрукты'}, {'title': 'Товары для дома'}, {'title': 'Косметика и гигиена'}, {'title': 'Бытовая техника и электроника'}, {'title': 'Всё для детей'}, {'title': 'Бакалея'}, {'title': 'Напитки'}, {'title': 'Подарочные наборы'} ]
+					each item in lvl1
+						li
+							span= item.title
+							if item.subItems
+								if item.subItems.length > 0
+									ul
+										each subItem in item.subItems
+											li: span= subItem
+
+
+			.cat.xl-8-11.md-1-1
+				- for(var j=0; j<2; j++)
+					h2.caps-text продукты (категория)
+					.wrap.gutter-15-xl
+						- for(var i=0; i<4; i++)
+							.cat-item.xl-1-2
+								.item-image
+									a(href="#")
+										img(src="/assets/images/cat-item.png", alt="cat item name")
+								.item-desc
+									.item-name Пицца
+									p При заказе от 1200 руб. пицца Моцарелла классик в подарок!
+									.basket-area
+										span.cost.cost-small 200
+											sub руб
+										span.add-to-basket
+											span 1шт.
+											button

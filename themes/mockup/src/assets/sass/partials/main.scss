@@ -152,30 +152,66 @@
 }
 
 // CATALOG FILTER
-.filter {
-	// @include rem(margin-bottom, 40px);
-	@include rem(padding-right, 40px);
-	// padding-right: 40px;
-	float: left;
+.nav-tree {
+	.nav-title {
+		position: relative;
+		font-size: 22px;
+		font-family: 'm-cond';
+		color: $color-light-blue;
+		text-transform: uppercase;
+	}
+	.nav-title ~ ul {
+		margin-top: 20px;
+	}
+	ul {
+		margin-bottom: 20px;
+		@include rem(padding-right, 40px);
 
+		li {
+			font-size: 17px;
+			font-family: 'm-cond';
+			> span {
+				color: #535353;
+				cursor: pointer;
+			}
+			&:hover {
+				> span {
+					// color: #333;
+					// text-decoration: underline;
+				}
+			}
+			&.active {
+				> span {
+					color: $color-light-blue;
+					// text-decoration: underline;
+				}
+				ul {
+					display: block;
+				}
+			}
+		}
+		li + li {
+			margin-top: 8px;
+		}
+		ul {
+			display: none;
+			margin: 10px 0 10px 20px;
+			@include rem(margin, 10px 0 10px 20px);
+			li {
+				> span {
+					color: #868686;
+				}
+			}
+		}
+	}
 	.checkbox-group {
 		position: relative;
 		@include rem(margin-bottom, 40px);
 
-		> span {
-			position: relative;
-			font-size: 22px;
-			font-family: 'm-cond';
-			color: $color-light-blue;
-			text-transform: uppercase;
-		}
-		> span + ul {
-			margin-top: 20px;
-		}
 		.clearFilter {
 			position: absolute;
 			top: 5px;
-			right: 0;
+			@include rem(right, 40px);
 			font: 14px 'm-cond';
 			color: #9E9E9E;
 		}

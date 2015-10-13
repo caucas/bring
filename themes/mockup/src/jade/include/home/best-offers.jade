@@ -1,7 +1,7 @@
 section.best-offers.wrap
-	.filter.wrap.xl-3-11.md-1-1
+	.nav-tree.wrap.xl-3-11.md-1-1
 		.checkbox-group.xl-1-1.md-2-5.xs-4-5
-			span(
+			span.nav-title(
 				data-expand="bestOffersFilter",
 				data-expand-mode="private"
 			) Кухни/Блюда
@@ -11,7 +11,7 @@ section.best-offers.wrap
 				each item in filterOptions
 					li.checkbox: label
 						input(type="checkbox")
-						span= item
+						div= item
 	.cat.xl-8-11.md-1-1
 		h2.caps-text Лучшие предложения недели
 		.wrap.gutter-15-xl
