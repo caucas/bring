@@ -171,6 +171,7 @@ main {
 
 		li {
 			position: relative;
+			margin-bottom: 8px;
 			font-size: 18px;
 			font-family: 'm-cond';
 			color: #535353;
@@ -194,9 +195,9 @@ main {
 					display: block;
 				}
 			}
-		}
-		li + li {
-			margin-top: 8px;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 		ul {
 			display: none;

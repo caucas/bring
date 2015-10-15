@@ -14,6 +14,7 @@
 
 	// Home page sliders
 	var topSlider = new Swiper('.top-slider', {
+		slidesPerView: 'auto',
 		pagination: '.top-slider-pagination',
 		paginationClickable: true,
 		followFinger: true,

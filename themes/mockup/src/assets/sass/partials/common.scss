@@ -130,6 +130,7 @@ ul {
 	sub {
 		font-size: 12px;
 		color: #000;
+		vertical-align: baseline;
 	}
 	&.cost-small {
 		@include fz(22px);

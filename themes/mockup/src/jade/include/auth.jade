@@ -1,6 +1,6 @@
 #authBlock
 	.auth-container
-		.swiper-wrapper.wrap
+		.swiper-wrapper
 			form#login-form.swiper-slide.xl-4-12
 				fieldset
 					legend
@@ -19,21 +19,22 @@
 						//- a(href="#") Забыли пароль?
 
 			form#reg-form.swiper-slide.xl-8-12
-				fieldset.wrap.left-xl
+				fieldset
 					legend
 						a.button-prev Авторизация
 						b /
 						span Регистрация
-					fieldset.xl-1-2
-						label.label-required ФИО
-						input(type="text", required)
-						label.label-required Контактный телефон
-						input(type="tel", required)
-					fieldset.xl-1-2
-						label.label-required E-mail
-						input(type="email", required)
-						label.label-required Пароль
-						input(type="password", required)
+					.wrap.xl-2.xl-gutter-30
+						fieldset
+							label.label-required ФИО
+							input(type="text", required)
+							label.label-required Контактный телефон
+							input(type="tel", required)
+						fieldset
+							label.label-required E-mail
+							input(type="email", required)
+							label.label-required Пароль
+							input(type="password", required)
 					fieldset
 						button.btn Регистрация
 						label.checkbox.xxs-1-2

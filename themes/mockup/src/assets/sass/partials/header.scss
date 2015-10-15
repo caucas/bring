@@ -21,6 +21,7 @@ header {
 	min-width: 250px;
 	@include rem(padding, 0px $base-padding);
 	font-size: 0;
+	@extend .vMiddle;
 
 	button {
 		display: none;
@@ -102,6 +103,7 @@ header {
 	width: 100%;
 	@include rem(padding, 20px $base-padding);
 	background-color: #fff;
+	@extend .vMiddle;
 
 	// .search-btn {
 	// 	position: absolute;

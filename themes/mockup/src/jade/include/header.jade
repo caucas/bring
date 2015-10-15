@@ -1,5 +1,5 @@
 header
-	.logo.vMiddle
+	.logo
 		button(
 			data-expand="aside",
 			data-expand-noscroll="true"
@@ -15,7 +15,7 @@ header
 		//- button.search-btn(type="button")
 
 	.user-area
-		#user-block.profile-btn.header-btn-black(data-expand="user-block")
+		.profile-btn.header-btn-black(data-expand="self")
 			.title Иванов Иван
 			ul.dropdown-menu.align-right
 				li: a(href="#") Мои заказы
@@ -24,5 +24,6 @@ header
 				li: a(href="#") Напоминания
 				li.divider
 				li: a(href="#") Выход
+		.auth-btn.header-btn-black(data-expand="authBlock", data-expand-mode="private")
 		.basket-btn.header-btn-yellow(data-modal="basket")
 		//- .basket-btn.full.header-btn-yellow(data-modal="basket")
