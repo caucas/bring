@@ -2,6 +2,7 @@
 	$aside-width		: 250px;
 	$header-height		: 80px;
 	$base-font-size		: 16px;
+	$base-padding		: 30px;
 
 // COLORS
 	// bg colors
@@ -82,7 +83,7 @@
 	// CUSTOM CHECKBOX & RADIO STYLES
 		@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
 			.#{$type} {
-				display: inline-block;
+				// display: inline-block;
 				position: relative;
 				overflow: hidden;
 
@@ -102,10 +103,10 @@
 					position: relative;
 					padding-left: 30px;
 					min-height: $y;
-					font-size: 16px;
-					font-family: inherit;
+					font-size: 18px;
+					// font-family: inherit;
 					// font-family: 'r-400';
-					// font-family: 'm-cond';
+					font-family: 'm-cond';
 					color: $color-light-black;
 					cursor: pointer;
 
@@ -121,7 +122,8 @@
 						@include bg($filename: 'bg/bg-#{$type}.png');
 					}
 				}
-				input[type="#{$type}"]:checked ~ div:after {
+				input[type="#{$type}"]:checked ~ div:after,
+				input[type="#{$type}"]:checked ~ span:after {
 					background-position: 0 bottom;
 				}
 				b {
@@ -135,7 +137,7 @@
 			}
 			.#{$type}-group {
 				li {
-					display: block;
+					// display: block;
 					label {
 						display: inline-block;
 						position: relative;

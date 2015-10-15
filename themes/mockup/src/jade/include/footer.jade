@@ -1,5 +1,5 @@
 footer
-	.footer-col-1
+	.xl-1-2
 		nav
 			ul
 				li: a(href="#") Раздел для партнеров
@@ -24,12 +24,12 @@ footer
 	//- 	a(href="#")
 	//- 		img(src="/assets/images/icon/icon-star.png", alt="star")
 	//- 		div Рейтинги
-	.footer-col-2
+	.site-desc.xl-1-2
 		.social
 			- var socials = ['tw', 'fb', 'yt', 'ig', 'gp', 'wp']
 			each item in socials
 				a(href="#", class="icon icon-#{item}")
-		p.info.hidden-xs
+		p.info.xs-hidden
 			| Доставка — это независимый клубный проект, объединивший сотни служб доставки
 			| пиццы, суши, еды и продуктов в Единую Систему Заказов.
 			| Цель проекта — обеспечить своим пользователям наилучшие условия для быстрого,

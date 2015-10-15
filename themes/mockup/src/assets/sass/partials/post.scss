@@ -1,3 +1,6 @@
+.post-content {
+	@include rem(padding-top, 30px);
+}
 .post-image {
 	// display: block;
 	max-width: 100%;

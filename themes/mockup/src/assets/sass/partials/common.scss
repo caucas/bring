@@ -12,16 +12,12 @@
 			tap-highlight-color: rgba(0,0,0,0);
 }
 
-html,
-body {
+html {
 	font-size: $base-font-size;
-	// height: 100%;
 }
 body {
-	background-color: #333;
-
-	&.no-scroll {
-		//ios safari bugfix
+	min-width: 320px;
+	&.no-scroll { // ios safari bugfix
 		position: fixed;
 		width: 100%;
 	}
@@ -72,15 +68,14 @@ h4 {
 ul {
 	list-style: none;
 }
-nav {
-}
 
 // flexible fix
-.wrap .wrap {font-size: 0 !important;}
-
-.no-scroll {
-	overflow: hidden;
+.wrap {
+	* {vertical-align: top;}
+	.wrap {font-size: 0 !important;}
 }
+
+.no-scroll {overflow:hidden}
 
 .clrfix {
 	&:after {
@@ -89,6 +84,30 @@ nav {
 		clear: both;
 	}
 }
+
+// vertical align
+.vTop > * {
+	vertical-align: top;
+}
+.vMiddle {
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 1px;
+		height: 100%;
+		margin-left: -1px;
+		vertical-align: middle;
+		// background-color: #f00;  // optional
+	}
+	& > * {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+.vBottom > * {
+	vertical-align: bottom;
+}
+// -------------------------
 
 .small-desc, small {
 	font-size: 11px;

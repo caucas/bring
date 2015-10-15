@@ -2,7 +2,7 @@
 	@media only screen and (min-width: 1601px) {
 		// home.scss
 		.best-offers {
-			.filter {
+			.nav-tree {
 				width: 23%;
 			}
 			.cat {
@@ -61,28 +61,36 @@
 			font-size: 13px;
 		}
 		// main.scss
-		.filter {
-			.checkbox-group {
-				margin-right: 30px;
-			}
-			.expand-block {
-				.expand-trigger {
-					padding-left: 40px;
+			.nav-tree {
+				.expand-block {
+					.expand-trigger {
+						@include rem(padding-left, $base-padding);
 
-					&:before, &:after {
-						content: '';
+						&:before, &:after {
+							content: '';
+						}
 					}
 				}
-			}
-			.expand-content {
-				display: none;
-				padding-left: 10px;
+				.expand-content {
+					display: none;
+					padding-left: 10px;
 
-				&.expanded {
-					display: block;
+					&.expanded {
+						display: block;
+					}
+				}
+				ul ul {
+					@include rem(margin, 10px 0);
+					position: absolute;
+					top: 100%;
+					padding: 15px;
+					background-color: #eee;
+					border: 1px solid #ccc;
+					box-shadow: 2px 3px 3px 0 rgba(0,0,0, .3);
+					z-index: 1;
 				}
 			}
-		}
+		// ---------
 	}
 
 // sm
@@ -97,9 +105,6 @@
 		// main.scss
 		.main-container {
 			padding-left: 0;
-		}
-		.main-content {
-			background-color: #fff;
 		}
 
 		// auth.scss
@@ -178,10 +183,10 @@
 						// элементы 2го уровня
 						li {
 							border: 0;
-							padding: 15px 20px 0;
 
 							span, a {
-								padding: 0;
+								display: block;
+								padding: 7px 20px;
 								color: #eee;
 								background: none;
 							}
@@ -211,7 +216,7 @@
 							}
 							// 2nd ul (container)
 							> ul {
-								padding-bottom: 15px;
+								padding: 7px 0;
 							}
 						}
 						&:hover {

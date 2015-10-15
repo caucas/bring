@@ -5,6 +5,7 @@ footer {
 	background-color: $bg-dark-color;
 	color: #B8B8B8;
 	@extend .clrfix;
+	@extend .wrap;
 
 	&:after {
 		content: '';
@@ -19,13 +20,7 @@ footer {
 		border-color: #ffffff transparent transparent transparent;
 	}
 
-	.footer-col-1, .footer-col-2 {
-		display: inline-block;
-		width: 50%;
-		vertical-align: top;
-	}
-	.footer-col-2 {
-		width: 40%;
+	.site-desc {
 		max-width: 500px;
 		float: right;
 	}

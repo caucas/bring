@@ -22,7 +22,8 @@
 		// проверяем, если клик не по самому <li> и по дочернему <a>
 		// то не обрабатываем и переходим по ссыле
 		// if ((e.target != this) && (e.target.getAttribute('href'))) return;
-
+		debugger;
+		console.log($(this));
 		if ($(this).children('ul').length) { // проверяем, есть ли вложенные подменю
 			if (!$(this).hasClass('expanded')) {
 				$(this).siblings('li').removeClass('expanded');

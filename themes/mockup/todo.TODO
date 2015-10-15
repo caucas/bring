@@ -1,3 +1,32 @@
+13.10.2015
+  ✔ переделать блок .main-content @done (15-10-13 21:23)
+    ✔ отступы вложенных блоков @done (15-10-13 21:23)
+    ✔ fluid блоки @done (15-10-13 21:23)
+  ☐ стили для страницы магазина
+    ☐ инфо-блок магазина
+    ☐ элементы каталога (на всю ширину)
+  ☐ протестить все измененения на всех разрешениях
+
+14.10.2015
+ ☐ переделать все страницы под новый flexigle.gs
+   ☐ стили модальных окон
+   ☐ авторизация/регистрация
+ ✔ aside expand li click fix @done (15-10-14 19:44)
+ ✔ footer styles @done (15-10-14 19:45)
+
+05.10.2015
+  ✔ переделать header @done (15-10-05 17:39)
+  ✔ display: table < 1100px @done (15-10-05 17:39)
+  ✔ dropdown-menu @done (15-10-05 17:30)
+    ✔ divider @done (15-10-05 16:45)
+    ✔ on hover effect @done (15-10-05 17:28)
+    ✔ span color on active state @done (15-10-05 17:28)
+  ✔ logo @done (15-10-05 17:30)
+    ✔ padding @done (15-10-05 17:30)
+    ✔ vertical align @done (15-10-05 17:30)
+    ✔ width @done (15-10-05 17:30)
+  ✔ js expander (+ self selector) @done (15-10-05 16:58)
+
 01.09.2015
   ✔ убрать плагин вставки css файлов @done (15-09-13 14:16)
   ✔ отрефакторить код @done (15-09-13 14:31)
@@ -26,17 +55,3 @@
   ✔ заменить контрольные точки (подогнать) @done (15-08-19 20:24)
   ✔ проблема с отступами (main-content) @done (15-08-19 14:21)
   ✔ проблема с js обработчиками (data-trigger) @done (15-08-19 19:36)
-
-05.10.2015
-  ✔ переделать header @done (15-10-05 17:39)
-  ✔ display: table < 1100px @done (15-10-05 17:39)
-  ✔ dropdown-menu @done (15-10-05 17:30)
-    ✔ divider @done (15-10-05 16:45)
-    ✔ on hover effect @done (15-10-05 17:28)
-    ✔ span color on active state @done (15-10-05 17:28)
-  ✔ logo @done (15-10-05 17:30)
-    ✔ padding @done (15-10-05 17:30)
-    ✔ vertical align @done (15-10-05 17:30)
-    ✔ width @done (15-10-05 17:30)
-  ✔ js expander (+ self selector) @done (15-10-05 16:58)
-  

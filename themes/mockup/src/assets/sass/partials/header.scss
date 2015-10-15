@@ -3,7 +3,7 @@ header {
 	display: table;
 	width: 100%;
 	background-color: $bg-dark-color;
-	box-shadow: 250px 1px 4px rgba(0, 0, 0, 0.15);
+	box-shadow: $aside-width 1px 4px rgba(0, 0, 0, 0.15);
 	z-index: 2;
 
 	> * {
@@ -14,77 +14,26 @@ header {
 	}
 }
 
-[class*='header-btn'] {
-	display: inline-block;
-	position: relative;
-	width: 85px;
-	height: $header-height;
-	background-position: center;
-	background-repeat: no-repeat;
-	cursor: pointer;
-	transition: background-color .3s ease;
-
-	.title {
-		position: absolute;
-		right: 100%;
-		padding: 0 30px;
-		font-size: 16px;
-		line-height: $header-height;
-		color: #D2D2D2;
-		transition: color .3s ease;
-		z-index: 1;
-	}
-	&:hover {
-		.title {
-			color: #666;
-		}
-	}
-	&.expanded {
-		.title {
-			color: #666;
-		}
-		.dropdown-menu {
-			display: block;
-		}
-	}
-}
-	.header-btn-black {
-		background-color: $bg-dark-color;
-		&:hover {
-			background-color: darken($bg-dark-color, 15%);
-		}
-		&.expanded:hover {
-			background-color: $bg-dark-color;
-		}
-	}
-	.header-btn-yellow {
-		background-color: $bg-yellow-color;
-		&:hover,
-		&.expanded {
-			background-color: darken($bg-yellow-color, 15%);
-		}
-	}
-
 .logo {
 	display: block;
 	width: 1px;
+	height: 80px;
 	min-width: 250px;
-	padding: 21px 35px;
-	// @include rem(padding, 20px 35px);
+	@include rem(padding, 0px $base-padding);
+	font-size: 0;
 
 	button {
 		display: none;
 		position: relative;
 		width: 28px;
 		height: 26px;
-		margin-top: 3px;
-		@include rem(margin-right, 35px);
+		margin-top: -9px;
+		@include rem(margin-right, $base-padding);
 		border: 0;
 		border-top: 4px solid #fff;
 		border-bottom: 4px solid #fff;
 		background: #21282E;
 		opacity: .7;
-		vertical-align: top;
 		transition: opacity .3s;
 
 		&:after {
@@ -151,13 +100,13 @@ header {
 
 .top-search {
 	width: 100%;
-	padding: 20px 35px;
+	@include rem(padding, 20px $base-padding);
 	background-color: #fff;
 
 	// .search-btn {
 	// 	position: absolute;
 	// 	top: 20px;
-	// 	left: 35px;
+	// 	left: $base-padding;
 	// 	width: 20px;
 	// 	height: 40px;
 	// 	border: 0;
@@ -192,3 +141,54 @@ header {
 		}
 	}
 }
+
+[class*='header-btn'] {
+	display: inline-block;
+	position: relative;
+	width: 85px;
+	height: $header-height;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	transition: background-color .3s ease;
+
+	.title {
+		position: absolute;
+		right: 100%;
+		padding: 0 30px;
+		font-size: 16px;
+		line-height: $header-height;
+		color: #D2D2D2;
+		transition: color .3s ease;
+		z-index: 1;
+	}
+	&:hover {
+		.title {
+			color: #666;
+		}
+	}
+	&.expanded {
+		.title {
+			color: #666;
+		}
+		.dropdown-menu {
+			display: block;
+		}
+	}
+}
+	.header-btn-black {
+		background-color: $bg-dark-color;
+		&:hover {
+			background-color: darken($bg-dark-color, 15%);
+		}
+		&.expanded:hover {
+			background-color: $bg-dark-color;
+		}
+	}
+	.header-btn-yellow {
+		background-color: $bg-yellow-color;
+		&:hover,
+		&.expanded {
+			background-color: darken($bg-yellow-color, 15%);
+		}
+	}

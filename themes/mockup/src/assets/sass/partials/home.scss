@@ -1,16 +1,17 @@
 .top-slider {
 	position: relative;
 	height: 300px;
+	padding: 0;
 	overflow: hidden;
 
 	.swiper-slide {
 		display: table;
 		// position: absolute;
 		// top: 0;
-		width: 100%;
+		width: 100% !important;
 		height: 100%;
 		// padding: 20px 45px;
-		@include rem(padding, 20px 45px);
+		@include rem(padding, 20px 30px);
 		background-color: #333;
 		background-size: cover;
 
@@ -28,7 +29,7 @@
 		.desc {
 			display: table-cell;
 			// padding-left: 40px;
-			@include rem(padding-left, 40px);
+			@include rem(padding-left, 30px);
 			vertical-align: middle;
 
 			div, p {
@@ -46,8 +47,8 @@
 	}
 
 	.swiper-pagination {
-		@include rem(bottom, 45px);
-		@include rem(padding-right, 45px);
+		@include rem(bottom, 30px);
+		@include rem(padding-right, 30px);
 		text-align: right;
 	}
 }
@@ -78,9 +79,9 @@
 
 		.title {
 			position: absolute;
+			right: 15px;
 			bottom: 0;
-			// bottom: -40px;
-			left: 15px; right: 15px;
+			left: 15px;
 			height: 40px;
 			padding: 0 15px;
 			background-color: rgba(33,40,46,0.9);
@@ -108,6 +109,7 @@
 }
 
 .novelty-slider {
+	@include rem(padding, 30px);
 	background-color: #fff;
 
 	.cat {
@@ -118,6 +120,7 @@
 }
 
 .single-product {
+	@include rem(padding-top, 30px);
 	@extend .clrfix;
 
 	// SILDER STYLES
@@ -145,10 +148,8 @@
 	.single-product-desc {
 		width: 67%;
 		max-width: 650px;
-		// margin-bottom: 15px;
-		// padding-left: 40px;
 		@include rem(margin-bottom, 15px);
-		@include rem(padding-left, 40px);
+		@include rem(padding-left, 30px);
 		float: left;
 
 		h3 {
@@ -177,7 +178,7 @@
 }
 
 .mobile-adv-wrap {
-	padding-top: 0 !important;
+	// padding-top: 0 !important;
 }
 	.mobile-adv-block {
 		position: relative;
