@@ -24,7 +24,7 @@ main {
 	@extend .clrfix;
 
 	h2 {
-		font-size: 30px;
+		// font-size: 30px;
 		// @include fz(30px);
 	}
 
@@ -103,6 +103,61 @@ main {
 					background-color: darken($color-light-green, 5%);
 				}
 			}
+		}
+	}
+}
+
+// SHOP INFO BLOCK
+.breads + .shop-info {
+	@include rem(margin-top, -30px);
+}
+.shop-info {
+	@include rem(padding, 25px 0px);
+	background-color: #fff;
+	box-shadow: 2px 1px 1px rgba(0,0,0, .1);
+
+	.shop-logo {
+		@include rem(padding, 0px 30px);
+		text-align: center;
+
+		img {
+			max-width: 100%;
+			max-height: 200px;
+		}
+	}
+	.shop-data {
+		@include rem(padding, 0px 30px);
+
+		.shop-name {
+			@include rem(margin-bottom, 20px);
+			font-family: r-700;
+			font-size: 26px;
+		}
+		.shop-tagline {
+			@include rem(margin-bottom, 15px);
+			font-size: 17px;
+		 	color: #626262;
+		}
+		.shop-args {
+			@include rem(margin-bottom, 20px);
+
+			th, td {
+				padding: 0 30px 5px 0;
+			}
+			th {
+				font-size: 17px;
+				color: #000;
+			}
+			td {
+				font-size: 11px;
+				color: #616161;
+			}
+		}
+		.shop-desc {
+			// max-width: 55%;
+			@include rem(margin-bottom, 20px);			
+			font-size: 12px;
+			color: #999;
 		}
 	}
 }

@@ -47,6 +47,11 @@ textarea {
 }
 
 // CUSTOM BUTTONS STYLES
+.buttons {
+	.btn + .btn {
+		@include rem(margin-left, 25px);
+	}
+}
 .btn {
 	$button-color: $bg-orange-color;
 	padding: 11px 25px;
@@ -65,6 +70,7 @@ textarea {
 
 	@include additional-colors($color-light-green, green);
 	@include additional-colors($color-gray, gray);
+	@include additional-colors($color-light-gray-2, light-gray);
 	@include additional-colors($color-light-blue, blue);
 }
 

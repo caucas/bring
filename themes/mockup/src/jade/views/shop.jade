@@ -6,8 +6,31 @@ block content
 		.breads
 			ul
 				+breads(items)
-		.wrap.vTop
-			.nav-tree.wrap.xl-3-11.md-1-1
+		.shop-info.wrap
+			.shop-logo.xl-2-9.md-3-11.xxs-hidden
+				img(src="/assets/images/shop_logo.png", alt="shop logotype")
+			.shop-data.xl-7-9.md-8-11.xxs-1-1
+				h1.shop-name Магазин на диване
+				.shop-tagline Японская и китайская кухня
+				table.shop-args
+					tr
+						th 250 руб
+						th 110 руб
+						th 60 минут
+					tr
+						td мин сумма заказа
+						td доставка
+						td среднее время
+				.wrap
+					.shop-desc.xl-6-11.md-1-1
+						| Минимальная сумма заказа в Кировский и Тракторозаводской район - 1200 руб.,
+						| Красноармейский районы - 2000 руб. Напитки не входят в минимальную сумму заказа.
+					.buttons.xl-right.xl-5-11.md-1-1.md-left
+						button.btn.btn-light-gray Информация
+						button.btn.btn-light-gray Отзывы
+
+		.wrap
+			.nav-tree.xl-2-9.md-1-1
 				span.nav-title Категории
 				ul.nav-expand.wrap.xl-1.md-3.sm-2.xxs-1
 					- var lvl1 = [ {'title': 'Мясные продукты'}, {'title': 'Замороженные продукты'}, {'title': 'Молочные продукты'}, {'title': 'Рыба', 'subItems': ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома']}, { 'title': 'Кондитерские изделия', 'subItems': ['Мясные продукты', 'Замороженные продукты', 'Молочные продукты', 'Рыба', 'Кондитерские изделия', 'Хлебобулочные изделия', 'Овощи', 'фрукты','Товары для дома'] }, {'title': 'Хлебобулочные изделия'}, {'title': 'Овощи'}, {'title': 'фрукты'}, {'title': 'Товары для дома'}, {'title': 'Косметика и гигиена'}, {'title': 'Бытовая техника и электроника'}, {'title': 'Всё для детей'}, {'title': 'Бакалея'}, {'title': 'Напитки'}, {'title': 'Подарочные наборы'} ]
@@ -20,8 +43,7 @@ block content
 										each subItem in item.subItems
 											li: span= subItem
 
-
-			.cat.xl-8-11.md-1-1
+			.cat.xl-7-9.md-1-1
 				- for(var j=0; j<2; j++)
 					h2.caps-text продукты (категория)
 					.wrap.xl-gutter-30

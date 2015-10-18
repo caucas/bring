@@ -1,15 +1,5 @@
 // xl
 	@media only screen and (min-width: 1601px) {
-		// home.scss
-		.best-offers {
-			.nav-tree {
-				width: 23%;
-			}
-			.cat {
-				width: 77%;
-				float: right;
-			}
-		}
 		.single-product {
 			.single-product-desc {
 				max-width: 100%;
@@ -29,30 +19,6 @@
 		#authBlock .auth-container{
 			padding: 30px 10%;
 		}
-		// vertical catalog
-		// home.scss
-			// .best-offers {
-			// 	.cat {
-			// 		.cat-item {
-			// 			min-width: auto;
-
-			// 			.item-image {
-			// 				position: relative;
-			// 				width: 100%;
-			// 				height: 160px;
-			// 				overflow: hidden;
-			// 			}
-			// 			.item-desc {
-			// 				padding: 25px;
-			// 				height: auto;
-
-			// 				p {
-			// 					height: 55px;
-			// 				}
-			// 			}
-			// 		}
-			// 	}
-			// }
 	}
 
 // md
@@ -62,23 +28,23 @@
 		}
 		// main.scss
 			.nav-tree {
-				.expand-block {
-					.expand-trigger {
-						@include rem(padding-left, $base-padding);
+				// .expand-block {
+				// 	.expand-trigger {
+				// 		@include rem(padding-left, $base-padding);
 
-						&:before, &:after {
-							content: '';
-						}
-					}
-				}
-				.expand-content {
-					display: none;
-					padding-left: 10px;
+				// 		&:before, &:after {
+				// 			content: '';
+				// 		}
+				// 	}
+				// }
+				// .expand-content {
+				// 	display: none;
+				// 	padding-left: 10px;
 
-					&.expanded {
-						display: block;
-					}
-				}
+				// 	&.expanded {
+				// 		display: block;
+				// 	}
+				// }
 				ul ul {
 					@include rem(margin, 10px 0);
 					position: absolute;
@@ -90,14 +56,13 @@
 					z-index: 1;
 				}
 			}
-		// ---------
 	}
 
 // sm
 	@media only screen and (max-width: 1100px) {
 		// common.scss
 		// цвет заливки стрелки вниз
-		.filter .checkbox-group {
+		.nav-tree .checkbox-group {
 			>span:after {
 				border-color: #fff transparent transparent transparent;
 			}

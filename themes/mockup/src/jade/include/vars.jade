@@ -8,7 +8,8 @@ mixin breads (items)
 	//- if !items
 	//- 	- items = ['Главная']
 	each item, i in items
-		if i < items.length-1
+		//- если элемент последний, то выводим span
+		if i != items.length
 			li: a(href="#") #{item}
 		else
 			li.current: span #{item}
