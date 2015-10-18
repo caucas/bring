@@ -83,12 +83,12 @@
 	// CUSTOM CHECKBOX & RADIO STYLES
 		@mixin customInput ($type: checkbox, $x: 14px, $y: 14px) {
 			.#{$type} {
-				// display: inline-block;
 				position: relative;
 				overflow: hidden;
 
 				label {
 					font-family: inherit;
+					font-size: inherit;
 				}
 
 				input[type="#{$type}"] {
@@ -100,13 +100,12 @@
 					margin-top: -$y/2;
 				}
 				div, span {
+					display: inline-block;
 					position: relative;
 					padding-left: 30px;
 					min-height: $y;
-					font-size: 16px;
+					font-size: inherit;
 					font-family: inherit;
-					// font-family: 'r-400';
-					// font-family: 'm-cond';
 					color: $color-light-black;
 					cursor: pointer;
 
@@ -137,14 +136,13 @@
 			}
 			.#{$type}-group {
 				li {
-					// display: block;
 					label {
 						display: inline-block;
 						position: relative;
 					}
 				}
-				.#{$type} + .#{$type}, li + li {
-					// margin-top: 10px;
+				.#{$type}, li {
+					margin-bottom: 8px;
 				}
 			}
 		}

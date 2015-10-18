@@ -112,12 +112,13 @@ main {
 	@include rem(margin-top, -30px);
 }
 .shop-info {
-	@include rem(padding, 25px 0px);
+	// @include rem(padding, 25px 0px);
+	padding: 0;
 	background-color: #fff;
 	box-shadow: 2px 1px 1px rgba(0,0,0, .1);
 
 	.shop-logo {
-		@include rem(padding, 0px 30px);
+		@include rem(padding, 25px 30px);
 		text-align: center;
 
 		img {
@@ -126,7 +127,8 @@ main {
 		}
 	}
 	.shop-data {
-		@include rem(padding, 0px 30px);
+		@include rem(padding, 25px 30px);
+		padding-left: $base-padding/2; // flexible.gs half gutter
 
 		.shop-name {
 			@include rem(margin-bottom, 20px);
@@ -154,8 +156,7 @@ main {
 			}
 		}
 		.shop-desc {
-			// max-width: 55%;
-			@include rem(margin-bottom, 20px);			
+			// max-width: 55%;		
 			font-size: 12px;
 			color: #999;
 		}

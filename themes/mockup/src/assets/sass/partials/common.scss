@@ -243,3 +243,36 @@ ul.list {
 		right: 0;
 	}
 }
+
+
+.cat + .pagination {
+	@include rem(margin-top, 30px);
+}
+.pagination {
+	cursor: default;
+	li {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background-color: #F6F6F6;
+		border: 1px solid #e5e5e5;
+		font-size: 13px;
+		line-height: 30px;
+		text-align: center;
+		cursor: pointer;
+		transition: all .3s ease;
+
+		& + li {
+			margin-left: 8px;
+		}
+
+		&.current,
+		&:hover {
+			background-color: #fff;
+			border-color: #ccc;
+		}
+		&.current:hover {
+			cursor: default;
+		}
+	}
+}

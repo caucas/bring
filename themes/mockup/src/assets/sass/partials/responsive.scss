@@ -26,6 +26,13 @@
 		html {
 			font-size: 13px;
 		}
+		.shop-info {
+			.shop-data {
+				.shop-desc {
+					@include rem(margin-bottom, 20px);
+				}
+			}
+		}
 		// main.scss
 			.nav-tree {
 				// .expand-block {
@@ -54,6 +61,25 @@
 					border: 1px solid #ccc;
 					box-shadow: 2px 3px 3px 0 rgba(0,0,0, .3);
 					z-index: 1;
+
+					&:before, &:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: -9px;
+						left: 5px;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 0 7px 8px 7px;
+						border-color: transparent transparent #CCCCCC transparent;
+					}
+					&:after {
+						border-width: 0 7px 8px 7px;
+						border-color: transparent transparent #EEEEEE transparent;
+						top: -7px;
+						left: 5px;
+					}
 				}
 			}
 	}
@@ -332,13 +358,13 @@
 			}
 
 			nav {
-				margin: 65px 0 40px;
+				margin-top: 65px;
 			}
 			.social {
 				position: absolute;
 				top: 35px;
 				left: 35px;
-				right: 35px;
+				// right: 35px;
 				padding: 0;
 			}
 		}

@@ -1,8 +1,10 @@
 footer {
+	$footer-border-width: 3px;
 	position: relative;
 	@include rem(padding, 40px 50px);
-	border-top: 3px solid $color-gray;
+	border-top: $footer-border-width solid $color-gray;
 	background-color: $bg-dark-color;
+	font-family: r-300;
 	color: #B8B8B8;
 	@extend .clrfix;
 	@extend .wrap;
@@ -11,7 +13,7 @@ footer {
 		content: '';
 		display: block;
 		position: absolute;
-		top: -3px; // = footer border width
+		top: -$footer-border-width;
 		left: 0;
 		width: 0;
 		height: 0;
@@ -26,7 +28,7 @@ footer {
 	}
 
 	nav {
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 		@extend .clrfix;
 
 		ul {
@@ -76,7 +78,7 @@ footer {
 	}
 
 	.social {
-		margin-bottom: 35px;
+		margin-bottom: 45px;
 		padding-left: 5%;
 
 		.icon {

@@ -13,3 +13,12 @@ mixin breads (items)
 			li: a(href="#") #{item}
 		else
 			li.current: span #{item}
+
+//- pagination
+mixin pagination (items, current)
+	ul.pagination
+		each item, i in items
+			if i == current-1
+				li.current #{item}
+			else
+				li #{item}
