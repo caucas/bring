@@ -74,10 +74,10 @@ var gulp			= require('gulp'),
 			.pipe(plumber())
 			.pipe(sass())
 			.pipe(autoprefixer({browsers: ['last 30 versions']}))
-			.pipe(sourcemaps.init())
+			// .pipe(sourcemaps.init())
 			.pipe(minifyCSS({advanced: false}))
 			.pipe(rename({suffix: ".min"}))
-			.pipe(sourcemaps.write())
+			// .pipe(sourcemaps.write())
 			.pipe(gulp.dest(build.css))
 			.pipe(reload({stream: true}))
 			.pipe(notify("SASS compiled"))
@@ -89,8 +89,8 @@ var gulp			= require('gulp'),
 			.pipe(plumber())
 			.pipe(jade({pretty: true}))
 			.pipe(gulp.dest(build.root))
-			.pipe(notify("JADE compiled"))
 			.pipe(reload({stream: true}))
+			.pipe(notify("JADE compiled"))
 	});
 
 // compile all jade templates
