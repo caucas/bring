@@ -1,37 +1,38 @@
 footer
-	.xl-1-2.xs-1-1
-		nav
-			ul
-				li: a(href="#") Раздел для партнеров
-				li: a(href="#") Пользовательское соглашение
-				li: a(href="#") Контакты
-				li: a(href="#") Акции
-			ul
-				li: a(href="#") Доставка пиццы
-				li: a(href="#") Доставка еды
-				li: a(href="#") Метро
-				li: a(href="#") Районы
-		p.copy
-			| © 2009-2015 Доставка Владикавказ <br>
-			| Все права защищены
-	//- .add-links.xl-1-4.hidden-md
-	//- 	a(href="#")
-	//- 		img(src="/assets/images/icon/icon-lamp.png", alt="lamp")
-	//- 		div Афиша
-	//- 	a(href="#")
-	//- 		img(src="/assets/images/icon/icon-streams.png", alt="streams")
-	//- 		div Трансляции
-	//- 	a(href="#")
-	//- 		img(src="/assets/images/icon/icon-star.png", alt="star")
-	//- 		div Рейтинги
-	.site-desc.xl-1-2.xs-1-1
-		.social
-			- var socials = ['tw', 'fb', 'yt', 'ig', 'gp', 'wp']
-			each item in socials
-				a(href="#", class="icon icon-#{item}")
-		p.info.xs-hidden
-			| Доставка — это независимый клубный проект, объединивший сотни служб доставки
-			| пиццы, суши, еды и продуктов в Единую Систему Заказов.
-			| Цель проекта — обеспечить своим пользователям наилучшие условия для быстрого,
-			| удобного и выгодного осуществления заказов.
-		a.to-top-btn(href="#")
+	.wrap
+		.xl-1-2.xs-1-1
+			nav
+				ul
+					li: a(href="#") Раздел для партнеров
+					li: a(href="#") Пользовательское соглашение
+					li: a(href="#") Контакты
+					li: a(href="#") Акции
+				ul
+					li: a(href="#") Доставка пиццы
+					li: a(href="#") Доставка еды
+					li: a(href="#") Метро
+					li: a(href="#") Районы
+			p.copy
+				| © 2009-2015 Доставка Владикавказ <br>
+				| Все права защищены
+		//- .add-links.xl-1-4.hidden-md
+		//- 	a(href="#")
+		//- 		img(src="/assets/images/icon/icon-lamp.png", alt="lamp")
+		//- 		div Афиша
+		//- 	a(href="#")
+		//- 		img(src="/assets/images/icon/icon-streams.png", alt="streams")
+		//- 		div Трансляции
+		//- 	a(href="#")
+		//- 		img(src="/assets/images/icon/icon-star.png", alt="star")
+		//- 		div Рейтинги
+		.site-desc.xl-1-2.xs-1-1
+			.social
+				- var socials = ['tw', 'fb', 'yt', 'ig', 'gp', 'wp']
+				each item in socials
+					a(href="#", class="icon icon-#{item}")
+			p.info.xs-hidden
+				| Доставка — это независимый клубный проект, объединивший сотни служб доставки
+				| пиццы, суши, еды и продуктов в Единую Систему Заказов.
+				| Цель проекта — обеспечить своим пользователям наилучшие условия для быстрого,
+				| удобного и выгодного осуществления заказов.
+			a.to-top-btn(href="#")

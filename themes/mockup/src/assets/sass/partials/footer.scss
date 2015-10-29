@@ -1,25 +1,40 @@
 footer {
 	$footer-border-width: 3px;
 	position: relative;
-	@include rem(padding, 40px 50px);
-	border-top: $footer-border-width solid $color-gray;
-	background-color: $bg-dark-color;
+	padding-top: $footer-border-width;
+	padding-left: $aside-width;
+	@include bg($bgcolor: $bg-dark-color, $filename: 'bg/bg-aside.png', $pos: -45px bottom);
 	font-family: r-300;
 	color: #B8B8B8;
 	@extend .clrfix;
 	@extend .wrap;
+
+	.wrap {
+		@include rem(padding, 40px 50px);
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: $aside-width;
+		right: 0;
+		height: $footer-border-width;
+		background: $color-gray;
+	}
 
 	&:after {
 		content: '';
 		display: block;
 		position: absolute;
 		top: -$footer-border-width;
-		left: 0;
+		left: $aside-width;
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 136px 10px 0 0px;
-		border-color: #ffffff transparent transparent transparent;
+		border-width: 136px 10px 0 0;
+		border-color: $color-light-white transparent transparent transparent;
 	}
 
 	.site-desc {
@@ -109,7 +124,7 @@ footer {
 	}
 	.to-top-btn {
 		position: absolute;
-		top: 0;
+		top: 3px;
 		right: 0;
 		width: 85px;
 		height: 80px;

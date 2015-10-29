@@ -115,6 +115,7 @@
 			top: $header-height;
 			bottom: 0;
 			padding: 0;
+			margin: 0;
 			width: 50%;
 			min-height: 0;
 			overflow: hidden;
@@ -265,14 +266,12 @@
 				display: none;
 			}
 		}
-
-		// home.css
-		// .best-offers .filter {
-		// 	padding-left: 30px;
-		// }
 		
 		// footer.scss
 		footer {
+			padding-left: 0;
+			background-image: none;
+			&:before,
 			&:after {
 				display: none;
 			}
